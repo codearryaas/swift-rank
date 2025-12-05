@@ -1,0 +1,668 @@
+/**
+ * Swift Rank Admin Styles - Native WordPress Design
+ */
+
+/* Use WordPress Default Styling Where Possible */
+/* Only add custom styles for plugin-specific elements */
+
+.swift-rank-field-group {
+	margin-bottom: 15px;
+}
+
+.swift-rank-field-group label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: 600;
+}
+
+.swift-rank-field-group .required {
+	color: #d63638; /* WP error red */
+}
+
+/* Info Boxes - Match WP Notice Styling */
+.swift-rank-info {
+	background: #e7f3ff;
+	border-left: 4px solid #2271b1;
+	padding: 12px;
+	margin: 15px 0;
+}
+
+/* Variables Help */
+.swift-rank-variables-help {
+	background: #fff8e5;
+	border-left: 4px solid #dba617;
+	padding: 12px;
+	margin: 20px 0;
+}
+
+.swift-rank-variables-help h4 {
+	margin-top: 0;
+	margin-bottom: 8px;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.swift-rank-variables-help code {
+	background: #f0f0f1;
+	padding: 2px 6px;
+	border-radius: 2px;
+	font-size: 12px;
+	font-family: Consolas, Monaco, monospace;
+}
+
+.swift-rank-template-conditions label {
+	display: block;
+	margin: 10px 0;
+}
+
+/* Field Editor Styles - Native WP Look */
+.swift-rank-fields-group {
+	background: #f6f7f7;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+
+.swift-rank-field {
+	background: #fff;
+	padding: 15px;
+	border: 1px solid #c3c4c7;
+	margin-bottom: 10px;
+}
+
+.swift-rank-field:hover {
+	border-color: #2271b1;
+}
+
+.swift-rank-field label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: 600;
+}
+
+.swift-rank-field-input {
+	margin-top: 5px;
+}
+
+.swift-rank-field .description {
+	/* Inherits native WP .description styling */
+	margin-top: 5px;
+}
+
+/* JSON Preview - WordPress Code Style */
+.swift-rank-json-preview {
+	background: #f6f7f7;
+	color: #2c3338;
+	border: 1px solid #c3c4c7;
+	padding: 15px;
+	font-family: Consolas, Monaco, monospace;
+	font-size: 12px;
+	line-height: 1.6;
+	overflow-x: auto;
+}
+
+/* Nested Field Groups */
+.swift-rank-fields-group > div > strong {
+	color: #2271b1;
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+/* Insert Variable Button - Native WP Button Style */
+.swift-rank-insert-variable-btn {
+	/* Inherits .button styling, just adjust size */
+	height: 30px;
+	line-height: 28px;
+	padding: 0 10px;
+	font-size: 12px;
+}
+
+.swift-rank-insert-variable-btn .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	vertical-align: text-top;
+	margin-right: 3px;
+}
+
+.swift-rank-variable-dropdown .swift-rank-var-item {
+	transition: background-color 0.1s ease;
+}
+
+.swift-rank-variable-dropdown .swift-rank-var-item:hover {
+	background-color: #f6f7f7;
+}
+
+.swift-rank-variable-dropdown .swift-rank-var-item:active {
+	background-color: #dcdcde;
+}
+
+.swift-rank-variable-dropdown code {
+	font-family: Consolas, Monaco, monospace;
+	background: #f0f0f1;
+	padding: 2px 4px;
+	border-radius: 2px;
+}
+
+/* Accordion Styles - Native WP Metabox Toggle Pattern */
+.swift-rank-accordion {
+	margin-bottom: 15px;
+}
+
+.swift-rank-accordion-item {
+	border: 1px solid #c3c4c7;
+	margin-bottom: 10px;
+	background: #fff;
+}
+
+.swift-rank-accordion-item.active {
+	border-color: #2271b1;
+}
+
+.swift-rank-accordion-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 15px;
+	background: #f6f7f7;
+	cursor: pointer;
+	user-select: none;
+	border-bottom: 1px solid #c3c4c7;
+}
+
+.swift-rank-accordion-header:hover {
+	background: #f0f0f1;
+}
+
+.swift-rank-accordion-item.active .swift-rank-accordion-header {
+	background: #fff;
+}
+
+.swift-rank-accordion-title {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex: 1;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.swift-rank-accordion-title .dashicons {
+	transition: transform 0.2s;
+	color: #50575e;
+}
+
+.swift-rank-accordion-item.active .swift-rank-accordion-title .dashicons {
+	transform: rotate(90deg);
+}
+
+.swift-rank-accordion-meta {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-size: 12px;
+	color: #50575e;
+}
+
+.swift-rank-accordion-badge {
+	background: #2271b1;
+	color: #fff;
+	padding: 3px 8px;
+	border-radius: 3px;
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.swift-rank-accordion-content {
+	display: none;
+	padding: 15px;
+	background: #fff;
+}
+
+.swift-rank-accordion-item.active .swift-rank-accordion-content {
+	display: block;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+	.swift-rank-field-group input[type="text"],
+	.swift-rank-field-group input[type="datetime-local"],
+	.swift-rank-field-group textarea,
+	.swift-rank-field-group select {
+		font-size: 16px;
+	}
+
+	.swift-rank-field {
+		padding: 10px;
+	}
+
+	.swift-rank-accordion-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 8px;
+	}
+
+	.swift-rank-accordion-meta {
+		width: 100%;
+	}
+}
+
+/* Tooltips */
+.swift-rank-tooltip {
+	display: inline-block;
+	position: relative;
+	margin-left: 5px;
+	cursor: help;
+	vertical-align: middle;
+}
+
+.swift-rank-tooltip .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	color: #a7aaad;
+	transition: color 0.2s ease;
+}
+
+.swift-rank-tooltip:hover .dashicons {
+	color: #2271b1;
+}
+
+.swift-rank-tooltip-text {
+	visibility: hidden;
+	min-width: 220px;
+	max-width: 300px;
+	background-color: #1e1e1e;
+	color: #fff;
+	text-align: left;
+	border-radius: 6px;
+	padding: 10px 12px;
+	position: absolute;
+	z-index: 999999;
+	bottom: 150%;
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: opacity 0.25s ease, visibility 0.25s ease;
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 1.5;
+	pointer-events: none;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+	white-space: normal;
+}
+
+.swift-rank-tooltip-text::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -6px;
+	border-width: 6px;
+	border-style: solid;
+	border-color: #1e1e1e transparent transparent transparent;
+}
+
+.swift-rank-tooltip:hover .swift-rank-tooltip-text {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* Settings Page Improvements */
+.swift-rank-admin .form-table {
+	/* Inherits native .form-table styling */
+	margin-top: 10px;
+}
+
+.swift-rank-admin .swift-rank-settings-header {
+	/* background: #f6f7f7;
+	border-left: 4px solid #2271b1; */
+	/* padding: 12px 15px; */
+	margin: 0px 0 20px 0;
+}
+
+.swift-rank-admin .swift-rank-settings-header p {
+	margin: 0;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+/* Social profiles */
+.swift-rank-repeater-item {
+	    background: #f9f9f9;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    position: relative;
+    border: 1px solid #e3e3e5;
+}
+
+/* Field Wrapper with Variable Button */
+.swift-rank-field-wrapper {
+	max-width: 600px;
+}
+
+.swift-rank-input-group {
+	display: flex;
+	gap: 8px;
+	align-items: flex-start;
+}
+
+.swift-rank-input-group input[type="text"],
+.swift-rank-input-group input[type="email"],
+.swift-rank-input-group input[type="url"] {
+	flex: 1;
+	min-width: 0;
+}
+
+.swift-rank-button-group {
+	display: flex;
+	gap: 8px;
+	flex-shrink: 0;
+	position: relative;
+}
+
+.swift-rank-button-group .button {
+	height: 32px;
+	line-height: 30px;
+	padding: 0 12px;
+	white-space: nowrap;
+}
+
+.swift-rank-button-group .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin-top: -2px;
+	margin-right: 4px;
+}
+
+/* Required Field Indicator */
+.swift-rank-required-indicator {
+	color: #d63638;
+	font-weight: bold;
+	margin-left: 4px;
+	font-size: 14px;
+}
+
+/* Social Media Repeater Improvements */
+.swift-rank-repeater {
+	max-width: 800px;
+}
+
+.swift-rank-repeater-items {
+	margin-bottom: 12px;
+}
+
+.swift-rank-repeater-item {
+	background: #fff;
+	padding: 16px;
+	margin-bottom: 12px;
+	border-radius: 4px;
+	position: relative;
+	border: 1px solid #c3c4c7;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.swift-rank-repeater-item:hover {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 1px #2271b1;
+}
+
+.swift-rank-repeater-item .swift-rank-remove-repeater-item {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	color: #b32d2e;
+	text-decoration: none;
+	padding: 4px 8px;
+	font-size: 12px;
+	line-height: 1;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	border-radius: 3px;
+}
+
+.swift-rank-repeater-item .swift-rank-remove-repeater-item:hover {
+	background-color: #f0f0f1;
+	color: #b32d2e;
+}
+
+.swift-rank-repeater-item .swift-rank-remove-repeater-item .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin-right: 2px;
+}
+
+.swift-rank-repeater-item-content {
+	padding-right: 80px;
+}
+
+.swift-rank-repeater-item-label {
+	display: block;
+	margin-bottom: 6px;
+	font-weight: 600;
+	font-size: 13px;
+	color: #1d2327;
+}
+
+.swift-rank-add-repeater-item {
+	margin-top: 8px;
+}
+
+.swift-rank-add-repeater-item .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin-top: -2px;
+	margin-right: 4px;
+}
+
+/* Opening Hours Styles */
+.swift-rank-opening-hours-container {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 16px;
+	/* max-width: 800px; */
+}
+
+.swift-rank-hours-row {
+	display: grid;
+	grid-template-columns: 120px 100px 1fr 1fr;
+	gap: 12px;
+	align-items: center;
+	padding: 10px;
+	margin-bottom: 8px;
+	background: #f9f9f9;
+	border-radius: 4px;
+	/* border-left: 3px solid #2271b1; */
+}
+
+.swift-rank-hours-row:hover {
+	background: #f0f0f1;
+}
+
+.swift-rank-hours-row label.day-label {
+	font-weight: 600;
+	color: #1d2327;
+	font-size: 13px;
+}
+
+.swift-rank-hours-row input[type="checkbox"] {
+	margin: 0;
+}
+
+.swift-rank-hours-row input[type="time"] {
+	padding: 4px 8px;
+	font-size: 13px;
+}
+
+.swift-rank-hours-row.closed input[type="time"] {
+	opacity: 0.4;
+	pointer-events: none;
+}
+
+.swift-rank-closed-label {
+	color: #d63638;
+	font-weight: 500;
+	font-size: 12px;
+}
+
+/* Image Preview */
+.swift-rank-image-preview {
+	margin-top: 8px;
+}
+
+.swift-rank-image-preview img {
+	max-width: 200px;
+	max-height: 150px;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	padding: 4px;
+	background: #f9f9f9;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 782px) {
+	.swift-rank-input-group {
+		flex-direction: column;
+	}
+
+	.swift-rank-button-group {
+		width: 100%;
+	}
+
+	.swift-rank-button-group .button {
+		flex: 1;
+	}
+
+	.swift-rank-hours-row {
+		grid-template-columns: 1fr;
+		gap: 8px;
+	}
+
+	.swift-rank-repeater-item-content {
+		padding-right: 0;
+		padding-bottom: 40px;
+	}
+
+	.swift-rank-repeater-item .swift-rank-remove-repeater-item {
+		bottom: 12px;
+		top: auto;
+	}
+}
+
+/* Help Tab Styles - WordPress Documentation Style */
+.swift-rank-help-section {
+	background: #fff;
+	padding: 20px;
+	margin-top: 20px;
+}
+
+.swift-rank-help-section h2 {
+	margin-top: 0;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #c3c4c7;
+	font-size: 23px;
+	font-weight: 400;
+	line-height: 1.3;
+}
+
+.swift-rank-help-section h3 {
+	color: #1d2327;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	font-size: 1.3em;
+	font-weight: 600;
+}
+
+.swift-rank-help-section h4 {
+	font-size: 1.1em;
+	margin: 1em 0 0.5em;
+	font-weight: 600;
+}
+
+.swift-rank-help-section h5 {
+	font-size: 1em;
+	margin: 1em 0 0.5em;
+	font-weight: 600;
+}
+
+.swift-rank-help-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+	margin: 20px 0;
+}
+
+.swift-rank-help-card {
+	background: #f6f7f7;
+	border: 1px solid #c3c4c7;
+	padding: 15px;
+}
+
+.swift-rank-help-card:hover {
+	border-color: #8c8f94;
+}
+
+.swift-rank-help-card h4 {
+	margin-top: 0;
+	font-size: 14px;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+
+.swift-rank-help-card ul {
+	margin: 10px 0;
+	padding-left: 20px;
+}
+
+.swift-rank-help-card li {
+	margin-bottom: 6px;
+	line-height: 1.5;
+}
+
+.swift-rank-help-card code {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	padding: 2px 6px;
+	font-size: 13px;
+	font-family: Consolas, Monaco, monospace;
+	color: #d63638;
+}
+
+.swift-rank-example-box {
+	background: #f0f6fc;
+	border-left: 4px solid #2271b1;
+	padding: 12px 15px;
+	margin: 20px 0;
+}
+
+.swift-rank-example-box h4 {
+	margin-top: 0;
+	color: #1d2327;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.swift-rank-example-box pre {
+	background: #f6f7f7;
+	border: 1px solid #c3c4c7;
+	padding: 10px;
+	overflow-x: auto;
+	margin: 10px 0 0 0;
+	font-size: 12px;
+}
+
+.swift-rank-example-box code {
+	font-family: Consolas, Monaco, monospace;
+	font-size: 12px;
+	line-height: 1.6;
+}
