@@ -4,7 +4,7 @@ Tags: schema, structured data, seo, json-ld, knowledge graph
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -148,10 +148,13 @@ Google recommends:
 
 == Changelog ==
 
-= 1.0.1 - 2025-12-05 =
+== 1.0.2 - 2025-12-12 ==
+- Fix: JSON-LD output was not being escaped properly.
+
+== 1.0.1 - 2025-12-05 ==
 - Update plugin name.
 
-= 1.0.0 - 2025-11-27 =
+== 1.0.0 - 2025-11-27 ==
 * Initial release
 
 == Upgrade Notice ==

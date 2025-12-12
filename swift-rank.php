@@ -3,7 +3,7 @@
  * Plugin Name: Swift Rank
  * Plugin URI: https://racase.com.np/plugins/swift-rank/
  * Description: Add Schema.org structured data to your WordPress site. Supports Organization and LocalBusiness schema with Knowledge Graph integration.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * Author: Rakesh Lawaju
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin constants.
-define( 'SWIFT_RANK_VERSION', '1.0.1' );
+define( 'SWIFT_RANK_VERSION', '1.0.2' );
 define( 'SWIFT_RANK_PLUGIN_FILE', __FILE__ );
 define( 'SWIFT_RANK_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SWIFT_RANK_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
