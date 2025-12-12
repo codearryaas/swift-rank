@@ -1,0 +1,8 @@
+// Import Post Metabox Styles
+@import '../post-metabox/style.scss';
+
+// Additional specific overrides for user profile if needed
+.swift-rank-post-metabox {
+    margin-top: 20px;
+    max-width: 800px;
+}

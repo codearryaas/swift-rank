@@ -1,0 +1,124 @@
+/**
+ * Frontend styles for HowTo block
+ */
+.wp-block-swift-rank-howto {
+    margin: 2em 0;
+    padding: 2em;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+
+    .swift-rank-howto-intro {
+        margin-bottom: 2em;
+
+        .howto-title {
+            margin: 0 0 0.75em 0;
+            font-size: 1.75em;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .howto-description {
+            margin: 0;
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #4a4a4a;
+        }
+    }
+
+    .swift-rank-howto-steps {
+        .steps-heading {
+            margin: 0 0 1.5em 0;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #1a1a1a;
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .swift-rank-howto-step {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 1.5em;
+            margin-bottom: 1.5em;
+            transition: box-shadow 0.2s ease;
+
+            &:hover {
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .step-content {
+                .step-name {
+                    margin: 0 0 1em 0;
+                    font-size: 1.2em;
+                    font-weight: 600;
+                    color: #2c3e50;
+                }
+
+                .step-text {
+                    margin: 0 0 1em 0;
+                    line-height: 1.7;
+                    color: #4a4a4a;
+
+                    p {
+                        margin: 0 0 0.75em 0;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                .step-image {
+                    margin-top: 1.5em;
+                    border-radius: 4px;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .wp-block-swift-rank-howto {
+        padding: 1.5em;
+
+        .swift-rank-howto-intro {
+            .howto-title {
+                font-size: 1.5em;
+            }
+
+            .howto-description {
+                font-size: 1em;
+            }
+        }
+
+        .swift-rank-howto-steps {
+            .steps-heading {
+                font-size: 1.2em;
+            }
+
+            .swift-rank-howto-step {
+                padding: 1.25em;
+
+                .step-content {
+                    .step-name {
+                        font-size: 1.1em;
+                    }
+                }
+            }
+        }
+    }
+}

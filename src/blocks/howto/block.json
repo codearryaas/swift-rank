@@ -1,0 +1,87 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "swift-rank/howto",
+	"version": "1.0.0",
+	"title": "How-To",
+	"category": "widgets",
+	"icon": "list-view",
+	"description": "Add step-by-step instructions with HowTo schema markup.",
+	"keywords": [
+		"howto",
+		"how-to",
+		"tutorial",
+		"guide",
+		"steps",
+		"schema"
+	],
+	"textdomain": "swift-rank",
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [
+			"wide",
+			"full"
+		],
+		"color": {
+			"background": true,
+			"text": true,
+			"link": true
+		},
+		"spacing": {
+			"padding": true,
+			"margin": true,
+			"blockGap": true
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
+		},
+		"layout": {
+			"type": "default"
+		},
+		"__experimentalDefaultControls": {
+			"blockGap": true
+		}
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"description": {
+			"type": "string",
+			"default": ""
+		},
+		"totalTime": {
+			"type": "string",
+			"default": ""
+		},
+		"enableSchema": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"example": {
+		"attributes": {
+			"title": "How to Make a Website",
+			"description": "Learn how to create a professional website in simple steps.",
+			"steps": [
+				{
+					"name": "Choose a domain name",
+					"text": "Select a memorable and relevant domain name for your website."
+				},
+				{
+					"name": "Set up hosting",
+					"text": "Choose a reliable hosting provider and set up your account."
+				},
+				{
+					"name": "Install WordPress",
+					"text": "Use the one-click installer to set up WordPress on your hosting."
+				}
+			]
+		}
+	}
+}

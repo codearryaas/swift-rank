@@ -1,0 +1,90 @@
+/**
+ * Frontend styles for FAQ block
+ */
+.wp-block-swift-rank-faq {
+	margin: 2em 0;
+
+	// Child FAQ items inherit parent background color only
+	.swift-rank-faq-item {
+		&:not([style*="background-color"]) {
+			background-color: inherit;
+		}
+	}
+
+	// Hide icon and disable cursor when toggle is disabled
+	&[data-enable-toggle="false"] {
+		.faq-item-icon {
+			display: none;
+		}
+
+		.faq-item-question-wrapper {
+			cursor: default;
+		}
+	}
+}
+
+// Compact style variation
+.wp-block-swift-rank-faq.is-style-compact {
+	.swift-rank-faq-item {
+		padding: 1em;
+
+		.faq-question {
+			font-size: 1.1em;
+			margin-bottom: 0.75em;
+		}
+
+		.faq-answer {
+			font-size: 0.95em;
+		}
+	}
+}
+
+// Accordion style variation (for future enhancement)
+.wp-block-swift-rank-faq.is-style-accordion {
+	.swift-rank-faq-item {
+		margin-bottom: 0;
+		border-radius: 0;
+		border-top: none;
+
+		&:first-child {
+			border-top: 1px solid #e0e0e0;
+			border-radius: 8px 8px 0 0;
+		}
+
+		&:last-child {
+			border-radius: 0 0 8px 8px;
+		}
+
+		.faq-question {
+			cursor: pointer;
+			position: relative;
+			padding-right: 2em;
+
+			&::after {
+				content: '\f347'; // Down chevron
+				position: absolute;
+				right: 0;
+				top: 0;
+				font-size: 1.2em;
+				transition: transform 0.3s ease;
+			}
+		}
+	}
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+	.wp-block-swift-rank-faq {
+		.swift-rank-faq-item {
+			padding: 1em;
+
+			.faq-question {
+				font-size: 1.1em;
+			}
+
+			.faq-answer {
+				font-size: 0.95em;
+			}
+		}
+	}
+}

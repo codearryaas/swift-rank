@@ -1,0 +1,1441 @@
+// Setup Wizard Styles
+
+// Import component styles for VariablesPopup, Icon, etc.
+@import '../components/style.scss';
+
+.schema-setup-wizard {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+
+    .wizard-header {
+        text-align: center;
+        margin-bottom: 40px;
+
+        .wizard-logo {
+            margin-bottom: 30px;
+
+            img {
+                max-width: 120px;
+                height: auto;
+                margin-bottom: 16px;
+                display: inline-block;
+            }
+
+            h1 {
+                font-size: 28px;
+                font-weight: 600;
+                color: #1d2327;
+                margin: 0;
+            }
+        }
+
+        // Progress Indicator
+        .wizard-progress {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0;
+            margin: 0 auto;
+            max-width: 100%;
+            padding: 0;
+
+            .progress-step {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                flex: 1;
+
+                .step-circle {
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 50%;
+                    background: #dcdcde;
+                    color: #646970;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 600;
+                    font-size: 15px;
+                    transition: all 0.2s ease;
+                    z-index: 2;
+                    position: relative;
+                    border: 2px solid #fff;
+
+                    .dashicons {
+                        font-size: 20px;
+                        width: auto;
+                        height: auto;
+                    }
+                }
+
+                .step-label {
+                    margin-top: 10px;
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: #646970;
+                    transition: color 0.2s ease;
+                    text-align: center;
+                    white-space: nowrap;
+                }
+
+                .step-connector {
+                    position: absolute;
+                    top: 22px;
+                    left: calc(50% + 22px);
+                    width: calc(100% - 44px);
+                    height: 2px;
+                    background: #dcdcde;
+                    transition: background 0.2s ease;
+                    z-index: 1;
+                }
+
+                &.active {
+                    .step-circle {
+                        background: linear-gradient(135deg, #00a32a 0%, #008a24 100%);
+                        color: #fff;
+                        font-weight: 700;
+                        border: 3px solid #fff;
+                        box-shadow: 0 0 0 3px rgba(0, 163, 42, 0.3),
+                            0 4px 12px rgba(0, 163, 42, 0.4);
+                        transform: scale(1.08);
+                        animation: pulse-green 2s ease-in-out infinite;
+                    }
+
+                    .step-label {
+                        color: #00a32a;
+                        font-weight: 700;
+                        text-shadow: 0 1px 2px rgba(0, 163, 42, 0.1);
+                    }
+                }
+
+                &.completed {
+                    .step-circle {
+                        background: linear-gradient(135deg, #00a32a 0%, #008a24 100%);
+                        color: #fff;
+                        border: 2px solid #fff;
+                        box-shadow: 0 2px 8px rgba(0, 163, 42, 0.25);
+
+                        .dashicons {
+                            animation: checkmark-pop 0.3s ease-out;
+                        }
+                    }
+
+                    .step-label {
+                        color: #00a32a;
+                        font-weight: 600;
+                    }
+
+                    .step-connector {
+                        background: linear-gradient(90deg, #00a32a 0%, #00a32a 100%);
+                        height: 3px;
+                    }
+                }
+
+                &.pending {
+                    .step-circle {
+                        background: #f0f0f1;
+                        color: #a0a5aa;
+                        border: 2px solid #dcdcde;
+                    }
+
+                    .step-label {
+                        color: #a0a5aa;
+                    }
+                }
+
+                &:last-child .step-connector {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .wizard-content {
+        background: #fff;
+        border: 1px solid #c3c4c7;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+        // overflow: hidden; // Removed to allow tooltips to overflow
+    }
+
+    .wizard-step {
+        .step-header {
+            padding: 30px 40px 24px;
+            border-bottom: 1px solid #dcdcde;
+            background: #fff;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+
+            h2 {
+                margin: 0 0 10px 0;
+                font-size: 24px;
+                font-weight: 600;
+                color: #1d2327;
+            }
+
+            .step-description {
+                margin: 0;
+                color: #646970;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        }
+
+        .step-body {
+            padding: 30px 40px;
+            min-height: 300px;
+        }
+
+        .step-footer {
+            padding: 20px 40px;
+            border-top: 1px solid #dcdcde;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f6f7f7;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+
+            .footer-left,
+            .footer-right {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .button-link {
+                text-decoration: none;
+                color: #646970;
+                font-weight: 400;
+                padding: 6px 12px;
+
+                &:hover {
+                    color: #2271b1;
+                }
+            }
+
+            .button {
+                height: auto;
+                padding: 6px 12px;
+
+                &.button-primary {
+                    background: #2271b1;
+                    border-color: #2271b1;
+
+                    &:hover {
+                        background: #135e96;
+                        border-color: #135e96;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Welcome Step Styles
+.welcome-content {
+    text-align: center;
+
+    .welcome-icon {
+        margin-bottom: 30px;
+
+        .dashicons,
+        svg {
+            font-size: 64px;
+            width: 64px;
+            height: 64px;
+            color: #2271b1;
+        }
+    }
+
+    .benefits-list {
+        text-align: left;
+        max-width: 600px;
+        margin: 0 auto 30px;
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1d2327;
+            text-align: center;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 20px;
+            padding: 16px;
+            background: #f6f7f7;
+            border-radius: 4px;
+            border: 1px solid #dcdcde;
+            align-items: flex-start;
+
+            .dashicons {
+                color: #00a32a;
+                font-size: 24px;
+                flex-shrink: 0;
+                margin-top: 0;
+                width: 24px;
+                height: 24px;
+            }
+
+            div {
+                flex: 1;
+            }
+
+            strong {
+                display: block;
+                margin-bottom: 4px;
+                color: #1d2327;
+                font-size: 15px;
+                font-weight: 600;
+            }
+
+            p {
+                margin: 0;
+                color: #646970;
+                font-size: 13px;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    .welcome-note {
+        background: #f0f6fc;
+        border: 1px solid #c3e4f7;
+        border-radius: 4px;
+        padding: 16px;
+        margin-top: 30px;
+
+        p {
+            margin: 0;
+            color: #1d2327;
+            font-size: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.5;
+
+            .dashicons {
+                color: #2271b1;
+                flex-shrink: 0;
+                margin-top: 1px;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+// Form Field Styles
+.form-field {
+    margin-bottom: 24px;
+
+    .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #1d2327;
+        font-size: 14px;
+
+        .dashicons {
+            margin-right: 5px;
+            color: #646970;
+            font-size: 16px;
+            vertical-align: middle;
+        }
+    }
+
+    .form-input,
+    .form-textarea {
+        width: 100%;
+        padding: 6px 10px;
+        border: 1px solid #8c8f94;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 1.5;
+
+        &:focus {
+            border-color: #2271b1;
+            outline: none;
+            box-shadow: 0 0 0 1px #2271b1;
+        }
+    }
+
+    .form-textarea {
+        resize: vertical;
+        font-family: inherit;
+        min-height: 100px;
+    }
+
+    .form-help {
+        margin: 6px 0 0 0;
+        font-size: 13px;
+        color: #646970;
+        font-style: italic;
+    }
+}
+
+// Radio Group
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .radio-option {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 16px;
+        border: 1px solid #c3c4c7;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: border-color 0.2s ease;
+        background: #fff;
+
+        &:hover {
+            border-color: #2271b1;
+        }
+
+        input[type="radio"] {
+            margin-top: 2px;
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        &:has(input[type="radio"]:checked) {
+            border-color: #2271b1;
+            background: #f0f6fc;
+
+            .radio-label strong {
+                color: #2271b1;
+            }
+        }
+
+        .radio-label {
+            flex: 1;
+
+            strong {
+                display: block;
+                margin-bottom: 4px;
+                font-size: 14px;
+                color: #1d2327;
+                font-weight: 600;
+            }
+
+            small {
+                display: block;
+                color: #646970;
+                font-size: 13px;
+                line-height: 1.4;
+            }
+        }
+    }
+}
+
+// Logo Upload
+.logo-upload {
+    .logo-preview {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        img {
+            max-width: 150px;
+            max-height: 150px;
+            border: 1px solid #dcdcde;
+            border-radius: 4px;
+        }
+    }
+}
+
+// Content Types Table
+.content-types-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    overflow: hidden;
+
+    thead {
+        background: #f6f7f7;
+
+        th {
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            color: #1d2327;
+            border-bottom: 1px solid #c3c4c7;
+            font-size: 13px;
+
+            &:first-child {
+                padding-left: 16px;
+            }
+
+            &:last-child {
+                padding-right: 16px;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            border-bottom: 1px solid #dcdcde;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                background-color: #f6f7f7;
+            }
+
+            td {
+                padding: 14px 12px;
+                vertical-align: middle;
+
+                &:first-child {
+                    padding-left: 16px;
+                }
+
+                &:last-child {
+                    padding-right: 16px;
+                }
+
+                strong {
+                    display: block;
+                    margin-bottom: 4px;
+                    color: #1d2327;
+                    font-weight: 600;
+                    font-size: 14px;
+                }
+
+                .table-description {
+                    margin: 0;
+                    font-size: 13px;
+                    color: #646970;
+                    line-height: 1.4;
+                }
+
+                .schema-type-select {
+                    width: 100%;
+                    padding: 6px 10px;
+                    border: 1px solid #8c8f94;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    cursor: pointer;
+
+                    &:focus {
+                        border-color: #2271b1;
+                        outline: none;
+                        box-shadow: 0 0 0 1px #2271b1;
+                    }
+
+                    &:disabled {
+                        opacity: 0.5;
+                        cursor: not-allowed;
+                        background: #f6f7f7;
+                    }
+                }
+
+                .schema-type-fixed {
+                    font-weight: 600;
+                    color: #646970;
+                    font-size: 14px;
+                }
+
+                input[type="checkbox"] {
+                    width: 18px;
+                    height: 18px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// Enhancements
+.enhancement-item {
+    padding: 16px;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    margin-bottom: 12px;
+
+    &.pro-feature {
+        background-color: #f6f7f7;
+    }
+
+    .enhancement-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        .pro-badge {
+            background: #2271b1;
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+    }
+
+    .enhancement-description {
+        margin: 0;
+        color: #646970;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .pro-notice {
+        margin: 8px 0 0 0;
+        color: #646970;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        .dashicons {
+            color: #2271b1;
+            font-size: 16px;
+        }
+    }
+}
+
+// Social Profiles
+.social-platforms {
+    .form-field {
+        .form-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            .dashicons {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.custom-profiles {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #dcdcde;
+
+    h4 {
+        margin: 0 0 12px 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1d2327;
+    }
+
+    .custom-profile-row {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+        align-items: center;
+    }
+}
+
+// Form Note
+.form-note {
+    background: #f0f6fc;
+    border: 1px solid #c3e4f7;
+    border-radius: 4px;
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+
+    .dashicons {
+        color: #2271b1;
+        flex-shrink: 0;
+        margin-top: 1px;
+        font-size: 18px;
+    }
+
+    p {
+        margin: 0;
+        color: #1d2327;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+// Loading State
+.schema-wizard-loading {
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .spinner {
+        float: none;
+        margin: 0 auto 20px;
+    }
+
+    p {
+        color: #646970;
+        font-size: 14px;
+    }
+}
+
+// Site Info Form - FieldsBuilder Integration
+.site-info-form {
+
+    // Fix spacing between label and field
+    .schema-field-wrapper {
+        margin-bottom: 20px !important;
+
+        .field-label-wrapper {
+            margin-bottom: 8px !important;
+
+            .field-label {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-weight: 600;
+                color: #1d2327;
+                font-size: 14px;
+
+                .required-indicator {
+                    color: #d63638;
+                }
+            }
+        }
+
+        .field-input-wrapper {
+            position: relative;
+
+            input[type="text"],
+            input[type="tel"],
+            input[type="email"],
+            input[type="url"],
+            textarea {
+                width: 100%;
+                padding: 6px 10px;
+                border: 1px solid #8c8f94;
+                border-radius: 4px;
+                font-size: 14px;
+
+                &:focus {
+                    border-color: #2271b1;
+                    outline: none;
+                    box-shadow: 0 0 0 1px #2271b1;
+                }
+            }
+        }
+
+        .field-action-btn {
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        .field-actions {
+            display: flex;
+            gap: 4px;
+            margin-top: 8px;
+        }
+    }
+
+    .swift-rank-variables-popover {
+        z-index: 999999;
+    }
+
+    .schema-select-wrapper {
+        .select-trigger {
+            width: 100%;
+        }
+    }
+
+    .schema-image-field {
+        .image-preview {
+            margin-top: 10px;
+        }
+    }
+
+    .schema-fields-builder {
+        .schema-field-wrapper {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// Pro Upgrade Prompt - Matches plugin style
+.upgrade-prompt {
+    background: #fef8e8;
+    border: 1px solid #dba617;
+    border-left: 4px solid #dba617;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+
+    .upgrade-icon {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        background: #f0b849;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .dashicons {
+            font-size: 20px;
+            width: 20px;
+            height: 20px;
+            color: #1e1e1e;
+            line-height: 1;
+        }
+    }
+
+    .upgrade-content {
+        flex: 1;
+
+        h3 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e1e1e;
+        }
+
+        >p {
+            margin: 0 0 16px 0;
+            color: #50575e;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .upgrade-features {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+
+            .feature-item {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                color: #1e1e1e;
+                font-size: 13px;
+
+                .dashicons {
+                    color: #00a32a;
+                    font-size: 18px;
+                    width: 18px;
+                    height: 18px;
+                    flex-shrink: 0;
+                    line-height: 1;
+                }
+            }
+        }
+
+        .upgrade-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+
+            .button-hero {
+                padding: 8px 16px;
+                font-size: 14px;
+                font-weight: 600;
+                background: #f0b849;
+                border: 1px solid #dba617;
+                border-radius: 4px;
+                color: #1e1e1e;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                cursor: pointer;
+
+                .dashicons {
+                    font-size: 16px;
+                    width: 16px;
+                    height: 16px;
+                    line-height: 1;
+                }
+
+                &:hover,
+                &:focus {
+                    background: #d99c00;
+                    border-color: #c78f00;
+                    color: #1e1e1e;
+                    text-decoration: none;
+                }
+            }
+
+            .upgrade-note {
+                margin: 0;
+                color: #646970;
+                font-size: 12px;
+                font-style: italic;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 16px;
+
+        .upgrade-content .upgrade-features {
+            gap: 6px;
+        }
+    }
+}
+
+// Upgrade Step Specific Styles - Matches plugin style
+.upgrade-step-content {
+    .upgrade-hero {
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 24px;
+        background: #fef8e8;
+        border-radius: 4px;
+        border: 1px solid #dba617;
+
+        .hero-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 16px;
+            background: #f0b849;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .dashicons {
+                font-size: 28px;
+                width: 28px;
+                height: 28px;
+                color: #1e1e1e;
+                line-height: 1;
+            }
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1e1e1e;
+            margin: 0 0 10px 0;
+        }
+
+        .hero-description {
+            font-size: 14px;
+            color: #50575e;
+            line-height: 1.5;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+
+    .upgrade-features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 30px;
+
+        .feature-card {
+            background: #fff;
+            border: 1px solid #c3c4c7;
+            border-radius: 4px;
+            padding: 20px 16px;
+            transition: border-color 0.2s ease;
+
+            &:hover {
+                border-color: #dba617;
+            }
+
+            .feature-icon {
+                width: 40px;
+                height: 40px;
+                background: #fef8e8;
+                border: 1px solid #dba617;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 12px;
+
+                .dashicons {
+                    font-size: 20px;
+                    width: 20px;
+                    height: 20px;
+                    color: #d99c00;
+                    line-height: 1;
+                }
+            }
+
+            h3 {
+                font-size: 15px;
+                font-weight: 600;
+                color: #1d2327;
+                margin: 0 0 6px 0;
+            }
+
+            p {
+                font-size: 13px;
+                color: #646970;
+                line-height: 1.4;
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 640px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .upgrade-cta {
+        background: #fef8e8;
+        border: 1px solid #dba617;
+        border-radius: 4px;
+        padding: 24px;
+        text-align: center;
+        margin-bottom: 24px;
+
+        .cta-content {
+            margin-bottom: 20px;
+
+            h3 {
+                font-size: 18px;
+                font-weight: 600;
+                color: #1e1e1e;
+                margin: 0 0 8px 0;
+            }
+
+            p {
+                font-size: 14px;
+                color: #50575e;
+                margin: 0;
+                line-height: 1.5;
+            }
+        }
+
+        .cta-actions {
+            .upgrade-button {
+                padding: 10px 24px;
+                font-size: 15px;
+                font-weight: 600;
+                background: #f0b849;
+                border: 1px solid #dba617;
+                border-radius: 4px;
+                color: #1e1e1e;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                margin-bottom: 10px;
+                cursor: pointer;
+
+                .dashicons {
+                    font-size: 18px;
+                    width: 18px;
+                    height: 18px;
+                    line-height: 1;
+                }
+
+                &:hover,
+                &:focus {
+                    background: #d99c00;
+                    border-color: #c78f00;
+                    color: #1e1e1e;
+                    text-decoration: none;
+                }
+            }
+
+            .cta-note {
+                font-size: 12px;
+                color: #646970;
+                margin: 0;
+            }
+        }
+    }
+
+    .skip-notice {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px;
+        background: #f0f6fc;
+        border-radius: 4px;
+        color: #646970;
+        font-size: 13px;
+        border: 1px solid #c3e4f7;
+
+        .dashicons {
+            color: #2271b1;
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.4;
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+    .schema-setup-wizard {
+        max-width: 750px;
+
+        .wizard-header .wizard-progress {
+            .progress-step {
+                .step-label {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 782px) {
+    .schema-setup-wizard {
+        margin: 20px auto;
+        padding: 0 15px;
+
+        .wizard-header {
+            margin-bottom: 30px;
+
+            .wizard-logo {
+                margin-bottom: 24px;
+
+                img {
+                    max-width: 100px;
+                }
+
+                h1 {
+                    font-size: 22px;
+                }
+            }
+
+            .wizard-progress {
+                padding: 0;
+                overflow-x: auto;
+                overflow-y: visible;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .progress-step {
+                    min-width: 65px;
+
+                    .step-circle {
+                        width: 38px;
+                        height: 38px;
+                        font-size: 13px;
+
+                        .dashicons {
+                            font-size: 16px;
+                        }
+                    }
+
+                    .step-label {
+                        font-size: 10px;
+                        max-width: 55px;
+                        white-space: normal;
+                        line-height: 1.2;
+                    }
+
+                    .step-connector {
+                        top: 19px;
+                        left: calc(50% + 19px);
+                        width: calc(100% - 38px);
+                    }
+                }
+            }
+        }
+
+        .wizard-step {
+            .step-header {
+                padding: 20px 16px 16px;
+
+                h2 {
+                    font-size: 20px;
+                }
+
+                .step-description {
+                    font-size: 13px;
+                }
+            }
+
+            .step-body {
+                padding: 20px 16px;
+                min-height: 250px;
+            }
+
+            .step-footer {
+                padding: 16px;
+                flex-direction: column;
+                gap: 10px;
+
+                .footer-left,
+                .footer-right {
+                    width: 100%;
+                    justify-content: center;
+                }
+
+                .footer-right {
+                    order: -1;
+                }
+
+                button,
+                .button {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    .radio-group {
+        .radio-option {
+            padding: 12px;
+        }
+    }
+
+    .content-types-table {
+        font-size: 12px;
+
+        thead th,
+        tbody td {
+            padding: 10px 8px;
+        }
+
+        .schema-type-select {
+            font-size: 13px;
+        }
+    }
+
+    .custom-profile-row {
+        flex-direction: column;
+
+        input {
+            width: 100% !important;
+        }
+    }
+
+    .logo-preview {
+        flex-direction: column;
+        align-items: flex-start !important;
+
+        img {
+            max-width: 100px !important;
+            max-height: 100px !important;
+        }
+    }
+
+    .upgrade-step-content {
+        .upgrade-hero {
+            padding: 20px 16px;
+
+            .hero-icon {
+                width: 52px;
+                height: 52px;
+
+                .dashicons {
+                    font-size: 26px;
+                    width: 26px;
+                    height: 26px;
+                }
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            .hero-description {
+                font-size: 13px;
+            }
+        }
+
+        .upgrade-cta {
+            padding: 20px 16px;
+
+            .cta-actions .upgrade-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .schema-setup-wizard {
+        .wizard-header {
+            .wizard-logo h1 {
+                font-size: 20px;
+            }
+
+            .wizard-progress {
+                .progress-step {
+                    min-width: 60px;
+
+                    .step-circle {
+                        width: 36px;
+                        height: 36px;
+                        font-size: 12px;
+
+                        .dashicons {
+                            font-size: 15px;
+                        }
+                    }
+
+                    .step-label {
+                        font-size: 9px;
+                        max-width: 50px;
+                    }
+
+                    .step-connector {
+                        top: 18px;
+                        left: calc(50% + 18px);
+                        width: calc(100% - 36px);
+                    }
+                }
+            }
+        }
+
+        .wizard-step {
+            .step-header {
+                padding: 16px 12px 12px;
+
+                h2 {
+                    font-size: 18px;
+                }
+            }
+
+            .step-body {
+                padding: 16px 12px;
+            }
+
+            .step-footer {
+                padding: 12px;
+            }
+        }
+    }
+
+    .benefits-list {
+        .benefit-item {
+            flex-direction: column;
+            gap: 8px;
+
+            .dashicons {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .upgrade-step-content {
+        .upgrade-hero {
+            padding: 16px 12px;
+
+            .hero-icon {
+                width: 48px;
+                height: 48px;
+
+                .dashicons {
+                    font-size: 24px;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+        }
+
+        .upgrade-cta {
+            padding: 16px 12px;
+
+            .cta-content h3 {
+                font-size: 16px;
+            }
+
+            .cta-actions .upgrade-button {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+// Wizard Progress Animations
+@keyframes pulse-green {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 3px rgba(0, 163, 42, 0.3),
+            0 4px 12px rgba(0, 163, 42, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 5px rgba(0, 163, 42, 0.2),
+            0 6px 16px rgba(0, 163, 42, 0.5);
+    }
+}
+
+@keyframes checkmark-pop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+// Pro badge inline (for FieldRenderer)
+.pro-badge-inline {
+    display: inline-block;
+    padding: 2px 6px;
+    margin-left: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #1e1e1e;
+    background-color: #f0b849;
+    border-radius: 3px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    letter-spacing: 0.3px;
+
+    &:hover {
+        background-color: #dba617;
+    }
+}

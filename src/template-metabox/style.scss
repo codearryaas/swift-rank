@@ -1,0 +1,910 @@
+// Import shared component styles
+@import '../components/style.scss';
+
+// Swift Rank Metabox Styles
+.schema-template-metabox-wrapper {
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	// Common field label styling
+	.field-label {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		font-weight: 600;
+		font-size: 13px;
+		color: #1d2327;
+		overflow: visible;
+	}
+
+	// Schema field styling
+	.schema-field {
+		overflow: visible;
+		position: relative;
+
+		.field-header {
+			overflow: visible;
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+	// Remove default panel borders
+	.components-panel {
+		border: none;
+		margin: 0;
+	}
+
+	.components-panel__body {
+		border: none;
+		margin: 0;
+	}
+
+	// Tab Navigation
+	.schema-template-tabs {
+		.components-tab-panel__tabs {
+			border-bottom: 1px solid #c3c4c7;
+			margin: 0;
+			padding: 0 12px;
+			background: #f6f7f7;
+		}
+
+		.components-tab-panel__tabs-item {
+			padding: 12px 16px;
+			font-size: 13px;
+			font-weight: 400;
+			color: #50575e;
+			border: none;
+			border-bottom: 2px solid transparent;
+			background: transparent;
+			margin: 0;
+
+			&:hover {
+				color: #2271b1;
+			}
+
+			&.is-active {
+				color: #2271b1;
+				border-bottom-color: #2271b1;
+				font-weight: 600;
+			}
+		}
+
+		.components-tab-panel__tab-content {
+			padding: 20px;
+		}
+	}
+
+	// Schema Tab
+	.schema-tab-content {
+
+		// Schema Preset Section
+		.schema-preset-section {
+			margin-bottom: 24px;
+			padding: 16px;
+			background: linear-gradient(135deg, #f0f6fc 0%, #e8f2fa 100%);
+			border: 1px solid #c3c4c7;
+			border-radius: 6px;
+
+			.schema-preset-button {
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+				font-weight: 500;
+				font-size: 13px;
+				padding: 8px 16px;
+				height: auto;
+
+				.schema-icon {
+					flex-shrink: 0;
+				}
+			}
+
+			.description {
+				margin-top: 8px;
+				margin-bottom: 0;
+				color: #50575e;
+				font-size: 12px;
+				line-height: 1.5;
+			}
+		}
+
+		.schema-type-selector {
+			margin-bottom: 24px;
+
+			input:focus {
+				outline: none !important;
+				box-shadow: none !important;
+			}
+
+			// Make icon SVGs inherit color from parent span
+			svg {
+				fill: currentColor;
+			}
+		}
+
+		.schema-fields-section {
+			.components-base-control {
+				margin-bottom: 20px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	// Conditions Tab - Toolpress Style
+	.conditions-tab-content {
+
+		// Default Behavior Toggle
+		.default-behavior-section {
+			margin-bottom: 24px;
+			padding: 16px;
+			background: #f0f6fc;
+			border: 1px solid #c3c4c7;
+			border-radius: 4px;
+
+			.components-toggle-control {
+				margin-bottom: 0;
+
+				.components-toggle-control__label {
+					font-weight: 600;
+					font-size: 14px;
+				}
+
+				.components-base-control__help {
+					margin-top: 8px;
+					font-size: 13px;
+				}
+			}
+		}
+
+		// Main Card
+		.components-card {
+			border: 1px solid #c3c4c7;
+			box-shadow: none;
+			border-radius: 4px;
+		}
+
+		.components-card__body {
+			padding: 24px;
+		}
+
+		// Header
+		.conditions-header {
+			margin-bottom: 24px;
+
+			h3 {
+				margin: 0 0 8px 0;
+				font-size: 16px;
+				font-weight: 600;
+				color: #1d2327;
+			}
+
+			.description {
+				margin: 0;
+				color: #646970;
+				font-size: 13px;
+				line-height: 1.5;
+			}
+		}
+
+		// Group Logic Selector
+		.group-logic-section {
+			margin-bottom: 24px;
+			padding: 20px;
+			background: #fff;
+			border: 1px solid #dcdcde;
+			border-radius: 4px;
+
+			.group-logic-label {
+				display: block;
+				font-weight: 600;
+				font-size: 14px;
+				margin-bottom: 12px;
+				color: #1d2327;
+			}
+
+			.group-logic-buttons {
+				display: flex;
+				gap: 8px;
+				margin-bottom: 12px;
+			}
+
+			.logic-button {
+				flex: 1;
+				padding: 10px 20px;
+				background: #fff;
+				border: 2px solid #dcdcde;
+				border-radius: 4px;
+				font-size: 14px;
+				font-weight: 500;
+				color: #50575e;
+				cursor: pointer;
+				transition: all 0.2s;
+
+				&:hover {
+					border-color: #2271b1;
+					color: #2271b1;
+				}
+
+				&.is-active {
+					background: #2271b1;
+					border-color: #2271b1;
+					color: #fff;
+				}
+			}
+
+			.logic-help {
+				margin: 0;
+				font-size: 12px;
+				color: #646970;
+				font-style: italic;
+			}
+		}
+
+		// Condition Groups
+		.condition-group {
+			margin-bottom: 24px;
+			background: #fff;
+			border: 2px solid #2271b1;
+			border-radius: 6px;
+			overflow: hidden;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+
+			// Group Header
+			.group-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 14px 20px;
+				background: linear-gradient(90deg, #f0f6fc 0%, #fff 100%);
+				border-bottom: 1px solid #dcdcde;
+
+				.group-title {
+					display: flex;
+					align-items: center;
+					gap: 16px;
+					flex: 1;
+
+					.group-label {
+						font-weight: 600;
+						font-size: 14px;
+						color: #1d2327;
+					}
+
+					.rule-logic-buttons {
+						display: flex;
+						gap: 6px;
+					}
+
+					.logic-button-small {
+						padding: 6px 14px;
+						background: #fff;
+						border: 1px solid #dcdcde;
+						border-radius: 3px;
+						font-size: 11px;
+						font-weight: 600;
+						color: #50575e;
+						cursor: pointer;
+						transition: all 0.2s;
+						line-height: 1;
+
+						&:hover {
+							border-color: #2271b1;
+							color: #2271b1;
+						}
+
+						&.is-active {
+							background: #2271b1;
+							border-color: #2271b1;
+							color: #fff;
+						}
+					}
+				}
+
+				.remove-group-btn {
+					flex-shrink: 0;
+				}
+			}
+
+			// Rules List
+			.rules-list {
+				padding: 20px;
+
+				.no-rules-message {
+					padding: 40px 20px;
+					text-align: center;
+					background: #f6f7f7;
+					border: 2px dashed #dcdcde;
+					border-radius: 4px;
+					margin-bottom: 16px;
+
+					p {
+						margin: 0;
+						color: #646970;
+						font-size: 13px;
+					}
+				}
+
+				// Individual Rule
+				.condition-rule {
+					display: flex;
+					gap: 12px;
+					padding: 20px;
+					background: #fafafa;
+					border: 1px solid #dcdcde;
+					border-radius: 4px;
+					margin-bottom: 16px;
+					transition: all 0.2s;
+
+					&:hover {
+						box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+						border-color: #c3c4c7;
+						background: #fff;
+					}
+
+					&:last-of-type {
+						margin-bottom: 0;
+					}
+
+					.rule-fields {
+						flex: 1;
+						display: grid;
+						grid-template-columns: 1fr 1fr 2fr;
+						gap: 16px;
+						// align-items: end;
+
+						@media (max-width: 1024px) {
+							grid-template-columns: 1fr 1fr;
+							gap: 12px;
+						}
+
+						@media (max-width: 782px) {
+							grid-template-columns: 1fr;
+							gap: 12px;
+						}
+
+						.rule-field {
+							>label {
+								display: block;
+								font-size: 11px;
+								font-weight: 600;
+								margin-bottom: 8px;
+								color: #1d2327;
+								text-transform: uppercase;
+								letter-spacing: 0.5px;
+							}
+
+							.components-base-control {
+								margin-bottom: 0;
+							}
+
+							&.rule-field-value {
+								grid-column: span 1;
+
+								@media (max-width: 1024px) and (min-width: 783px) {
+									grid-column: span 2;
+								}
+							}
+						}
+					}
+
+					.remove-rule-btn {
+						flex-shrink: 0;
+						align-self: flex-end;
+						min-height: 36px;
+					}
+				}
+
+				.add-rule-btn {
+					margin-top: 16px;
+					width: 100%;
+					justify-content: center;
+				}
+			}
+		}
+
+		// Group Divider
+		.group-divider {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 28px 0;
+			position: relative;
+
+			&::before,
+			&::after {
+				content: '';
+				flex: 1;
+				height: 2px;
+				background: linear-gradient(90deg, transparent 0%, #dcdcde 50%, transparent 100%);
+			}
+
+			.divider-logic {
+				padding: 8px 24px;
+				background: #fff;
+				border: 2px solid #2271b1;
+				border-radius: 20px;
+				font-size: 12px;
+				font-weight: 700;
+				color: #2271b1;
+				letter-spacing: 1.5px;
+				margin: 0 20px;
+			}
+		}
+
+		// Add Group Footer
+		.add-group-footer {
+			margin-top: 28px;
+			padding-top: 24px;
+			border-top: 2px solid #f0f0f1;
+			text-align: center;
+
+			.add-group-btn {
+				// min-width: 200px;
+			}
+		}
+	}
+}
+
+// Media Upload Control
+.media-upload-control {
+	margin-bottom: 20px;
+
+	.media-upload-wrapper {
+		display: flex;
+		gap: 8px;
+		align-items: flex-start;
+		margin-top: 8px;
+	}
+
+	.media-upload-button,
+	.media-remove-button {
+		min-width: 140px;
+		height: 36px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		padding: 0 16px;
+		background: #2271b1;
+		color: #fff;
+		border: 1px solid #2271b1;
+		border-radius: 3px;
+		font-size: 13px;
+		font-weight: 400;
+		cursor: pointer;
+		transition: all 0.15s ease;
+
+		&:hover {
+			background: #135e96;
+			border-color: #135e96;
+			color: #fff;
+		}
+
+		&:focus {
+			box-shadow: 0 0 0 1px #fff, 0 0 0 3px #2271b1;
+			outline: 2px solid transparent;
+		}
+
+		.lucide {
+			flex-shrink: 0;
+		}
+	}
+
+	.media-remove-button {
+		background: #d63638;
+		border-color: #d63638;
+		min-width: 100px;
+
+		&:hover {
+			background: #b32d2e;
+			border-color: #b32d2e;
+		}
+	}
+
+	.media-preview {
+		margin-top: 12px;
+		padding: 8px;
+		background: #f6f7f7;
+		border: 1px solid #c3c4c7;
+		border-radius: 3px;
+		display: inline-block;
+
+		img {
+			display: block;
+			max-width: 200px;
+			height: auto;
+			border-radius: 2px;
+		}
+	}
+}
+
+// WordPress Component Overrides
+.schema-template-metabox {
+
+	// Buttons
+	.components-button {
+		&.is-primary {
+			background: #2271b1;
+			border-color: #2271b1;
+			color: #fff;
+
+			&:hover:not(:disabled) {
+				background: #135e96;
+				border-color: #135e96;
+			}
+
+			&:focus:not(:disabled) {
+				box-shadow: 0 0 0 1px #fff, 0 0 0 3px #2271b1;
+			}
+		}
+
+		&.is-secondary {
+			color: #50575e;
+			border-color: #949494;
+
+			&:hover:not(:disabled) {
+				color: #2271b1;
+				border-color: #2271b1;
+			}
+
+			&:focus:not(:disabled) {
+				color: #2271b1;
+				border-color: #2271b1;
+				box-shadow: 0 0 0 1px #2271b1;
+			}
+		}
+
+		&.is-destructive {
+			&:not(:disabled) {
+				color: #d63638;
+				border-color: #d63638;
+
+				&:hover {
+					background: #d63638;
+					border-color: #d63638;
+					color: #fff;
+				}
+			}
+		}
+
+		&.is-small {
+			height: 30px;
+			line-height: 28px;
+			padding: 0 12px;
+			font-size: 12px;
+		}
+	}
+
+	// Select Controls
+	.components-select-control__input {
+		padding: 8px 10px;
+		border-color: #8c8f94;
+		border-radius: 3px;
+		font-size: 13px;
+		min-height: 36px;
+
+		&:focus {
+			border-color: #2271b1;
+			box-shadow: 0 0 0 1px #2271b1;
+			outline: 2px solid transparent;
+		}
+	}
+
+	// Text Controls
+	.components-text-control__input,
+	.components-textarea-control__input {
+		padding: 8px 10px;
+		border-color: #8c8f94;
+		border-radius: 3px;
+		font-size: 13px;
+
+		&:focus {
+			border-color: #2271b1;
+			box-shadow: 0 0 0 1px #2271b1;
+			outline: 2px solid transparent;
+		}
+	}
+
+	.components-textarea-control__input {
+		min-height: 100px;
+		line-height: 1.5;
+	}
+
+	// Form Token Field
+	.components-form-token-field {
+		.components-form-token-field__input-container {
+			border-color: #8c8f94;
+			border-radius: 3px;
+			padding: 4px 6px;
+			min-height: 36px;
+
+			&:focus-within {
+				border-color: #2271b1;
+				box-shadow: 0 0 0 1px #2271b1;
+			}
+		}
+
+		.components-form-token-field__token {
+			background: #2271b1;
+			color: #fff;
+			border-radius: 2px;
+			margin: 2px;
+			padding: 4px 8px;
+			font-size: 12px;
+			line-height: 1.4;
+
+			.components-button {
+				color: #fff;
+				min-width: auto;
+				padding: 0 4px;
+
+				&:hover {
+					color: #f0f0f0;
+				}
+			}
+		}
+
+		.components-form-token-field__input {
+			font-size: 13px;
+			margin: 2px;
+		}
+	}
+
+	// Labels
+	.components-base-control__label {
+		font-size: 12px;
+		font-weight: 600;
+		color: #1d2327;
+		margin-bottom: 6px;
+	}
+
+	// Help Text
+	.components-base-control__help {
+		font-size: 12px;
+		color: #646970;
+		margin-top: 8px;
+		font-style: normal;
+		line-height: 1.5;
+	}
+
+	// Toggle Control
+	.components-toggle-control {
+		.components-toggle-control__label {
+			font-size: 14px;
+			font-weight: 400;
+		}
+
+		&.is-checked .components-toggle-control__track {
+			background-color: #2271b1;
+		}
+	}
+
+	// Checkbox Control
+	.components-checkbox-control__input:checked {
+		background: #2271b1;
+		border-color: #2271b1;
+	}
+
+	// Notice
+	.components-notice {
+		border-radius: 3px;
+		margin-bottom: 16px;
+
+		&.is-warning {
+			border-left-color: #dba617;
+		}
+	}
+
+	// Opening Hours Container
+	.swift-rank-opening-hours-container {
+		background: #fff;
+		border: 1px solid #c3c4c7;
+		border-radius: 4px;
+		padding: 16px;
+	}
+
+	.swift-rank-hours-row {
+		display: grid;
+		grid-template-columns: 120px 100px 1fr 1fr;
+		gap: 12px;
+		align-items: center;
+		padding: 10px;
+		margin-bottom: 8px;
+		background: #f9f9f9;
+		border-radius: 4px;
+
+		&:hover {
+			background: #f0f0f1;
+		}
+
+		label.day-label {
+			font-weight: 600;
+			color: #1d2327;
+			font-size: 13px;
+		}
+
+		input[type="checkbox"] {
+			margin: 0;
+		}
+
+		input[type="time"] {
+			padding: 4px 8px;
+			font-size: 13px;
+		}
+
+		&.closed input[type="time"] {
+			opacity: 0.4;
+			pointer-events: none;
+		}
+	}
+
+	.swift-rank-closed-label {
+		color: #d63638;
+		font-weight: 500;
+		font-size: 12px;
+	}
+
+	// Responsive adjustments for opening hours
+	@media (max-width: 782px) {
+		.swift-rank-hours-row {
+			grid-template-columns: 1fr;
+			gap: 8px;
+		}
+	}
+
+	// Social Profiles Container
+	.swift-rank-social-profiles-container {
+		background: #fff;
+		border: 1px solid #c3c4c7;
+		border-radius: 4px;
+		padding: 16px;
+
+		.swift-rank-repeater-items {
+			margin-bottom: 12px;
+		}
+
+		.swift-rank-repeater-item {
+			position: relative;
+			padding: 16px;
+			padding-right: 100px;
+			margin-bottom: 12px;
+			background: #f9f9f9;
+			border: 1px solid #dcdcde;
+			border-radius: 4px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			.swift-rank-remove-repeater-item {
+				position: absolute;
+				top: 12px;
+				right: 12px;
+				color: #d63638;
+				border-color: #d63638;
+				background: transparent;
+
+				.lucide {
+					vertical-align: middle;
+					flex-shrink: 0;
+				}
+
+				&:hover {
+					background: #d63638;
+					color: #fff;
+				}
+			}
+
+			.swift-rank-repeater-item-content {
+				.swift-rank-repeater-item-label {
+					display: block;
+					font-weight: 600;
+					font-size: 12px;
+					color: #1d2327;
+					margin-bottom: 6px;
+				}
+
+				.swift-rank-input-group {
+					input {
+						width: 100%;
+					}
+				}
+
+				.description {
+					margin-top: 6px;
+					font-size: 11px;
+					color: #646970;
+				}
+			}
+		}
+
+		.swift-rank-add-repeater-item {
+			margin-top: 8px;
+
+			.lucide {
+				vertical-align: middle;
+				flex-shrink: 0;
+			}
+		}
+
+		@media (max-width: 782px) {
+			.swift-rank-repeater-item {
+				padding-right: 16px;
+				padding-bottom: 50px;
+
+				.swift-rank-remove-repeater-item {
+					top: auto;
+					bottom: 12px;
+				}
+			}
+		}
+	}
+}
+
+// Conditions Tab - Pro Notice in footer
+.add-group-footer {
+	.pro-field-notice {
+		width: 100%;
+		margin-top: 12px;
+	}
+}
+
+// Schema Preset Modal (Pro Plugin)
+.schema-preset-modal {
+	.components-modal__content {
+		padding: 0 !important;
+		overflow: hidden;
+	}
+
+	.components-modal__header {
+		border-bottom: 1px solid #dcdcde;
+		padding: 16px 24px;
+		background: #fff;
+		margin: 0;
+
+		.components-modal__header-heading {
+			font-size: 16px;
+			font-weight: 600;
+		}
+	}
+
+	// Override WordPress modal max-width
+	&.components-modal__frame {
+		max-width: 1200px !important;
+		width: 95vw;
+	}
+}
+
+
+// Hide Pro upgrade metabox header to prevent moving/toggling
+#swift_rank_pro_upgrade {
+
+	.hndle,
+	.handlediv,
+	.postbox-header,
+	.handle-actions {
+		display: none !important;
+	}
+
+	.inside {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	// Ensure the postbox itself has no extra padding
+	&.postbox {
+		padding: 0 !important;
+	}
+}

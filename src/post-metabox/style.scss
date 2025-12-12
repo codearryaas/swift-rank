@@ -1,0 +1,477 @@
+// Swift Rank Post Metabox Styles
+// Native WordPress Admin Design
+
+// Import shared component styles (tooltip, variables popup, etc.)
+@import '../components/style.scss';
+
+.swift-rank-post-metabox {
+	padding: 0;
+	overflow: visible;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	// Info notice at top
+	.auto-enabled-notice {
+		margin: 0 0 16px 0;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	// Templates list
+	.templates-list {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	// Template Card
+	.template-card {
+		border: 1px solid #dcdcde;
+		border-radius: 6px;
+		overflow: visible;
+		background: #fff;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+		transition: all 0.2s ease;
+
+		&:hover {
+			border-color: #2271b1;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+		}
+
+		.template-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 14px 18px;
+			background: linear-gradient(to bottom, #fafafa 0%, #f6f7f7 100%);
+			border-bottom: 1px solid #dcdcde;
+			border-radius: 6px 6px 0 0;
+			cursor: pointer;
+			user-select: none;
+			transition: background 0.15s ease;
+
+			&:hover {
+				background: linear-gradient(to bottom, #f5f5f5 0%, #f0f0f1 100%);
+			}
+
+			.header-content {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				flex: 1;
+			}
+
+			.header-actions {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+
+			.reset-all-btn,
+			.reset-template-btn {
+				svg {
+					fill: currentColor;
+				}
+			}
+
+			.schema-type-badge {
+				background: linear-gradient(135deg, #2271b1 0%, #135e96 100%);
+				color: #fff;
+				padding: 4px 12px;
+				border-radius: 4px;
+				font-size: 11px;
+				font-weight: 600;
+				letter-spacing: 0.3px;
+				box-shadow: 0 1px 3px rgba(34, 113, 177, 0.2);
+
+				.lucide,
+				svg {
+					color: currentColor;
+					stroke: currentColor;
+				}
+			}
+
+			.template-title {
+				font-weight: 600;
+				font-size: 14px;
+				color: #1d2327;
+			}
+
+			.overrides-count {
+				background: linear-gradient(135deg, #dba617 0%, #c78f00 100%);
+				color: #fff;
+				padding: 3px 10px;
+				border-radius: 12px;
+				font-size: 10px;
+				font-weight: 700;
+				letter-spacing: 0.3px;
+				box-shadow: 0 1px 3px rgba(219, 166, 23, 0.25);
+			}
+
+			.lucide {
+				color: #646970;
+				flex-shrink: 0;
+				transition: transform 0.2s ease;
+			}
+		}
+
+		.template-fields {
+			padding: 18px;
+			background: #fff;
+			border-radius: 0 0 6px 6px;
+			overflow: visible;
+		}
+
+		// Expanded state styling
+		&.is-expanded {
+			.template-header {
+				.lucide {
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+
+	// Schema Field
+	.schema-field {
+		margin-bottom: 16px;
+		padding-bottom: 16px;
+		border-bottom: 1px solid #f0f0f1;
+		overflow: visible;
+		position: relative;
+
+		&:last-child {
+			margin-bottom: 0;
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+
+		&.has-override {
+
+			.components-text-control__input,
+			.components-textarea-control__input {
+				border-color: #dba617;
+				background: #fffbf0;
+			}
+		}
+
+		.field-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 6px;
+			overflow: visible;
+			position: relative;
+			z-index: 1;
+
+			label {
+				font-weight: 600;
+				font-size: 12px;
+				color: #1d2327;
+			}
+
+			.field-label {
+				display: flex;
+				align-items: center;
+				gap: 6px;
+				overflow: visible;
+				font-weight: 600;
+				font-size: 13px;
+				color: #1d2327;
+			}
+
+			.field-actions {
+				display: flex;
+				align-items: center;
+				gap: 4px;
+			}
+
+			.insert-variable-btn,
+			.upload-image-btn {
+				padding: 4px;
+				min-width: 28px;
+				height: 28px;
+
+				.lucide,
+				svg {
+					width: 16px;
+					height: 16px;
+				}
+			}
+
+			.reset-field-btn {
+				padding: 4px;
+				min-width: 28px;
+				height: 28px;
+				color: #d63638;
+
+				svg {
+					width: 16px;
+					height: 16px;
+					fill: currentColor;
+				}
+
+				&:hover {
+					color: #b32d2e;
+				}
+			}
+		}
+
+		.components-base-control {
+			margin-bottom: 0;
+		}
+
+		.components-base-control__label {
+			display: none; // We use our own label.
+		}
+
+		.components-text-control__input,
+		.components-textarea-control__input {
+			width: 100%;
+			font-size: 13px;
+		}
+
+		.field-default {
+			margin: 8px 0 0 0;
+			font-size: 11px;
+			color: #646970;
+			display: flex;
+			align-items: flex-start;
+			gap: 6px;
+
+			.label {
+				flex-shrink: 0;
+			}
+
+			code {
+				background: #f0f0f1;
+				padding: 2px 6px;
+				border-radius: 3px;
+				font-size: 11px;
+				word-break: break-all;
+			}
+		}
+
+		.field-note {
+			margin: 8px 0 0 0;
+			padding: 10px;
+			background: #f0f6fc;
+			border-left: 3px solid #2271b1;
+			font-size: 12px;
+			color: #50575e;
+		}
+	}
+}
+
+// Variable dropdown menu
+.components-dropdown-menu__menu {
+	.components-menu-group__label {
+		font-weight: 600;
+		color: #1d2327;
+		padding: 8px 12px;
+		border-bottom: 1px solid #f0f0f1;
+	}
+
+	.components-menu-item__button {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		width: 100%;
+		padding: 8px 12px;
+
+		code {
+			background: #f0f0f1;
+			padding: 2px 6px;
+			border-radius: 3px;
+			font-size: 11px;
+			color: #2271b1;
+		}
+
+		.variable-label {
+			color: #646970;
+			font-size: 12px;
+		}
+	}
+}
+
+// Responsive adjustments
+@media (max-width: 782px) {
+	.swift-rank-post-metabox {
+		.template-card {
+			.template-header {
+				flex-wrap: wrap;
+				gap: 8px;
+
+				.header-content {
+					flex-wrap: wrap;
+				}
+			}
+		}
+
+		.schema-field {
+			.field-header {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 8px;
+			}
+
+			.field-default {
+				flex-direction: column;
+				gap: 4px;
+			}
+		}
+	}
+}
+
+// Opening Hours Container - matches settings page styling
+.swift-rank-post-metabox {
+	.swift-rank-opening-hours-container {
+		background: #fff;
+		border: 1px solid #c3c4c7;
+		border-radius: 4px;
+		padding: 16px;
+	}
+
+	.swift-rank-hours-row {
+		display: grid;
+		grid-template-columns: 120px 100px 1fr 1fr;
+		gap: 12px;
+		align-items: center;
+		padding: 10px;
+		margin-bottom: 8px;
+		background: #f9f9f9;
+		border-radius: 4px;
+
+		&:hover {
+			background: #f0f0f1;
+		}
+
+		label.day-label {
+			font-weight: 600;
+			color: #1d2327;
+			font-size: 13px;
+		}
+
+		input[type="checkbox"] {
+			margin: 0;
+		}
+
+		input[type="time"] {
+			padding: 4px 8px;
+			font-size: 13px;
+		}
+
+		&.closed input[type="time"] {
+			opacity: 0.4;
+			pointer-events: none;
+		}
+	}
+
+	.swift-rank-closed-label {
+		color: #d63638;
+		font-weight: 500;
+		font-size: 12px;
+	}
+
+	// Repeater styles for social profiles
+	.swift-rank-repeater,
+	.swift-rank-social-profiles-container {
+		.swift-rank-repeater-items {
+			margin-bottom: 12px;
+		}
+
+		.swift-rank-repeater-item {
+			position: relative;
+			padding: 16px;
+			padding-right: 100px;
+			margin-bottom: 12px;
+			background: #f9f9f9;
+			border: 1px solid #c3c4c7;
+			border-radius: 4px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			.swift-rank-remove-repeater-item {
+				position: absolute;
+				top: 12px;
+				right: 12px;
+				color: #d63638;
+				border-color: #d63638;
+				background: transparent;
+
+				.lucide {
+					vertical-align: middle;
+					flex-shrink: 0;
+				}
+
+				&:hover {
+					background: #d63638;
+					color: #fff;
+				}
+			}
+
+			.swift-rank-repeater-item-content {
+				.swift-rank-repeater-item-label {
+					display: block;
+					font-weight: 600;
+					font-size: 12px;
+					color: #1d2327;
+					margin-bottom: 6px;
+				}
+
+				.swift-rank-input-group {
+					input {
+						width: 100%;
+					}
+				}
+
+				.description {
+					margin-top: 6px;
+					font-size: 11px;
+					color: #646970;
+				}
+			}
+		}
+
+		.swift-rank-add-repeater-item {
+			margin-top: 8px;
+
+			.lucide {
+				vertical-align: middle;
+				flex-shrink: 0;
+			}
+		}
+	}
+
+	// Social profiles container wrapper
+	.swift-rank-social-profiles-container {
+		background: #fff;
+		border: 1px solid #c3c4c7;
+		border-radius: 4px;
+		padding: 16px;
+	}
+
+	// Responsive adjustments for opening hours
+	@media (max-width: 782px) {
+		.swift-rank-hours-row {
+			grid-template-columns: 1fr;
+			gap: 8px;
+		}
+
+		.swift-rank-repeater-item {
+			padding-right: 16px;
+			padding-bottom: 50px;
+
+			.swift-rank-remove-repeater-item {
+				top: auto;
+				bottom: 12px;
+			}
+		}
+	}
+}

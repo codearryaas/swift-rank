@@ -1,0 +1,688 @@
+# Copyright (C) 2024 Rakesh Lawaju
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Schema Master 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/schema-engine\n"
+"POT-Creation-Date: 2024-11-27 00:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/class-tp-schema-admin.php:98
+msgid "Upload"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:104
+#: includes/class-tp-schema-admin.php:1063
+msgid "Insert Variable"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:130
+#: includes/class-tp-schema-admin.php:131
+msgid "Schema Master"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:139
+#: includes/class-tp-schema-admin.php:140
+#: includes/class-tp-schema-admin.php:1134
+msgid "Schema Validator"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:156
+#: includes/class-tp-schema-admin.php:1227
+msgid "Knowledge Graph Settings"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:164
+msgid "Enable Knowledge Graph Schema"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:164
+msgid "Enable Knowledge Graph schema on the homepage."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:173
+msgid "Data Type"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:173
+msgid "Select whether this site represents an Organization or a Person."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:182
+msgid "Industry"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:182
+msgid "The industry that best describes your organization."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:192
+msgid "Job Title"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:192
+msgid "The job title of the person."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:202
+msgid "Gender"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:202
+msgid "The gender of the person."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:212
+msgid "Works For (Organization)"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:212
+msgid "The organization the person works for."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:222
+#: includes/class-tp-schema-admin.php:1257
+msgid "Name"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:222
+msgid "The legal name of the organization or person."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:231
+msgid "Logo URL"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:231
+msgid "URL to the logo or profile image."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:240
+msgid "Phone Number"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:240
+msgid "Contact phone number."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:249
+msgid "Email Address"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:249
+msgid "Contact email address."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:258
+msgid "Fax Number"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:258
+msgid "Fax number (optional)."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:267
+msgid "Contact Type"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:267
+msgid "The type of contact (e.g., Customer Service, Sales, Technical Support)."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:276
+msgid "Street Address"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:276
+msgid "Street address."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:285
+msgid "City"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:285
+msgid "City."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:294
+msgid "State/Region"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:294
+msgid "State or region."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:303
+msgid "Postal Code"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:303
+msgid "Postal/Zip code."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:312
+msgid "Country"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:312
+msgid "Country."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:321
+#: includes/class-tp-schema-admin.php:1287
+msgid "Price Range"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:321
+msgid "Price range for the business (e.g., $, $$, $$$, $$$$). Only used for LocalBusiness."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:331
+#: includes/class-tp-schema-admin.php:1282
+msgid "Opening Hours"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:331
+msgid "Opening hours for the organization."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:341
+msgid "Social Media Profiles"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:341
+msgid "Links to social media profiles."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:519
+msgid "Add knowledge graph schema to identify your business or person on the homepage."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:531
+msgid "Add knowledge graph schema to homepage"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:545
+#: includes/class-tp-schema-admin.php:1237
+msgid "Organization"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:548
+#: includes/class-tp-schema-admin.php:1238
+msgid "Local Business"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:550
+#: includes/class-tp-schema-admin.php:1239
+msgid "Person"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:552
+msgid "Select the type of entity to represent. Choose \"Local Business\" for businesses with physical locations."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:581
+msgid "Select Industry"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:587
+msgid "Select the industry that best describes your organization."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:606
+msgid "Job title of the person."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:625
+msgid "Gender of the person (e.g., Male, Female, Non-binary)."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:644
+msgid "Organization name the person works for (appears in Person schema only)."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:664
+msgid "Use {site_name} for automatic site name or enter a custom name."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:684
+msgid "Enter the full URL to your organization logo. Recommended: square or 16:9 aspect ratio, max height 60px, transparent PNG preferred."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:691
+msgid "Logo preview"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:711
+msgid "Enter phone in international format (e.g., +1-555-123-4567). Use variables like {meta:phone} for dynamic content."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:730
+msgid "Enter contact email address. Use variables like {option:admin_email} for dynamic content."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:749
+msgid "Enter fax number in international format (optional)."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:768
+msgid "Contact type (e.g., Customer Service, Sales, Technical Support). Appears in contact point schema."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:787
+msgid "Street address for your organization (e.g., 123 Main Street, Suite 100)."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:806
+msgid "City name for postal address (e.g., New York, Los Angeles)."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:825
+msgid "State, province, or region (e.g., NY, California, Ontario)."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:844
+msgid "Postal code or ZIP code (e.g., 10001, SW1A 1AA, 75001)."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:863
+msgid "Country name (e.g., United States, United Kingdom, Canada)."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:882
+msgid "Price range for LocalBusiness only. Common formats:"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:887
+msgid "Symbol format:"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:888
+msgid "Range format:"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:889
+msgid "Examples:"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:987
+msgid "Check \"Closed\" for days when your business is not open. Times are in 24-hour format."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1045
+msgid "Remove"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1049
+msgid "Social Media Profile URL"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1068
+msgid "Enter a social media profile URL (e.g., Facebook, Twitter, LinkedIn, Instagram)"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1076
+msgid "Add Social Profile"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1079
+msgid "Add social media profile URLs for your organization. These appear in your Knowledge Graph."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1090
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1097
+msgid "Configure Schema.org structured data settings for your WordPress site."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1107
+msgid "Knowledge Graph"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1109
+msgid "Help"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1135
+msgid "Test and validate your schema markup with these tools:"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1140
+msgid "Quick Validation"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1141
+msgid "Test your homepage schema with these validation tools:"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1147
+#: includes/class-tp-schema-admin.php:1374
+msgid "Google Rich Results Test"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1149
+msgid "Test how Google sees your structured data and check for rich results eligibility."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1152
+msgid "Test with Google"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1159
+#: includes/class-tp-schema-admin.php:1378
+msgid "Schema.org Validator"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1161
+msgid "Validate your schema markup against official Schema.org standards."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1164
+msgid "Validate Schema"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1173
+msgid "Manual Inspection"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1175
+#: includes/class-tp-schema-admin.php:1382
+msgid "View Page Source"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1175
+msgid "Visit your homepage and press Ctrl+U (Windows) or Cmd+U (Mac) to view the source code."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1176
+msgid "Search for Schema"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1176
+msgid "Look for \"Schema Master\" comment or search for \"application/ld+json\" to find the schema output."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1177
+msgid "Verify Data"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1177
+msgid "Check that all your organization information appears correctly in the JSON-LD script."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1180
+msgid "Open Homepage"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1187
+msgid "Common Validation Errors"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1191
+#: includes/class-tp-schema-admin.php:1250
+msgid "Error"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1192
+msgid "Solution"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1197
+msgid "Missing required field"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1198
+msgid "Fill in all required fields marked with * in the Knowledge Graph settings."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1201
+msgid "Invalid URL format"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1202
+msgid "Ensure all URLs start with https:// or http:// and are properly formatted."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1205
+msgid "Invalid phone number"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1206
+msgid "Use international format with country code (e.g., +1-555-123-4567)."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1209
+msgid "Logo too large"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1210
+msgid "Google recommends logos with max height of 60px for best results."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1228
+msgid "Learn how to configure your Knowledge Graph schema for optimal search engine visibility."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1232
+msgid "What is Knowledge Graph?"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1233
+msgid "The Knowledge Graph is structured data that tells search engines important information about your organization, business, or person. This helps search engines display rich information about you in search results."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1235
+msgid "Schema Types"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1237
+msgid "For companies, corporations, and general businesses without physical locations."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1238
+msgid "For businesses with physical locations, operating hours, and price ranges (e.g., restaurants, stores, offices)."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1239
+msgid "For personal websites, portfolios, or individual professionals (e.g., freelancers, authors, consultants)."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1246
+msgid "Important Fields"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1250
+msgid "Field"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1251
+msgid "Description"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1252
+msgid "Required"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1258
+msgid "The legal name of your organization or your personal name. Use variables like {site_name} for dynamic content."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1262
+msgid "Logo / Image"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1263
+msgid "URL to your logo (for organizations) or profile photo (for persons). Recommended: square or 16:9 ratio, max 60px height, PNG format."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1264
+#: includes/class-tp-schema-admin.php:1269
+#: includes/class-tp-schema-admin.php:1274
+#: includes/class-tp-schema-admin.php:1279
+msgid "Recommended"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1267
+msgid "Contact Information"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1268
+msgid "Phone, email, and fax numbers help users contact you directly from search results. Use international format for phone numbers."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1269
+#: includes/class-tp-schema-admin.php:1274
+msgid "Optional"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1272
+msgid "Address"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1273
+msgid "Full postal address including street, city, state, postal code, and country. Important for local businesses."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1277
+msgid "Social Media Profiles"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1278
+msgid "Links to your official social media accounts (Facebook, Twitter, LinkedIn, Instagram, etc.). Helps verify your identity."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1283
+msgid "Business hours for each day of the week. Only for LocalBusiness schema type."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1284
+#: includes/class-tp-schema-admin.php:1289
+msgid "LocalBusiness only"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1288
+msgid "Indicates pricing level using $, $$, $$$, or $$$$ symbols. Only for LocalBusiness schema type."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1296
+msgid "Available Variables"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1297
+msgid "You can use these variables in your schema fields. They will be replaced with actual values when the schema is output."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1302
+msgid "🌐 Site Variables"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1306
+#: includes/class-tp-schema-admin.php:1334
+msgid "Variable"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1313
+msgid "Your WordPress site name"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1317
+msgid "Your site home URL"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1321
+msgid "Your site tagline/description"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1330
+msgid "🔧 Custom Variables"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1341
+msgid "Get any WordPress option value (replace \"option_name\" with actual option name)"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1351
+msgid "💡 How to Use Variables"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1353
+msgid "Click \"Insert Variable\" button"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1353
+msgid "Look for the button next to input fields in the settings."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1354
+msgid "Select a variable"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1354
+msgid "Choose from the dropdown menu of available variables."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1355
+msgid "Variable is inserted"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1355
+msgid "The variable will be added to the field at cursor position."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1356
+msgid "Mix with text"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1356
+msgid "You can combine variables with static text as needed."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1360
+msgid "Example Usage"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1361
+msgid "Organization Name:"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1362
+msgid "Custom Option:"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1363
+msgid "Mixed:"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1370
+msgid "🔍 Testing Your Schema"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1371
+msgid "After configuring your schema settings, validate it with these tools:"
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1375
+msgid "Test how Google sees your structured data and check for errors."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1379
+msgid "Validate your schema markup against Schema.org standards."
+msgstr ""
+
+#: includes/class-tp-schema-admin.php:1383
+msgid "Visit your homepage and view source (Ctrl+U / Cmd+U). Look for JSON-LD script tag in the <head> section."
+msgstr ""
+
+#: schema-engine.php:98
+msgid "load_textdomain"
+msgstr ""

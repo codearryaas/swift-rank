@@ -1,0 +1,82 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "swift-rank/faq",
+	"version": "1.0.0",
+	"title": "FAQ",
+	"category": "widgets",
+	"icon": "editor-help",
+	"description": "Add Frequently Asked Questions with FAQ schema markup.",
+	"keywords": [
+		"faq",
+		"question",
+		"answer",
+		"schema"
+	],
+	"textdomain": "swift-rank",
+	"supports": {
+		"html": false,
+		"anchor": true,
+		"align": [
+			"wide",
+			"full"
+		],
+		"color": {
+			"background": true,
+			"text": true,
+			"link": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true,
+			"__experimentalDefaultControls": {
+				"blockGap": true
+			}
+		},
+		"__experimentalBorder": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true
+		},
+		"layout": true
+	},
+	"layout": {
+		"type": "flex",
+		"orientation": "vertical"
+	},
+	"styles": [
+		{
+			"name": "default",
+			"label": "Default",
+			"isDefault": true
+		},
+		{
+			"name": "compact",
+			"label": "Compact"
+		}
+	],
+	"providesContext": {
+		"swift-rank/enableSchema": "enableSchema",
+		"swift-rank/enableToggle": "enableToggle"
+	},
+	"attributes": {
+		"enableSchema": {
+			"type": "boolean",
+			"default": true
+		},
+		"enableToggle": {
+			"type": "boolean",
+			"default": true
+		},
+		"openFirst": {
+			"type": "boolean",
+			"default": true
+		}
+	}
+}

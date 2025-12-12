@@ -16,7 +16,8 @@
 }
 
 .swift-rank-field-group .required {
-	color: #d63638; /* WP error red */
+	color: #d63638;
+	/* WP error red */
 }
 
 /* Info Boxes - Match WP Notice Styling */
@@ -101,7 +102,7 @@
 }
 
 /* Nested Field Groups */
-.swift-rank-fields-group > div > strong {
+.swift-rank-fields-group>div>strong {
 	color: #2271b1;
 	font-size: 12px;
 	font-weight: 600;
@@ -117,12 +118,10 @@
 	font-size: 12px;
 }
 
-.swift-rank-insert-variable-btn .dashicons {
-	font-size: 16px;
-	width: 16px;
-	height: 16px;
+.swift-rank-insert-variable-btn .lucide {
 	vertical-align: text-top;
 	margin-right: 3px;
+	flex-shrink: 0;
 }
 
 .swift-rank-variable-dropdown .swift-rank-var-item {
@@ -187,12 +186,13 @@
 	font-size: 14px;
 }
 
-.swift-rank-accordion-title .dashicons {
+.swift-rank-accordion-title .lucide {
 	transition: transform 0.2s;
 	color: #50575e;
+	flex-shrink: 0;
 }
 
-.swift-rank-accordion-item.active .swift-rank-accordion-title .dashicons {
+.swift-rank-accordion-item.active .swift-rank-accordion-title .lucide {
 	transform: rotate(90deg);
 }
 
@@ -225,6 +225,7 @@
 
 /* Responsive */
 @media (max-width: 782px) {
+
 	.swift-rank-field-group input[type="text"],
 	.swift-rank-field-group input[type="datetime-local"],
 	.swift-rank-field-group textarea,
@@ -256,15 +257,13 @@
 	vertical-align: middle;
 }
 
-.swift-rank-tooltip .dashicons {
-	font-size: 16px;
-	width: 16px;
-	height: 16px;
+.swift-rank-tooltip .lucide {
 	color: #a7aaad;
 	transition: color 0.2s ease;
+	flex-shrink: 0;
 }
 
-.swift-rank-tooltip:hover .dashicons {
+.swift-rank-tooltip:hover .lucide {
 	color: #2271b1;
 }
 
@@ -288,7 +287,7 @@
 	font-weight: normal;
 	line-height: 1.5;
 	pointer-events: none;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 	white-space: normal;
 }
 
@@ -329,12 +328,12 @@
 
 /* Social profiles */
 .swift-rank-repeater-item {
-	    background: #f9f9f9;
-    padding: 12px;
-    margin-bottom: 12px;
-    border-radius: 4px;
-    position: relative;
-    border: 1px solid #e3e3e5;
+	background: #f9f9f9;
+	padding: 12px;
+	margin-bottom: 12px;
+	border-radius: 4px;
+	position: relative;
+	border: 1px solid #e3e3e5;
 }
 
 /* Field Wrapper with Variable Button */
@@ -369,13 +368,11 @@
 	white-space: nowrap;
 }
 
-.swift-rank-button-group .dashicons {
-	font-size: 16px;
-	width: 16px;
-	height: 16px;
+.swift-rank-button-group .lucide {
 	vertical-align: middle;
 	margin-top: -2px;
 	margin-right: 4px;
+	flex-shrink: 0;
 }
 
 /* Required Field Indicator */
@@ -431,12 +428,10 @@
 	color: #b32d2e;
 }
 
-.swift-rank-repeater-item .swift-rank-remove-repeater-item .dashicons {
-	font-size: 16px;
-	width: 16px;
-	height: 16px;
+.swift-rank-repeater-item .swift-rank-remove-repeater-item .lucide {
 	vertical-align: middle;
 	margin-right: 2px;
+	flex-shrink: 0;
 }
 
 .swift-rank-repeater-item-content {
@@ -455,13 +450,11 @@
 	margin-top: 8px;
 }
 
-.swift-rank-add-repeater-item .dashicons {
-	font-size: 16px;
-	width: 16px;
-	height: 16px;
+.swift-rank-add-repeater-item .lucide {
 	vertical-align: middle;
 	margin-top: -2px;
 	margin-right: 4px;
+	flex-shrink: 0;
 }
 
 /* Opening Hours Styles */
@@ -661,8 +654,129 @@
 	font-size: 12px;
 }
 
-.swift-rank-example-box code {
-	font-family: Consolas, Monaco, monospace;
+
+/* Select Box Improvements */
+.swift-rank-field-group select {
+	max-width: 100%;
+	border-color: #8c8f94;
+	color: #2c3338;
+}
+
+.swift-rank-field-group select:hover {
+	border-color: #2271b1;
+}
+
+.swift-rank-field-group select option {
+	color: #2c3338;
+	background: #fff;
+	padding: 4px;
+}
+
+.swift-rank-field-group select option:checked,
+.swift-rank-field-group select option[selected] {
+	background-color: #2271b1 !important;
+	color: #fff !important;
+}
+
+/* Ensure dropdowns in React components also look good */
+.components-select-control__input {
+	border-color: #8c8f94 !important;
+}
+
+.components-select-control__input option {
+	color: #2c3338;
+	background: #fff;
+}
+
+/* Pro Upgrade Sidebar (PHP-rendered in metabox) */
+.swift-rank-pro-sidebar {
+	padding: 16px;
+	background: linear-gradient(135deg, #fef8e8 0%, #fff9e6 100%);
+	border-radius: 4px;
+	margin: -6px -12px -12px -12px;
+}
+
+.swift-rank-pro-sidebar .sidebar-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 12px;
+}
+
+.swift-rank-pro-sidebar .sidebar-header .upgrade-icon {
+	width: 36px;
+	height: 36px;
+	background: linear-gradient(135deg, #f0b849 0%, #d99c00 100%);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.swift-rank-pro-sidebar .sidebar-header .upgrade-icon .lucide {
+	color: #fff;
+	flex-shrink: 0;
+}
+
+.swift-rank-pro-sidebar .sidebar-header h4 {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 600;
+	color: #1d2327;
+	line-height: 1.3;
+}
+
+.swift-rank-pro-sidebar .sidebar-features {
+	margin: 0 0 16px;
+	padding: 0;
+	list-style: none;
+}
+
+.swift-rank-pro-sidebar .sidebar-features li {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 0;
 	font-size: 12px;
-	line-height: 1.6;
+	color: #50575e;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.swift-rank-pro-sidebar .sidebar-features li:last-child {
+	border-bottom: none;
+}
+
+.swift-rank-pro-sidebar .sidebar-features li .lucide {
+	color: #00a32a;
+	flex-shrink: 0;
+}
+
+.swift-rank-pro-sidebar .sidebar-upgrade-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	width: 100%;
+	padding: 10px 16px;
+	background: linear-gradient(135deg, #f0b849 0%, #d99c00 100%);
+	color: #1e1e1e;
+	border: none;
+	border-radius: 4px;
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.15s ease;
+}
+
+.swift-rank-pro-sidebar .sidebar-upgrade-btn:hover {
+	background: linear-gradient(135deg, #d99c00 0%, #c78f00 100%);
+	color: #1e1e1e;
+	text-decoration: none;
+}
+
+.swift-rank-pro-sidebar .sidebar-upgrade-btn .lucide {
+	flex-shrink: 0;
 }

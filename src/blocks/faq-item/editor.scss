@@ -1,0 +1,78 @@
+.swift-rank-faq-item {
+	// border: 1px solid #e0e0e0;
+	// border-radius: 4px;
+	// padding: 16px;
+	// background: #fafafa;
+	transition: all 0.2s ease;
+	margin-bottom: 12px;
+
+	&:hover {
+		border-color: #2271b1;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	}
+
+	.faq-item-question-wrapper {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-bottom: 12px;
+
+		.faq-item-question {
+			flex: 1;
+			// font-size: 16px;
+			// font-weight: 600;
+			// color: #1e1e1e;
+			border: 1px dashed transparent;
+			border-radius: 2px;
+
+			&:focus {
+				border-color: #2271b1;
+				background: #fff;
+				outline: none;
+			}
+
+			&:empty:before {
+				color: #999;
+			}
+		}
+
+		// .faq-item-icon {
+		// 	flex-shrink: 0;
+		// 	color: #2271b1;
+		// 	opacity: 0.7;
+		// }
+	}
+
+	.faq-item-answer-wrapper {
+		display: block;
+		width: 100%;
+
+		.faq-item-answer {
+			font-size: 14px;
+			line-height: 1.6;
+			// color: #3c434a;
+			border: 1px dashed transparent;
+			padding: 8px;
+			border-radius: 2px;
+			min-height: 40px;
+
+			&:focus {
+				border-color: #2271b1;
+				background: #fff;
+				outline: none;
+			}
+
+			&:empty:before {
+				color: #999;
+			}
+
+			p {
+				// margin: 0 0 8px 0;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

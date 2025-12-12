@@ -1,14 +1,13 @@
 {
   "name": "swift-rank",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "WordPress plugin for Schema.org structured data",
   "main": "index.js",
   "scripts": {
-    "build": "grunt build",
-    "bundle": "grunt bundle",
-    "sync-version": "grunt sync-version",
-    "clean": "grunt clean",
-    "version": "grunt version"
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "bundle": "npm run build && grunt build",
+    "version:check": "grunt check-version"
   },
   "keywords": [
     "wordpress",
@@ -19,9 +18,17 @@
   "author": "Rakesh Lawaju",
   "license": "GPL-2.0-or-later",
   "devDependencies": {
+    "@wordpress/scripts": "^26.0.0",
     "grunt": "^1.6.1",
     "grunt-contrib-clean": "^2.0.1",
     "grunt-contrib-compress": "^2.0.0",
     "grunt-contrib-copy": "^1.0.0"
+  },
+  "dependencies": {
+    "@wordpress/components": "^25.0.0",
+    "@wordpress/element": "^5.0.0",
+    "@wordpress/i18n": "^4.0.0",
+    "lucide-react": "^0.555.0",
+    "react-select": "^5.8.0"
   }
 }

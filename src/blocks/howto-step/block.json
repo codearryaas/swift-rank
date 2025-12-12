@@ -1,0 +1,57 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "swift-rank/howto-step",
+    "version": "1.0.0",
+    "title": "How-To Step",
+    "category": "widgets",
+    "parent": [
+        "swift-rank/howto"
+    ],
+    "icon": "saved",
+    "description": "A single step in a How-To guide.",
+    "keywords": [
+        "step",
+        "instruction",
+        "howto"
+    ],
+    "textdomain": "swift-rank",
+    "supports": {
+        "html": false,
+        "reusable": false,
+        "inserter": false,
+        "color": {
+            "background": true,
+            "text": true,
+            "link": true
+        },
+        "spacing": {
+            "padding": true,
+            "margin": true
+        },
+        "__experimentalBorder": {
+            "color": true,
+            "radius": true,
+            "style": true,
+            "width": true
+        }
+    },
+    "attributes": {
+        "name": {
+            "type": "string",
+            "default": ""
+        },
+        "text": {
+            "type": "string",
+            "default": ""
+        },
+        "image": {
+            "type": "string",
+            "default": ""
+        },
+        "url": {
+            "type": "string",
+            "default": ""
+        }
+    }
+}

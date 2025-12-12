@@ -205,45 +205,6 @@
 			$(window).off('beforeunload');
 		});
 
-		// Knowledge Graph Type Toggle
-		function toggleKnowledgeGraphFields() {
-			var type = $('#swift_rank_settings_organization_type').val();
-			var $personFields = $('.swift-rank-person-only').closest('tr');
-			var $orgFields = $('.swift-rank-organization-only').closest('tr');
-			var $businessFields = $('.swift-rank-localbusiness-only').closest('tr');
-			var $nameLabel = $('label[for="swift_rank_settings_organization_name"]');
-
-			// Fields to hide for Person
-			var $logoRow = $('#swift_rank_settings_organization_logo').closest('tr');
-
-			if ('Person' === type) {
-				$personFields.show();
-				$orgFields.hide();
-				$businessFields.hide();
-				$logoRow.hide();
-				$nameLabel.text('Person Name');
-			} else if ('LocalBusiness' === type) {
-				$personFields.hide();
-				$orgFields.show();
-				$businessFields.show();
-				$logoRow.show();
-				$nameLabel.text('Business Name');
-			} else {
-				// Organization
-				$personFields.hide();
-				$orgFields.show();
-				$businessFields.hide();
-				$logoRow.show();
-				$nameLabel.text('Organization Name');
-			}
-		}
-
-		// Init toggle
-		if ($('#swift_rank_settings_organization_type').length) {
-			toggleKnowledgeGraphFields();
-			$('#swift_rank_settings_organization_type').on('change', toggleKnowledgeGraphFields);
-		}
-
 		// Repeater field functionality
 		$(document).on('click', '.swift-rank-add-repeater-item', function (e) {
 			e.preventDefault();
