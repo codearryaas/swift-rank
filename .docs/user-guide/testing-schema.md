@@ -21,11 +21,11 @@ Testing and validating your schema markup is crucial for ensuring search engines
 
 ## Quick Validation Tools
 
-Schema Engine includes built-in validation shortcuts in the WordPress admin bar.
+Swift Rank includes built-in validation shortcuts in the WordPress admin bar.
 
 ### Admin Bar Validator (Frontend Only)
 
-When logged in and viewing your site frontend, look for the **Schema Engine** menu in the admin bar at the top of the page.
+When logged in and viewing your site frontend, look for the **Swift Rank** menu in the admin bar at the top of the page.
 
 **Available Tools:**
 1. **Google Rich Results Test**
@@ -35,7 +35,7 @@ When logged in and viewing your site frontend, look for the **Schema Engine** me
 
 1. Navigate to any page on your site (frontend)
 2. Look at the admin bar (top of page)
-3. Hover over **Schema Engine**
+3. Hover over **Swift Rank**
 4. Click **Google Rich Results Test** or **Schema.org Validator**
 5. Tool opens in new tab with your page pre-loaded
 6. Review results
@@ -589,7 +589,7 @@ If you encounter persistent validation errors:
 1. **Check Documentation:** Review user guides
 2. **Search Console:** Check for specific error messages
 3. **Community:** WordPress forums, schema.org community
-4. **Support:** Contact Schema Engine support (Pro users)
+4. **Support:** Contact Swift Rank support (Pro users)
 5. **Google Help:** Google's structured data documentation
 
 ## Next Steps

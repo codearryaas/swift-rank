@@ -1,6 +1,6 @@
-# Getting Started with Schema Engine
+# Getting Started with Swift Rank
 
-Welcome to Schema Engine! This guide will help you get started with adding structured data (schema markup) to your WordPress website.
+Welcome to Swift Rank! This guide will help you get started with adding structured data (schema markup) to your WordPress website.
 
 ## What is Schema Markup?
 
@@ -8,13 +8,13 @@ Schema markup is structured data that helps search engines understand your websi
 
 ## First Steps After Installation
 
-After installing and activating Schema Engine, you'll find a new menu item in your WordPress dashboard: **Schema Engine**.
+After installing and activating Swift Rank, you'll find a new menu item in your WordPress dashboard: **Swift Rank**.
 
 ### 1. Configure Your Knowledge Graph
 
 The Knowledge Graph represents your website's identity in search results.
 
-1. Navigate to **Schema Engine → Settings**
+1. Navigate to **Swift Rank → Settings**
 2. Under the **Knowledge Graph** section:
    - Select your **Entity Type**: Organization, Person, or Local Business
    - Fill in your basic information (name, description, URL)
@@ -32,21 +32,21 @@ The Knowledge Graph represents your website's identity in search results.
 
 ### 2. Understanding the Interface
 
-Schema Engine has three main areas:
+Swift Rank has three main areas:
 
 #### Schema Templates
-- Located at **Schema Engine → All Schemas**
+- Located at **Swift Rank → All Schemas**
 - Each template defines structured data rules
 - Templates apply automatically based on conditions you set
 
 #### Settings
-- Located at **Schema Engine → Settings**
+- Located at **Swift Rank → Settings**
 - Configure site-wide schema (Knowledge Graph)
 - Set default images and global options
 - Manage your Pro license (if applicable)
 
 #### Add New Schema
-- Located at **Schema Engine → Add New**
+- Located at **Swift Rank → Add New**
 - Create new schema templates
 - Configure schema type, fields, and display conditions
 
@@ -56,13 +56,13 @@ Let's create a simple Article schema for your blog posts.
 
 ### Step 1: Create a New Template
 
-1. Go to **Schema Engine → Add New**
+1. Go to **Swift Rank → Add New**
 2. Enter a title: "Blog Post Article Schema"
 3. Click **Publish** to save it (you can edit it after)
 
 ### Step 2: Select Schema Type
 
-1. In the **Schema Engine** panel on the right, find **Schema Type**
+1. In the **Swift Rank** panel on the right, find **Schema Type**
 2. Select **Article** from the dropdown
 3. The panel will refresh showing Article-specific fields
 
@@ -110,7 +110,7 @@ Scroll down to the **Display Conditions** section.
    - **Value**: Select "Posts"
 4. Click outside to save the rule
 
-This tells Schema Engine to apply this schema to all blog posts.
+This tells Swift Rank to apply this schema to all blog posts.
 
 ### Step 5: Publish Your Template
 
@@ -131,9 +131,57 @@ To see if your schema is working:
 While viewing a blog post (logged in as admin):
 
 1. Look at the admin bar at the top
-2. Hover over **Schema Engine**
+2. Hover over **Swift Rank**
 3. Click **Google Rich Results Test**
 4. Google will analyze your schema and show any errors or warnings
+
+## Understanding Auto Schema
+
+Swift Rank can automatically generate schema for your content even without creating templates. This feature is called **Auto Schema**.
+
+### What is Auto Schema?
+
+Auto Schema automatically creates schema markup for your posts, pages, and products when:
+- No schema templates match the current page
+- Auto Schema is enabled for that content type
+- Required data is available (title, image, etc.)
+
+### When to Use Auto Schema
+
+**Use Auto Schema for:**
+- Quick setup without creating templates
+- Consistent basic schema across all content
+- Fallback for pages without specific templates
+- Sites with simple schema needs
+
+**Use Templates for:**
+- Custom schema configurations
+- Different schema for different categories
+- Advanced field customization
+- Multiple schema types on the same page
+- Precise control over schema output
+
+### Enabling Auto Schema
+
+1. Go to **Swift Rank → Settings → General**
+2. Find the **Auto Schema** section
+3. Enable for the content types you want:
+   - **Posts**: Choose Article, BlogPosting, or NewsArticle
+   - **Pages**: Generates WebPage schema
+   - **Search**: Adds SearchResultsPage schema
+   - **WooCommerce**: Generates Product schema
+
+### Auto Schema vs Templates
+
+You can use both Auto Schema and Templates together:
+- Templates take priority when they match
+- Auto Schema fills in the gaps for unmatched content
+- This ensures all your content has schema markup
+
+**Example:**
+- Template for "Product Reviews" category → Uses template
+- Regular blog post → Uses Auto Schema
+- About page → Uses Auto Schema (if enabled for pages)
 
 ## Understanding Variables
 
@@ -166,10 +214,12 @@ You noticed `{post_title}` and `{post_excerpt}` in the fields. These are **dynam
 Now that you have your first schema template working, you can:
 
 1. **Create More Templates**: Different schema types for different content
-   - Product schema for WooCommerce products (Pro)
+   - Product schema for WooCommerce products
    - FAQ schema for FAQ pages
-   - Video schema for video content (Pro)
+   - VideoObject schema for video content
    - LocalBusiness schema for location pages
+   - Review schema for product/service reviews
+   - Job Posting schema for job listings
 
 2. **Refine Display Conditions**: Target specific pages or categories
    - Show schema only on specific categories
@@ -177,10 +227,9 @@ Now that you have your first schema template working, you can:
    - Combine multiple conditions
 
 3. **Explore Pro Features** (if you have Pro):
-   - Advanced schema types (Recipe, Event, HowTo)
+   - Advanced schema types (Recipe, Event, HowTo, Podcast Episode)
    - Custom schema builder
-   - Opening hours for local businesses
-   - Advanced display conditions
+   - Additional Pro-only features
 
 ## Common Questions
 
@@ -190,27 +239,27 @@ No! That's the power of templates. Create one template with display conditions, 
 
 ### What happens if I have multiple templates?
 
-If multiple templates match the same page, Schema Engine combines them into a single schema graph, ensuring they're properly connected.
+If multiple templates match the same page, Swift Rank combines them into a single schema graph, ensuring they're properly connected.
 
 ### Can I override schema for a specific post?
 
-Yes! Edit the post and use the **Schema Engine** metabox to customize or disable schema for that specific post.
+Yes! Edit the post and use the **Swift Rank** metabox to customize or disable schema for that specific post.
 
 ### How do I know if my schema is valid?
 
 Use the validation tools:
-- Admin bar → Schema Engine → Google Rich Results Test
-- Admin bar → Schema Engine → Schema.org Validator
+- Admin bar → Swift Rank → Google Rich Results Test
+- Admin bar → Swift Rank → Schema.org Validator
 - Both test your schema and report any errors
 
 ### Does schema affect my site's performance?
 
-Schema Engine is lightweight and optimized for performance. The schema markup is minimal JSON-LD code that doesn't impact page load times.
+Swift Rank is lightweight and optimized for performance. The schema markup is minimal JSON-LD code that doesn't impact page load times.
 
 ## Tips for Success
 
 1. **Start Simple**: Begin with basic Article or Organization schema
-2. **Use Variables**: Let Schema Engine populate content automatically
+2. **Use Variables**: Let Swift Rank populate content automatically
 3. **Validate Regularly**: Check your schema after making changes
 4. **Fill Required Fields**: Red asterisks (*) indicate required fields
 5. **Use Unique Titles**: Give each template a descriptive title for easy management
@@ -236,4 +285,4 @@ Continue learning with these guides:
 - [Organization Schema Setup](schema-types/organization.md) - Organization schema guide
 - [FAQ Schema Setup](schema-types/faq.md) - FAQ schema guide
 
-Welcome to better search visibility with Schema Engine!
+Welcome to better search visibility with Swift Rank!

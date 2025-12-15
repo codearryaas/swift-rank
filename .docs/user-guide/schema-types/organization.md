@@ -27,7 +27,7 @@ Organization schema is configured in two places:
 ### 1. Settings → Knowledge Graph (Recommended)
 
 **Primary Method:**
-- Go to **Schema Engine → Settings**
+- Go to **Swift Rank → Settings**
 - Knowledge Graph section
 - Configure once, applies site-wide
 - Automatically referenced by Article schema
@@ -49,7 +49,7 @@ Organization schema is configured in two places:
 
 ### Step 1: Access Settings
 
-1. Navigate to **Schema Engine → Settings**
+1. Navigate to **Swift Rank → Settings**
 2. Find the **Knowledge Graph** section
 
 ### Step 2: Select Entity Type
@@ -206,7 +206,7 @@ Social profiles help Google verify your official accounts.
 
 **Test on Homepage:**
 1. Visit your homepage (frontend)
-2. Admin bar → **Schema Engine** → **Google Rich Results Test**
+2. Admin bar → **Swift Rank** → **Google Rich Results Test**
 3. Verify Organization schema detected
 4. Check for errors or warnings
 
@@ -216,7 +216,7 @@ For advanced users who want more control or multiple Organization schemas.
 
 ### Step 1: Create Template
 
-1. Go to **Schema Engine → Add New**
+1. Go to **Swift Rank → Add New**
 2. Title: "Organization Schema - Main"
 
 ### Step 2: Select Schema Type
@@ -665,7 +665,7 @@ Template 3: Brand B Organization (Brand B pages)
 }
 ```
 
-**Note:** Schema Engine free version uses Settings for Organization. Pro version templates offer more fields.
+**Note:** Swift Rank free version uses Settings for Organization. Pro version templates offer more fields.
 
 ## Settings vs Template: Which to Use?
 

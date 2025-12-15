@@ -73,7 +73,7 @@ Show schema if:
 
 ## Condition Types
 
-Schema Engine supports four main condition types:
+Swift Rank supports four main condition types:
 
 ### 1. Whole Site
 

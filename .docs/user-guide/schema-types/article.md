@@ -23,7 +23,7 @@ Article schema (`@type: Article`) tells search engines about written content on 
 
 ## Article Types
 
-Schema Engine supports several Article subtypes:
+Swift Rank supports several Article subtypes:
 
 ### Article (Generic)
 **Use for:** General articles, editorials, opinion pieces
@@ -108,13 +108,13 @@ These fields enhance your schema and may improve rich results:
 
 ### Step 1: Create Article Template
 
-1. Navigate to **Schema Engine → Add New**
+1. Navigate to **Swift Rank → Add New**
 2. Title: "Article Schema - Blog Posts"
 3. Don't publish yet
 
 ### Step 2: Select Article Type
 
-In the **Schema Engine** panel:
+In the **Swift Rank** panel:
 
 1. **Schema Type** dropdown → Select **Article**
 2. Panel refreshes with Article fields
@@ -211,7 +211,7 @@ Condition Group 1:
 ### Step 7: Test Your Schema
 
 1. Visit a blog post (frontend)
-2. Admin bar → **Schema Engine** → **Google Rich Results Test**
+2. Admin bar → **Swift Rank** → **Google Rich Results Test**
 3. Verify:
    - ✓ Article detected
    - ✓ No errors

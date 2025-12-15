@@ -1,6 +1,6 @@
 # Creating Schema Templates
 
-Schema templates are the foundation of Schema Engine. Instead of manually adding schema to every page, you create a template once and let it apply automatically based on conditions.
+Schema templates are the foundation of Swift Rank. Instead of manually adding schema to every page, you create a template once and let it apply automatically based on conditions.
 
 ## What is a Schema Template?
 
@@ -22,9 +22,9 @@ Once published, the template automatically outputs schema on pages matching your
 
 ### Step 1: Access the Template Editor
 
-Navigate to **Schema Engine → Add New**
+Navigate to **Swift Rank → Add New**
 
-You'll see the familiar WordPress editor with additional Schema Engine panels on the right.
+You'll see the familiar WordPress editor with additional Swift Rank panels on the right.
 
 ### Step 2: Name Your Template
 
@@ -43,29 +43,32 @@ Enter a descriptive title in the title field:
 
 ### Step 3: Select Schema Type
 
-In the **Schema Engine** panel (right sidebar):
+In the **Swift Rank** panel (right sidebar):
 
 1. Find the **Schema Type** dropdown
 2. Click to view available types
 3. Select the type that matches your content
 
 **Available Schema Types (Free):**
-- Article
+- Article (BlogPosting, NewsArticle)
 - Product
 - Organization
 - Person
 - LocalBusiness
 - Review
-- Video
+- VideoObject
 - FAQ Page
 - Breadcrumb
 - Job Posting
+- WebPage
+- Website
+- ImageObject
 
 **Available Schema Types (Pro):**
 - All free types, plus:
 - Recipe
 - Event
-- How-To
+- HowTo
 - Podcast Episode
 - Custom Schema (visual builder)
 
@@ -224,7 +227,7 @@ Repeater fields let you add multiple items (like FAQ questions or ingredients).
 
 ### Using Categories for Templates
 
-While Schema Engine templates are custom post types, you can organize them:
+While Swift Rank templates are custom post types, you can organize them:
 
 **Naming Convention:**
 - Prefix templates by type: "Article - ", "Product - ", "Local - "
@@ -243,7 +246,7 @@ While Schema Engine templates are custom post types, you can organize them:
 
 When multiple templates match the same page:
 
-1. Schema Engine combines all matching schemas
+1. Swift Rank combines all matching schemas
 2. Creates a connected schema graph
 3. Each schema gets a unique @id reference
 4. No conflicts - all schemas output together
@@ -306,7 +309,7 @@ When multiple templates match the same page:
     - Answer: "Navigate to Plugins → Add New..."
   - Item 2:
     - Question: "Is there a Pro version?"
-    - Answer: "Yes, Schema Engine Pro offers..."
+    - Answer: "Yes, Swift Rank Pro offers..."
 
 **Display Conditions:**
 - Singular = Select specific FAQ pages
@@ -414,7 +417,7 @@ Price: {meta:_price}
 
 ### Referencing Other Schemas
 
-Schema Engine automatically connects related schemas:
+Swift Rank automatically connects related schemas:
 - Article author references Person/Organization
 - Product manufacturer references Organization
 - Review itemReviewed references Product

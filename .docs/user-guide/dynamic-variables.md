@@ -1,6 +1,6 @@
 # Using Dynamic Variables
 
-Dynamic variables are one of the most powerful features in Schema Engine. They allow you to create a single template that automatically populates with different content for each page.
+Dynamic variables are one of the most powerful features in Swift Rank. They allow you to create a single template that automatically populates with different content for each page.
 
 ## What Are Dynamic Variables?
 
@@ -26,7 +26,7 @@ The same template produces different schema output for each post.
 
 1. You create a template with variables: `{post_title}`
 2. User visits a page
-3. Schema Engine checks display conditions
+3. Swift Rank checks display conditions
 4. Template matches the page
 5. Variables are replaced with actual values
 6. Schema is output to the page
@@ -281,7 +281,7 @@ Variables output as strings, but schema expects different types:
 ```
 "price": "{meta:_price}"  → "29.99" (string)
 ```
-Schema Engine automatically converts numbers when needed.
+Swift Rank automatically converts numbers when needed.
 
 ### 5. Empty Variables
 
@@ -336,7 +336,7 @@ Post title: My "Amazing" Post & Guide
 "headline": "My \"Amazing\" Post & Guide"
 ```
 
-Schema Engine handles:
+Swift Rank handles:
 - Quotes: `"` becomes `\"`
 - Backslashes: `\` becomes `\\`
 - Newlines: Converted to spaces
@@ -570,7 +570,7 @@ SELECT meta_key FROM wp_postmeta WHERE post_id = YOUR_ID;
 
 ## Pro Variable Features
 
-Schema Engine Pro adds additional variable capabilities:
+Swift Rank Pro adds additional variable capabilities:
 
 **Custom Variable Groups:**
 - Define your own variable groups
@@ -655,4 +655,4 @@ Schema Engine Pro adds additional variable capabilities:
 - **Validate Schema:** [Testing Your Schema](testing-schema.md)
 - **Learn Schema Types:** [Schema Type Guides](schema-types/)
 
-Dynamic variables make Schema Engine powerful and flexible. Master them, and you can automate schema for thousands of pages with a single template!
+Dynamic variables make Swift Rank powerful and flexible. Master them, and you can automate schema for thousands of pages with a single template!

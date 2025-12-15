@@ -70,13 +70,13 @@ That's it! FAQ schema is one of the simplest schema types.
 
 ### Step 1: Create FAQ Template
 
-1. Navigate to **Schema Engine → Add New**
+1. Navigate to **Swift Rank → Add New**
 2. Title: "FAQ Schema - Support Pages"
 3. Don't publish yet
 
 ### Step 2: Select Schema Type
 
-In the **Schema Engine** panel:
+In the **Swift Rank** panel:
 
 1. **Schema Type** dropdown → Select **FAQ Page**
 2. Panel refreshes with FAQ fields
@@ -172,7 +172,7 @@ Condition Group 1:
 ### Step 7: Test Your Schema
 
 1. Visit your FAQ page (frontend)
-2. Admin bar → **Schema Engine** → **Google Rich Results Test**
+2. Admin bar → **Swift Rank** → **Google Rich Results Test**
 3. Verify:
    - ✓ FAQ Page detected
    - ✓ All questions listed
@@ -250,24 +250,24 @@ Condition Group 1:
 
 ```
 Item 1:
-Q: How do I install Schema Engine?
-A: To install Schema Engine: 1) Log in to your WordPress admin dashboard. 2) Navigate to Plugins → Add New. 3) Search for "Schema Engine". 4) Click Install Now on the Schema Engine plugin. 5) Click Activate. The plugin is now installed and you can access it from the Schema Engine menu in your dashboard.
+Q: How do I install Swift Rank?
+A: To install Swift Rank: 1) Log in to your WordPress admin dashboard. 2) Navigate to Plugins → Add New. 3) Search for "Swift Rank". 4) Click Install Now on the Swift Rank plugin. 5) Click Activate. The plugin is now installed and you can access it from the Swift Rank menu in your dashboard.
 
 Item 2:
-Q: Do I need Schema Engine Pro?
-A: Schema Engine Pro is optional. The free version includes essential schema types (Article, Organization, Person, LocalBusiness, FAQ, and more) suitable for most websites. Schema Engine Pro adds advanced types (Recipe, Event, How-To), additional features (custom schema builder, advanced conditions), and priority support. If you need advanced schema types or features, Pro is recommended.
+Q: Do I need Swift Rank Pro?
+A: Swift Rank Pro is optional. The free version includes essential schema types (Article, Organization, Person, LocalBusiness, FAQ, and more) suitable for most websites. Swift Rank Pro adds advanced types (Recipe, Event, How-To), additional features (custom schema builder, advanced conditions), and priority support. If you need advanced schema types or features, Pro is recommended.
 
 Item 3:
 Q: How do I know if my schema is working?
-A: To verify your schema is working: 1) Visit a page with schema on the frontend while logged in. 2) Look at the admin bar and hover over "Schema Engine". 3) Click "Google Rich Results Test". 4) Google will analyze your page and show if schema is detected. You can also view your page source (right-click → View Page Source) and search for "application/ld+json" to see the schema markup directly.
+A: To verify your schema is working: 1) Visit a page with schema on the frontend while logged in. 2) Look at the admin bar and hover over "Swift Rank". 3) Click "Google Rich Results Test". 4) Google will analyze your page and show if schema is detected. You can also view your page source (right-click → View Page Source) and search for "application/ld+json" to see the schema markup directly.
 
 Item 4:
-Q: Can I use Schema Engine with other SEO plugins?
-A: Yes, Schema Engine works alongside other SEO plugins like Yoast SEO, Rank Math, and All in One SEO. However, you may want to disable schema features in other plugins to avoid duplicate schema markup. Schema Engine is designed to be the comprehensive solution for structured data on your site.
+Q: Can I use Swift Rank with other SEO plugins?
+A: Yes, Swift Rank works alongside other SEO plugins like Yoast SEO, Rank Math, and All in One SEO. However, you may want to disable schema features in other plugins to avoid duplicate schema markup. Swift Rank is designed to be the comprehensive solution for structured data on your site.
 
 Item 5:
 Q: Where can I get support?
-A: Free plugin support is available through the WordPress.org support forums. Schema Engine Pro users receive priority email support through our helpdesk at support.toolpress.net. Documentation and guides are available in the plugin's .docs folder and on our website at toolpress.net/schema-engine.
+A: Free plugin support is available through the WordPress.org support forums. Swift Rank Pro users receive priority email support through our helpdesk at support.toolpress.net. Documentation and guides are available in the plugin's .docs folder and on our website at toolpress.net/schema-engine.
 ```
 
 **Display Conditions:**
@@ -285,18 +285,18 @@ Condition Group 1:
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How do I install Schema Engine?",
+      "name": "How do I install Swift Rank?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "To install Schema Engine: 1) Log in to your WordPress admin dashboard. 2) Navigate to Plugins → Add New..."
+        "text": "To install Swift Rank: 1) Log in to your WordPress admin dashboard. 2) Navigate to Plugins → Add New..."
       }
     },
     {
       "@type": "Question",
-      "name": "Do I need Schema Engine Pro?",
+      "name": "Do I need Swift Rank Pro?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Schema Engine Pro is optional. The free version includes essential schema types..."
+        "text": "Swift Rank Pro is optional. The free version includes essential schema types..."
       }
     },
     {
@@ -309,10 +309,10 @@ Condition Group 1:
     },
     {
       "@type": "Question",
-      "name": "Can I use Schema Engine with other SEO plugins?",
+      "name": "Can I use Swift Rank with other SEO plugins?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, Schema Engine works alongside other SEO plugins like Yoast SEO..."
+        "text": "Yes, Swift Rank works alongside other SEO plugins like Yoast SEO..."
       }
     },
     {
@@ -376,8 +376,8 @@ Google has strict policies for FAQ rich results. Violating them can result in ma
 | Service information | Quora questions |
 | Help documentation | Community forums |
 
-**Schema Engine Free:** FAQPage only
-**Schema Engine Pro:** FAQPage and QAPage
+**Swift Rank Free:** FAQPage only
+**Swift Rank Pro:** FAQPage and QAPage
 
 ## Advanced Configurations
 
@@ -391,7 +391,7 @@ Google has strict policies for FAQ rich results. Violating them can result in ma
 1. Create FAQ template with empty items
 2. Set display conditions (e.g., Post Type = Pages)
 3. Edit each page
-4. Use Schema Engine metabox to add page-specific FAQs
+4. Use Swift Rank metabox to add page-specific FAQs
 
 ### FAQs on Multiple Page Types
 
@@ -438,7 +438,7 @@ Article schema for blog post
 = Both schemas output
 ```
 
-Schema Engine automatically combines them in a schema graph.
+Swift Rank automatically combines them in a schema graph.
 
 ## Common Issues
 
