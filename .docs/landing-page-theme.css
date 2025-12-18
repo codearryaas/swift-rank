@@ -1,0 +1,278 @@
+/* Swift Rank Landing Page - Red Hero Theme */
+
+:root {
+    /* Core Palette */
+    --primary-color: #B50000;
+    /* Deep Red */
+    --secondary-color: #10B981;
+    /* Emerald Green */
+    --accent-color: #F59E0B;
+    /* Amber Gold */
+
+    /* Neutrals */
+    --text-dark: #111827;
+    /* Gray 900 */
+    --text-medium: #4B5563;
+    /* Gray 600 */
+    --text-light: #D1D5DB;
+    /* Gray 300 */
+    --text-white: #FFFFFF;
+
+    --bg-white: #FFFFFF;
+    --bg-gray-50: #F9FAFB;
+    --bg-gray-100: #F3F4F6;
+    --bg-gray-800: #1F2937;
+    --bg-gray-900: #111827;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+/* =========================================
+   Section: Hero
+   ========================================= */
+.section-hero {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+}
+
+.section-hero .btn-primary {
+    background-color: var(--text-white);
+    color: var(--primary-color);
+}
+
+.section-hero .icon-accent {
+    color: var(--accent-color);
+}
+
+.section-hero .hero-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   Section: Problem Statement
+   ========================================= */
+.section-problem {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+}
+
+.section-problem .icon-feature {
+    color: var(--primary-color);
+}
+
+.section-problem .problem-card {
+    background-color: var(--bg-gray-50);
+    border: 1px solid var(--bg-gray-100);
+}
+
+/* =========================================
+   Section: Key Benefits
+   ========================================= */
+.section-benefits {
+    background-color: var(--bg-gray-50);
+    color: var(--text-dark);
+}
+
+.section-benefits .icon-benefit {
+    color: var(--primary-color);
+}
+
+.section-benefits .benefit-card {
+    background-color: var(--bg-white);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================================
+   Section: How It Works
+   ========================================= */
+.section-how-it-works {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+}
+
+.section-how-it-works .step-card {
+    background-color: var(--bg-white);
+    border: 1px solid #E5E7EB;
+    /* Gray 200 */
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.2s;
+}
+
+.section-how-it-works .step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+    /* Highlight on hover */
+}
+
+.section-how-it-works .step-number {
+    background-color: var(--primary-color);
+    /* Red Circle */
+    color: var(--text-white);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(181, 0, 0, 0.3);
+}
+
+/* =========================================
+   Section: Features
+   ========================================= */
+.section-features {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+}
+
+.section-features .feature-card {
+    background-color: var(--bg-white);
+    border: 1px solid #F3F4F6;
+    border-left: 4px solid transparent;
+    /* Prepare for hover effect */
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.section-features .feature-card:hover {
+    border-left-color: var(--accent-color);
+    /* Gold accent on hover */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.section-features .icon-feature {
+    color: var(--accent-color);
+    background-color: rgba(245, 158, 11, 0.1);
+    /* Soft Gold Background */
+    width: 3rem;
+    height: 3rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+/* =========================================
+   Section: Pricing
+   ========================================= */
+.section-pricing {
+    background-color: var(--bg-gray-100);
+    color: var(--text-dark);
+}
+
+.section-pricing .pricing-card {
+    background-color: var(--bg-white);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.section-pricing .pricing-card.featured {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 15px -3px rgba(181, 0, 0, 0.1);
+}
+
+.section-pricing .icon-check {
+    color: var(--primary-color);
+}
+
+/* =========================================
+   Section: Use Cases
+   ========================================= */
+.section-use-cases {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+}
+
+.section-use-cases .use-case-card {
+    background-color: var(--bg-white);
+    border: 1px solid #E5E7EB;
+    /* Gray 200 */
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.section-use-cases .use-case-card:hover {
+    background-color: var(--bg-white);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 6px -1px rgba(181, 0, 0, 0.1);
+}
+
+.section-use-cases .icon-use-case {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+/* =========================================
+   Section: Testimonials
+   ========================================= */
+.section-testimonials {
+    background-color: var(--bg-gray-900);
+    color: var(--bg-gray-50);
+}
+
+.section-testimonials .testimonial-card {
+    background-color: var(--bg-gray-800);
+    color: var(--bg-gray-50);
+}
+
+.section-testimonials .star-rating {
+    color: var(--accent-color);
+}
+
+/* =========================================
+   Section: Call to Action (CTA)
+   ========================================= */
+.section-cta {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    text-align: center;
+}
+
+.section-cta .btn-cta {
+    background-color: var(--text-white);
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* =========================================
+   Section: Footer
+   ========================================= */
+.section-footer {
+    background-color: var(--bg-gray-800);
+    color: var(--text-light);
+}
+
+.section-footer a {
+    color: #9CA3AF;
+    /* Gray 400 */
+}
+
+.section-footer a:hover {
+    color: var(--text-white);
+}
