@@ -96,7 +96,7 @@
 
 				// Build dropdown content
 				var html = '';
-				$.each(schemaVariables, function (category, variables) {
+				$.each(swiftRankSchemaVariables, function (category, variables) {
 					html += '<div class="swift-rank-var-category" style="padding: 8px 12px; background: #f0f0f1; font-weight: 600; font-size: 11px; text-transform: uppercase; color: #50575e; border-top: 1px solid #ddd;">' + category + '</div>';
 					$.each(variables, function (index, variable) {
 						html += '<div class="swift-rank-var-item" data-value="' + variable.value + '" style="padding: 8px 12px; cursor: pointer; font-size: 12px; border-bottom: 1px solid #f0f0f1;">' +

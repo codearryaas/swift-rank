@@ -4,7 +4,7 @@ Tags: schema, structured data, seo, json-ld, knowledge graph
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -147,6 +147,9 @@ Google recommends:
 1. Knowledge Graph Settings - Main configuration page with all schema options
 
 == Changelog ==
+
+== 1.0.3 - 2025-12-18 ==
+- Fix: naming of variable.
 
 == 1.0.2 - 2025-12-12 ==
 - Fix: JSON-LD output was not being escaped properly.
