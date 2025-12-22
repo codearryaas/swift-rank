@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: Swift Rank
- * Plugin URI: https://toolpress.net/plugins/swift-rank/
+ * Plugin URI: https://toolpress.net/swift-rank/
  * Description: Add Schema.org structured data to your WordPress site. Supports Organization and LocalBusiness schema with Knowledge Graph integration.
  * Version: 1.0.0
  * Requires at least: 5.0
  * Requires PHP: 7.0
- * Author: Rakesh Lawaju
- * Author URI: https://racase.com.np
+ * Author: ToolPress
+ * Author URI: https://toolpress.net
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: swift-rank

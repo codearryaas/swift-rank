@@ -57,18 +57,18 @@ class Swift_Rank_Blocks
 		$this->register_block('faq-item');
 
 		// Register HowTo block.
-		$this->register_block('howto');
+		// $this->register_block('howto');
 
 		// Register HowTo Step block.
-		$this->register_block('howto-step');
+		// $this->register_block('howto-step');
 
 		// Initialize FAQ block server-side rendering.
 		require_once SWIFT_RANK_PLUGIN_DIR . 'includes/blocks/class-faq-block.php';
 		FAQ_Block::get_instance();
 
 		// Initialize HowTo block server-side rendering.
-		require_once SWIFT_RANK_PLUGIN_DIR . 'includes/blocks/class-howto-block.php';
-		HowTo_Block::get_instance();
+		// require_once SWIFT_RANK_PLUGIN_DIR . 'includes/blocks/class-howto-block.php';
+		// HowTo_Block::get_instance();
 	}
 
 	/**

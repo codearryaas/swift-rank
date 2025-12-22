@@ -227,7 +227,7 @@ const SettingsApp = () => {
                         <h3>{__('Documentation', 'swift-rank')}</h3>
                         <p>{__('Learn how to get the most out of Swift Rank.', 'swift-rank')}</p>
                         <a
-                            href="https://toolpress.net/docs"
+                            href="https://toolpress.net/docs-category/swift-rank/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="button"
