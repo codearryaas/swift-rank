@@ -1,149 +1,119 @@
 === Swift Rank ===
 Contributors: racase
 Tags: schema, structured data, seo, json-ld, rich snippets
-Requires at least: 5.0
+Requires at least: 5.9
 Tested up to: 6.9
-Requires PHP: 7.0
+Requires PHP: 7.4
 Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Add Schema.org structured data to your WordPress site with reusable schema templates and dynamic variables.
+Simple, Powerful Schema Markup for WordPress. Boost your SEO, get rich results, and increase CTR, without coding.
 
 == Description ==
 
 Swift Rank helps you add professional Schema.org structured data to your WordPress website using the recommended JSON-LD format. Improve your search engine visibility and enable rich snippets in Google search results with powerful schema templates.
 
+**Why Schema Markup Matters for Your WordPress Site**
+
+Schema markup helps search engines understand your content better, leading to:
+
+*   **Rich Snippets**: Stand out in search results with star ratings, images, and more.
+*   **Higher Click-Through Rates**: Rich results get 30% more clicks on average.
+*   **Better Rankings**: Help Google understand your content context.
+*   **Knowledge Graph Visibility**: Establish your brand’s identity in Google’s Knowledge Graph.
+
 = Key Features =
 
-* **Schema Templates** - Create reusable schema templates with conditional display rules
-* **Multiple Schema Types** - Article, BlogPosting, NewsArticle, Event, FAQPage, HowTo, and more
-* **JSON-LD Format** - Uses Google's recommended JSON-LD structured data format
-* **Dynamic Variables System** - Insert WordPress data dynamically into schema fields
-* **Condition-Based Display** - Apply templates to specific post types, categories, or individual posts
-* **Media Library Integration** - Upload images directly from WordPress
-* **Clean Output** - Automatically removes empty values from schema output
-* **User-Friendly Interface** - Intuitive admin panel with tooltips and help documentation
+*   **Quick & Easy Setup**: No coding required. Get started in minutes with our visual template builder and setup wizard.
+*   **Automatic Schema Generation**: Set it once, apply it everywhere. Auto Schema for posts, pages, and products without creating templates.
+*   **Smart Template System**: Create reusable templates with conditional display rules. One template can power schema for hundreds of pages automatically.
+*   **Dynamic Variables**: Use `{post_title}`, `{featured_image}`, `{post_date}`, and 50+ variables to automatically populate schema fields from your WordPress content.
+*   **Condition-Based Display**: Apply templates to specific post types, categories, or individual posts.
+*   **Knowledge Graph Integration**: Add Organization, Person, or LocalBusiness schema to establish your site’s identity.
+*   **Real-Time Validation**: Built-in links to Google Rich Results Test and Schema.org Validator.
+*   **Import/Export Templates**: Backup, migrate, or share your schema templates between sites.
+*   **Clean Output**: Automatically removes empty values from schema output to ensure valid JSON-LD.
 
-= Schema Types Supported =
+= Supported Schema Types =
 
-**Article Types**
-Article, BlogPosting, and NewsArticle schemas for blog posts, news, and general content.
+We support 18+ schema types for every use case:
 
-**FAQPage**
-Structured data for FAQ pages with question and answer pairs.
+*   **Article Types**: Article, BlogPosting, NewsArticle
+*   **E-commerce**: Product (WooCommerce integration), Review, AggregateRating
+*   **Local Business**: LocalBusiness, Organization, Person
+*   **Creative Works**: VideoObject, Recipe (Pro), HowTo (Pro)
+*   **Events**: Event
+*   **FAQ**: FAQPage
+*   **Service**: Service
+*   **Job Posting**: JobPosting
+*   And more...
 
-**HowTo**
-Step-by-step guide schema with tools, supplies, and individual steps.
+= Swift Rank Pro Features =
 
-**Event**
-Event schema for conferences, meetups, and scheduled events.
+Unlock the full potential of your SEO with Swift Rank Pro:
 
-= Why Use Swift Rank? =
+*   **Recipe Schema**: Perfect for food bloggers to display cooking times, calories, and ratings.
+*   **HowTo Schema**: Step-by-step guides with tools and supplies.
+*   **Advanced Local Business**: Opening hours, departments, and more detailed location data.
+*   **Priority Support**: Get faster help from our expert team.
 
-Schema markup helps search engines understand your content better, which can lead to:
+= Frequently Asked Questions =
 
-* Enhanced search results with rich snippets
-* Better visibility in search results
-* Improved click-through rates from search results
-* Better representation in voice search results
+== Do I need coding skills to use Swift Rank? ==
 
-= Dynamic Variables =
+Absolutely not! Swift Rank is designed for non-technical users. The visual interface and setup wizard make it easy for anyone to add schema markup. If you can use WordPress, you can use Swift Rank.
 
-Swift Rank includes a powerful variables system:
+== How is Swift Rank different from other schema plugins? ==
 
-* `{post_title}` - Current post/page title
-* `{post_url}` - Current post/page URL
-* `{post_excerpt}` - Post excerpt
-* `{featured_image}` - Featured image URL
-* `{post_date}` - Publication date
-* `{author_name}` - Author display name
-* `{site_name}` - Your WordPress site name
-* `{site_url}` - Your site home URL
-* And many more...
+Swift Rank offers unique features like Auto Schema (automatic schema generation), template-based automation, import/export functionality, and a setup wizard. It’s designed to be both powerful for developers and easy for beginners.
 
-Variables update automatically when your content changes, keeping your schema data current without manual updates.
+== Will Swift Rank work with my theme and plugins? ==
 
-= Easy to Use =
+Yes! Swift Rank is compatible with all WordPress themes and works seamlessly with popular plugins like Yoast SEO, WooCommerce, and page builders.
 
-1. Install and activate the plugin
-2. Go to Swift Rank → Add New Template
-3. Choose your schema type
-4. Configure fields and conditions
-5. Save and test with Google Rich Results Test
+== How soon will I see rich snippets in search results? ==
+
+After implementing schema markup, Google needs to recrawl your pages. This can take anywhere from a few days to a few weeks. Swift Rank ensures your markup is correct, but Google decides when and if to show rich snippets.
+
+== What’s the difference between Auto Schema and Templates? ==
+
+Auto Schema automatically generates basic schema for all posts/pages without any setup. Templates give you full control over schema fields and display conditions. You can use both together for maximum coverage.
+
+== Can I export my schema templates? ==
+
+Yes! The import/export feature lets you backup templates, migrate between sites, or share configurations with team members.
 
 == Installation ==
 
-= Automatic Installation =
-
-1. Log in to your WordPress admin dashboard
-2. Navigate to Plugins → Add New
-3. Search for "Swift Rank"
-4. Click "Install Now" on the Swift Rank plugin
-5. Activate the plugin
-
-= Manual Installation =
-
-1. Download the plugin ZIP file
-2. Log in to your WordPress admin dashboard
-3. Navigate to Plugins → Add New → Upload Plugin
-4. Choose the downloaded ZIP file
-5. Click "Install Now"
-6. Activate the plugin
-
-= After Activation =
-
-1. Go to Swift Rank → Add New Template
-2. Choose your schema type (Article, FAQPage, etc.)
-3. Configure the schema fields
-4. Set display conditions
-5. Click "Publish"
-6. Visit a matching page and view source to verify schema output
-7. Test with Google Rich Results Test: https://search.google.com/test/rich-results
-
-== Frequently Asked Questions ==
-
-= What is Schema.org structured data? =
-
-Schema.org is a collaborative project that provides a collection of schemas (structured data markup) that webmasters can use to mark up their pages. Search engines like Google use this data to better understand your content and display rich results.
-
-= Does this plugin guarantee rich snippets in Google? =
-
-No plugin can guarantee rich snippets. Schema markup helps Google understand your content, but Google decides when and how to display rich results based on many factors including content quality and relevance.
-
-= How do schema templates work? =
-
-Create a template, select a schema type, configure the fields, and set conditions for which posts should use it. The template automatically applies to matching content.
-
-= How do I verify my schema is working? =
-
-1. Visit a page where your template applies
-2. View page source (Ctrl+U or Cmd+U)
-3. Look for `<!-- Swift Rank -->` comment
-4. Test with Google Rich Results Test: https://search.google.com/test/rich-results
-5. Validate with Schema.org validator: https://validator.schema.org/
-
-= What are variables and how do I use them? =
-
-Variables are placeholders that automatically insert dynamic WordPress data. Click the "Insert Variable" button next to any field, select a variable, and it will be added to your field. Variables update automatically when your content changes.
+1.  Log in to your WordPress admin dashboard.
+2.  Navigate to Plugins → Add New.
+3.  Search for "Swift Rank".
+4.  Click "Install Now" on the Swift Rank plugin.
+5.  Activate the plugin.
 
 == Screenshots ==
 
-1. Schema Template Editor - Create and configure schema templates
+1.  Schema Template Editor - Create and configure schema templates.
 
 == Changelog ==
 
+= 1.0.4 – 2025-12-22 =
+* New upgraded version release.
+
+= 1.0.3 – 2025-12-18 =
+* Fix: naming of variable.
+
+= 1.0.2 – 2025-12-12 =
+* Fix: JSON-LD output was not being escaped properly.
+
+= 1.0.1 – 2025-12-05 =
+* Update plugin name.
+
 = 1.0.0 - 2024-11-27 =
-* Initial release
+* Initial release.
 
 == Upgrade Notice ==
 
-= 1.0.0 =
-Initial release of Swift Rank. Add professional Schema.org structured data to your WordPress site.
-
-== Support ==
-
-For support, feature requests, or bug reports, please visit:
-* Documentation: See the Help tab in plugin settings
-* Website: https://toolpress.net/support
-* WordPress Support Forum: https://wordpress.org/support/plugin/swift-rank/
+= 1.0.4 – 2025-12-22 =
+Update readme description and FAQ to reflect latest features.
