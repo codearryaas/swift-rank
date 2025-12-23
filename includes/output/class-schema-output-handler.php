@@ -977,6 +977,19 @@ class Schema_Output_Handler
 		// We re-check is_array because variable might have been extracted above
 		elseif (is_array($schema[$target_field]) && isset($schema[$target_field]['id'])) {
 			$image_id = absint($schema[$target_field]['id']);
+
+			// Handle case where we have an empty image object (id=0, url='')
+			if (0 === $image_id && empty($schema[$target_field]['url'])) {
+				// Try fallback for main image field
+				if ('image' === $target_field) {
+					$image_id = $this->get_default_image_id();
+				}
+
+				// If still no ID, unset this field so we don't output an empty array
+				if (0 === $image_id) {
+					unset($schema[$target_field]);
+				}
+			}
 		}
 
 
@@ -995,7 +1008,7 @@ class Schema_Output_Handler
 		}
 
 		// Fallback: If not resolved yet (no ID or ID failed) and it's a variable
-		if (!$resolved && strpos($variable, '{') === 0) {
+		if (!$resolved && is_string($variable) && strpos($variable, '{') === 0) {
 			// If ID resolution fails but we have a variable (e.g. {site_logo}),
 			// try to resolve the variable to a URL and use that to create an ImageObject
 			if (!isset($this->variable_replacer)) {
