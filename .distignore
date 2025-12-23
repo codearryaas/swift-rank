@@ -25,6 +25,7 @@ yarn.lock
 /.wordpress-org
 /.git
 /bundle
+/release
 /node_modules
 /src
 /vendor
