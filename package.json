@@ -1,6 +1,6 @@
 {
   "name": "swift-rank",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "WordPress plugin for Schema.org structured data",
   "main": "index.js",
   "scripts": {
