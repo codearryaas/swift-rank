@@ -1,0 +1,28 @@
+{
+    "landingPage": "/wp-admin/admin.php?page=swift-rank",
+    "preferredVersions": {
+        "php": "8.0",
+        "wp": "latest"
+    },
+    "phpExtensionBundles": [
+        "kitchen-sink"
+    ],
+    "steps": [
+        {
+            "step": "login",
+            "username": "admin",
+            "password": "password"
+        },
+        {
+            "step": "installPlugin",
+            "pluginData": {
+                "resource": "wordpress.org/plugins",
+                "slug": "swift-rank"
+            }
+        },
+        {
+            "step": "activatePlugin",
+            "pluginSlug": "swift-rank"
+        }
+    ]
+}
