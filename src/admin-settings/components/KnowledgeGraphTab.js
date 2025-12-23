@@ -3,20 +3,20 @@ import { useEffect } from '@wordpress/element';
 import Icon from '../../components/Icon';
 import FieldsBuilder from '../../components/FieldsBuilder';
 import FieldRenderer from '../../components/FieldRenderer';
-import knowledgeBaseFields from '../config/knowledge-base-fields';
+import knowledgeGraphFields from '../config/knowledge-graph-fields';
 
-const KnowledgeBaseTab = ({ settings, updateSetting }) => {
-    const knowledgeBaseEnabled = settings.knowledge_base_enabled || false;
-    const knowledgeBaseType = settings.knowledge_base_type || 'Organization';
+const KnowledgeGraphTab = ({ settings, updateSetting }) => {
+    const knowledgeGraphEnabled = settings.knowledge_graph_enabled || false;
+    const knowledgeGraphType = settings.knowledge_graph_type || 'Organization';
     const organizationFields = settings.organization_fields || {};
     const personFields = settings.person_fields || {};
     const localBusinessFields = settings.localbusiness_fields || {};
 
     // Get appropriate fields based on type
     let currentFields;
-    if (knowledgeBaseType === 'Person') {
+    if (knowledgeGraphType === 'Person') {
         currentFields = personFields;
-    } else if (knowledgeBaseType === 'LocalBusiness') {
+    } else if (knowledgeGraphType === 'LocalBusiness') {
         currentFields = localBusinessFields;
     } else {
         currentFields = organizationFields;
@@ -26,7 +26,7 @@ const KnowledgeBaseTab = ({ settings, updateSetting }) => {
     useEffect(() => {
         // Get schema types from localized data
         const schemaTypes = window.swiftRankSettings?.schemaTypes || [];
-        const schemaType = schemaTypes.find(t => t.value === knowledgeBaseType);
+        const schemaType = schemaTypes.find(t => t.value === knowledgeGraphType);
 
         if (schemaType?.fields) {
             // Build initial fields with defaults
@@ -48,22 +48,22 @@ const KnowledgeBaseTab = ({ settings, updateSetting }) => {
 
             // Only update if we need to initialize missing fields
             if (needsInit && Object.keys(initialFields).length > 0) {
-                if (knowledgeBaseType === 'Person') {
+                if (knowledgeGraphType === 'Person') {
                     updateSetting('person_fields', initialFields);
-                } else if (knowledgeBaseType === 'LocalBusiness') {
+                } else if (knowledgeGraphType === 'LocalBusiness') {
                     updateSetting('localbusiness_fields', initialFields);
                 } else {
                     updateSetting('organization_fields', initialFields);
                 }
             }
         }
-    }, [knowledgeBaseType]);
+    }, [knowledgeGraphType]);
 
     // Handle fields update from FieldsBuilder
     const handleFieldsChange = (newFields) => {
-        if (knowledgeBaseType === 'Person') {
+        if (knowledgeGraphType === 'Person') {
             updateSetting('person_fields', newFields);
-        } else if (knowledgeBaseType === 'LocalBusiness') {
+        } else if (knowledgeGraphType === 'LocalBusiness') {
             updateSetting('localbusiness_fields', newFields);
         } else {
             updateSetting('organization_fields', newFields);
@@ -76,15 +76,15 @@ const KnowledgeBaseTab = ({ settings, updateSetting }) => {
     };
 
     return (
-        <div className="swift-rank-knowledge-base-settings">
-            <h2>{__('Knowledge Base Schema', 'swift-rank')}</h2>
+        <div className="swift-rank-knowledge-graph-settings">
+            <h2>{__('Knowledge Graph Schema', 'swift-rank')}</h2>
             <p className="description">
                 {__('Configure Organization or Person schema to establish your site\'s identity in Google Knowledge Graph.', 'swift-rank')}
             </p>
 
             <div className="schema-fields-container" style={{ marginTop: '20px' }}>
                 {/* Render top-level toggle and select fields using FieldRenderer */}
-                {knowledgeBaseFields.map((fieldConfig) => (
+                {knowledgeGraphFields.map((fieldConfig) => (
                     <FieldRenderer
                         key={fieldConfig.name}
                         fieldConfig={fieldConfig}
@@ -100,8 +100,8 @@ const KnowledgeBaseTab = ({ settings, updateSetting }) => {
                 {/* Render schema-specific fields using FieldsBuilder */}
                 <div style={{ marginTop: '20px' }}>
                     <FieldsBuilder
-                        key={knowledgeBaseType}
-                        schemaType={knowledgeBaseType}
+                        key={knowledgeGraphType}
+                        schemaType={knowledgeGraphType}
                         fields={currentFields}
                         onChange={handleFieldsChange}
                         isPostMetabox={false}
@@ -126,4 +126,4 @@ const KnowledgeBaseTab = ({ settings, updateSetting }) => {
     );
 };
 
-export default KnowledgeBaseTab;
+export default KnowledgeGraphTab;

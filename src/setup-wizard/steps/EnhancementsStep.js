@@ -7,7 +7,7 @@ const EnhancementsStep = ({ onNext, onBack, onSkip, currentStep, totalSteps, isS
     const isProActive = typeof window.swiftRankWizardSettings !== 'undefined' && window.swiftRankWizardSettings.isProActive;
 
     const [formData, setFormData] = useState({
-        knowledge_base_enabled: initialData.knowledge_base_enabled !== undefined ? initialData.knowledge_base_enabled : true,
+        knowledge_graph_enabled: initialData.knowledge_graph_enabled !== undefined ? initialData.knowledge_graph_enabled : true,
         breadcrumb_enabled: initialData.breadcrumb_enabled !== undefined ? initialData.breadcrumb_enabled : true,
         sitelinks_searchbox: initialData.sitelinks_searchbox !== undefined ? initialData.sitelinks_searchbox : false,
     });
@@ -35,9 +35,9 @@ const EnhancementsStep = ({ onNext, onBack, onSkip, currentStep, totalSteps, isS
                 <div className="enhancement-item">
                     <div className="enhancement-header">
                         <ToggleControl
-                            label={__('Enable Knowledge Base Schema', 'swift-rank')}
-                            checked={formData.knowledge_base_enabled}
-                            onChange={(value) => handleChange('knowledge_base_enabled', value)}
+                            label={__('Enable Knowledge Graph Schema', 'swift-rank')}
+                            checked={formData.knowledge_graph_enabled}
+                            onChange={(value) => handleChange('knowledge_graph_enabled', value)}
                         />
                     </div>
                     <p className="enhancement-description">

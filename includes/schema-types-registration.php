@@ -75,7 +75,7 @@ function swift_rank_register_base_types($types)
                     }
 
                     // Check if this is a Pro type
-                    $is_pro_type = in_array($type_value, $pro_schema_types, true);
+                    $is_pro_type = in_array($type_value, $pro_schema_types, true) || (isset($structure['isPro']) && $structure['isPro']);
 
                     $types[$type_value] = array(
                         'label' => $label,

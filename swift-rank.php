@@ -183,9 +183,9 @@ class Swift_Rank
 			'minify_schema' => true,
 			'default_image' => array('url' => '', 'id' => 0, 'width' => 0, 'height' => 0),
 
-			// Knowledge Base
-			'knowledge_base_enabled' => true,
-			'knowledge_base_type' => 'Organization',
+			// Knowledge Graph settings.
+			'knowledge_graph_enabled' => true,
+			'knowledge_graph_type' => 'Organization',
 			'organization_fields' => array(
 				'organizationType' => 'Organization',
 				'name' => '{site_name}',

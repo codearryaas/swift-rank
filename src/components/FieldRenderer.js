@@ -710,7 +710,7 @@ const FieldRenderer = ({ fieldConfig, value, onChange, fields, isOverridden, onR
 				tooltip={tooltip}
 				placeholder={fieldConfig.placeholder}
 				targets={fieldConfig.targets || ['Person']}
-				sources={fieldConfig.sources || ['users', 'knowledge_base']}
+				sources={fieldConfig.sources || ['users', 'knowledge_graph']}
 				allowCustom={fieldConfig.allowCustom !== false}
 				customPlaceholder={fieldConfig.customPlaceholder}
 				isOverridden={isOverridden}

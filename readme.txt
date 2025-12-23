@@ -25,15 +25,14 @@ Schema markup helps search engines understand your content better, leading to:
 
 = Key Features =
 
-*   **Quick & Easy Setup**: No coding required. Get started in minutes with our visual template builder and setup wizard.
-*   **Automatic Schema Generation**: Set it once, apply it everywhere. Auto Schema for posts, pages, and products without creating templates.
-*   **Smart Template System**: Create reusable templates with conditional display rules. One template can power schema for hundreds of pages automatically.
-*   **Dynamic Variables**: Use `{post_title}`, `{featured_image}`, `{post_date}`, and 50+ variables to automatically populate schema fields from your WordPress content.
-*   **Condition-Based Display**: Apply templates to specific post types, categories, or individual posts.
-*   **Knowledge Graph Integration**: Add Organization, Person, or LocalBusiness schema to establish your site’s identity.
-*   **Real-Time Validation**: Built-in links to Google Rich Results Test and Schema.org Validator.
-*   **Import/Export Templates**: Backup, migrate, or share your schema templates between sites.
-*   **Clean Output**: Automatically removes empty values from schema output to ensure valid JSON-LD.
+*   **[Quick & Easy Setup](https://toolpress.net/documentation/setup-wizard-of-swift-rank/)**: No coding required. Get started in minutes with our visual template builder and setup wizard.
+*   **[Schema Templates](https://toolpress.net/documentation/how-to-add-schema-templates-in-swift-rank/)**: Set it once, apply it everywhere. Auto Schema for posts, pages, and products without creating templates.
+*   **[Dynamic Variables](https://toolpress.net/documentation/dynamic-variables-in-swift-rank/)**: Use `{post_title}`, `{featured_image}`, `{post_date}`, and 50+ variables to automatically populate schema fields from your WordPress content.
+*   **[Condition-Based Display](https://toolpress.net/documentation/conditions-tab-display-conditions/)**: Apply templates to specific post types, categories, or individual posts.
+*   **[Knowledge Graph Integration](https://toolpress.net/documentation/knowledge-base-tab-of-the-swift-rank/)**: Add Organization, Person, or LocalBusiness schema to establish your site’s identity.
+*   **[Real-Time Validation](https://toolpress.net/docs-category/swift-rank/)**: Built-in links to Google Rich Results Test and Schema.org Validator.
+*   **[Import/Export Templates](https://toolpress.net/documentation/import-export-schema-templates/)**: Backup, migrate, or share your schema templates between sites.
+*   **[Clean Output](https://toolpress.net/documentation/general-settings-of-the-swift-rank/)**: Automatically removes empty values from schema output to ensure valid JSON-LD.
 
 = Supported Schema Types =
 

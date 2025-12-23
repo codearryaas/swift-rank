@@ -6,19 +6,19 @@ import FieldsBuilder from '../../components/FieldsBuilder';
 
 const SiteInfoStep = ({ onNext, onBack, onSkip, currentStep, totalSteps, isSaving, initialData }) => {
     const [formData, setFormData] = useState({
-        knowledge_base_type: initialData.knowledge_base_type || 'Organization',
+        knowledge_graph_type: initialData.knowledge_graph_type || 'Organization',
         organization_fields: initialData.organization_fields || {},
         person_fields: initialData.person_fields || {},
         localbusiness_fields: initialData.localbusiness_fields || {},
     });
 
-    const knowledgeBaseType = formData.knowledge_base_type;
+    const knowledgeGraphType = formData.knowledge_graph_type;
 
     // Get appropriate fields based on type
     let currentFields;
-    if (knowledgeBaseType === 'Person') {
+    if (knowledgeGraphType === 'Person') {
         currentFields = formData.person_fields;
-    } else if (knowledgeBaseType === 'LocalBusiness') {
+    } else if (knowledgeGraphType === 'LocalBusiness') {
         currentFields = formData.localbusiness_fields;
     } else {
         currentFields = formData.organization_fields;
@@ -28,18 +28,18 @@ const SiteInfoStep = ({ onNext, onBack, onSkip, currentStep, totalSteps, isSavin
     const handleTypeChange = (value) => {
         setFormData({
             ...formData,
-            knowledge_base_type: value,
+            knowledge_graph_type: value,
         });
     };
 
     // Handle schema fields change from FieldsBuilder
     const handleFieldsChange = (newFields) => {
-        if (knowledgeBaseType === 'Person') {
+        if (knowledgeGraphType === 'Person') {
             setFormData({
                 ...formData,
                 person_fields: newFields,
             });
-        } else if (knowledgeBaseType === 'LocalBusiness') {
+        } else if (knowledgeGraphType === 'LocalBusiness') {
             setFormData({
                 ...formData,
                 localbusiness_fields: newFields,
@@ -55,7 +55,7 @@ const SiteInfoStep = ({ onNext, onBack, onSkip, currentStep, totalSteps, isSavin
     const handleNext = () => {
         // Extract only the values, not the entire field objects
         const dataToSave = {
-            knowledge_base_type: formData.knowledge_base_type,
+            knowledge_graph_type: formData.knowledge_graph_type,
             organization_fields: formData.organization_fields,
             person_fields: formData.person_fields,
             localbusiness_fields: formData.localbusiness_fields,
@@ -65,7 +65,7 @@ const SiteInfoStep = ({ onNext, onBack, onSkip, currentStep, totalSteps, isSavin
 
     // Type selector field config
     const typeSelectorField = {
-        name: 'knowledge_base_type',
+        name: 'knowledge_graph_type',
         label: __('Website Type', 'swift-rank'),
         type: 'select',
         options: [
@@ -92,7 +92,7 @@ const SiteInfoStep = ({ onNext, onBack, onSkip, currentStep, totalSteps, isSavin
                 {/* Type Selector */}
                 <FieldRenderer
                     fieldConfig={typeSelectorField}
-                    value={knowledgeBaseType}
+                    value={knowledgeGraphType}
                     onChange={handleTypeChange}
                     fields={formData}
                     isPostMetabox={false}
@@ -101,8 +101,8 @@ const SiteInfoStep = ({ onNext, onBack, onSkip, currentStep, totalSteps, isSavin
                 {/* Schema-specific fields using FieldsBuilder */}
                 <div style={{ marginTop: '20px' }}>
                     <FieldsBuilder
-                        key={knowledgeBaseType}
-                        schemaType={knowledgeBaseType}
+                        key={knowledgeGraphType}
+                        schemaType={knowledgeGraphType}
                         fields={currentFields}
                         onChange={handleFieldsChange}
                         isPostMetabox={false}

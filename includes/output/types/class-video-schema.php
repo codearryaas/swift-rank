@@ -94,6 +94,7 @@ class Schema_Video implements Schema_Builder_Interface
             'description' => __('A video file or video content.', 'swift-rank'),
             'url' => 'https://schema.org/VideoObject',
             'icon' => 'video',
+            'isPro' => true,
         );
     }
 

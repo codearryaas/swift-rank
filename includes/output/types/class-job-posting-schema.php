@@ -33,6 +33,7 @@ class Schema_Job_Posting implements Schema_Builder_Interface
 			'description' => __('A listing that describes a job opening in an organization.', 'swift-rank'),
 			'url' => 'https://schema.org/JobPosting',
 			'icon' => 'briefcase',
+			'isPro' => true,
 		);
 	}
 

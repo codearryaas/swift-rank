@@ -75,13 +75,13 @@ class Schema_Webpage implements Schema_Builder_Interface
         );
 
         // Link to Organization (About)
-        // Determine KB type from settings
+        // Determine KG type from settings
         $settings = get_option('swift_rank_settings', array());
-        $kb_type = isset($settings['knowledge_base_type']) ? $settings['knowledge_base_type'] : 'Organization';
+        $kg_type = isset($settings['knowledge_graph_type']) ? $settings['knowledge_graph_type'] : 'Organization';
 
         $schema['about'] = array(
-            '@type' => $kb_type,
-            '@id' => '{site_url}/#' . strtolower($kb_type),
+            '@type' => $kg_type,
+            '@id' => '{site_url}/#' . strtolower($kg_type),
         );
 
 

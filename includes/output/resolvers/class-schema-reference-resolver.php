@@ -165,8 +165,8 @@ if (!class_exists('Schema_Reference_Resolver')) {
 				case 'schema_template':
 					return self::resolve_schema_template_reference($id);
 
-				case 'knowledge_base':
-					return self::resolve_knowledge_base_reference($id);
+				case 'knowledge_graph':
+					return self::resolve_knowledge_graph_reference($id);
 
 				default:
 					return null;
@@ -437,19 +437,19 @@ if (!class_exists('Schema_Reference_Resolver')) {
 		}
 
 		/**
-		 * Resolve a knowledge base reference to @id or inline schema
+		 * Resolve a Knowledge Graph reference to @id or inline schema
 		 *
-		 * @param string $key Knowledge base key (typically 'knowledge_base').
+		 * @param string $key Knowledge Graph key (typically 'knowledge_graph').
 		 * @return array|null @id reference or inline schema, or null if not found.
 		 */
-		private static function resolve_knowledge_base_reference($key)
+		private static function resolve_knowledge_graph_reference($key)
 		{
 			// Check if Schema_Reference_Manager exists (from base plugin)
 			if (!class_exists('Schema_Reference_Manager')) {
 				return null;
 			}
 
-			// Get knowledge base settings
+			// Get Knowledge Graph settings
 			$settings = get_option('swift_rank_settings', array());
 
 			// Ensure we always have an entity to output if referenced, regardless of enabled status
@@ -458,68 +458,68 @@ if (!class_exists('Schema_Reference_Resolver')) {
 				return null;
 			}
 
-			$kb_type = isset($settings['knowledge_base_type']) ? $settings['knowledge_base_type'] : 'Organization';
-			$kb_schema = null;
-			$kb_ref = null;
+			$kg_type = isset($settings['knowledge_graph_type']) ? $settings['knowledge_graph_type'] : 'Organization';
+			$kg_schema = null;
+			$kg_ref = null;
 
 			// Build schema and reference based on type
-			if ($kb_type === 'Organization') {
-				$kb_ref = array(
+			if ($kg_type === 'Organization') {
+				$kg_ref = array(
 					'@type' => 'Organization',
 					'@id' => Schema_Reference_Manager::get_organization_id(),
 				);
-				$kb_schema = $kb_ref; // Start with ID/Type
-				$kb_fields = isset($settings['organization_fields']) ? $settings['organization_fields'] : array();
-			} elseif ($kb_type === 'Person') {
-				$kb_ref = array(
+				$kg_schema = $kg_ref; // Start with ID/Type
+				$kg_fields = isset($settings['organization_fields']) ? $settings['organization_fields'] : array();
+			} elseif ($kg_type === 'Person') {
+				$kg_ref = array(
 					'@type' => 'Person',
 					'@id' => home_url('/#person'),
 				);
-				$kb_schema = $kb_ref;
-				$kb_fields = isset($settings['person_fields']) ? $settings['person_fields'] : array();
-			} elseif ($kb_type === 'LocalBusiness') {
-				$kb_ref = array(
+				$kg_schema = $kg_ref;
+				$kg_fields = isset($settings['person_fields']) ? $settings['person_fields'] : array();
+			} elseif ($kg_type === 'LocalBusiness') {
+				$kg_ref = array(
 					'@type' => 'LocalBusiness',
 					'@id' => home_url('/#localbusiness'),
 				);
-				$kb_schema = $kb_ref;
-				$kb_fields = isset($settings['localbusiness_fields']) ? $settings['localbusiness_fields'] : array();
+				$kg_schema = $kg_ref;
+				$kg_fields = isset($settings['localbusiness_fields']) ? $settings['localbusiness_fields'] : array();
 			}
 
-			if ($kb_schema && isset($kb_fields)) {
+			if ($kg_schema && isset($kg_fields)) {
 				// Use the base plugin's schema builder to ensure proper structuring
 				// This ensures logo becomes ImageObject, address becomes PostalAddress, etc.
 				if (class_exists('Schema_Output_Handler')) {
 					$output_handler = Schema_Output_Handler::get_instance();
-					$built_schema = $output_handler->build_schema($kb_type, $kb_fields);
+					$built_schema = $output_handler->build_schema($kg_type, $kg_fields);
 
 					// Merge the built schema (which has proper structure) with our @id
 					if (!empty($built_schema)) {
 						// Remove @context if present (we only need it in the graph root)
 						unset($built_schema['@context']);
-						$kb_schema = array_merge($kb_schema, $built_schema);
+						$kg_schema = array_merge($kg_schema, $built_schema);
 					}
 				} else {
-					// Fallback: Add all fields from KB settings if handler not available
-					foreach ($kb_fields as $field_name => $field_value) {
+					// Fallback: Add all fields from KG settings if handler not available
+					foreach ($kg_fields as $field_name => $field_value) {
 						// Skip empty values
 						if ($field_value === null || $field_value === '' || (is_array($field_value) && empty($field_value))) {
 							continue;
 						}
 
-						$kb_schema[$field_name] = $field_value;
+						$kg_schema[$field_name] = $field_value;
 					}
 				}
 
 				// Variable replacement is already done by build_schema, but apply again to be safe
-				$kb_schema = self::replace_variables($kb_schema);
+				$kg_schema = self::replace_variables($kg_schema);
 
 				// Add to extra schemas queue to ensure it's in the graph
-				self::$extra_schemas[] = $kb_schema;
+				self::$extra_schemas[] = $kg_schema;
 			}
 
 			// ALWAYS return the @id reference
-			return $kb_ref;
+			return $kg_ref;
 		}
 
 		/**

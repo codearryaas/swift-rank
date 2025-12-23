@@ -67,6 +67,7 @@ import {
 	Edit3,
 	List,
 	File,
+	Minus,
 } from 'lucide-react';
 import { Icon as WPIcon } from '@wordpress/components';
 
@@ -133,6 +134,7 @@ const iconMap = {
 	'edit-3': Edit3,
 	'list': List,
 	'file': File,
+	'minus': Minus,
 };
 
 const Icon = ({ name, size = 24, className = '', style = {}, color }) => {

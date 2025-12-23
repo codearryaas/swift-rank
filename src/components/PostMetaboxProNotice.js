@@ -16,7 +16,7 @@ const PostMetaboxProNotice = () => {
 
 	const message = isUserProfile
 		? __('Unlock Pro to assign schema templates to users based on roles.', 'swift-rank')
-		: __('Unlock Pro schema types, advanced variables & WooCommerce integration', 'swift-rank');
+		: __('Unlock Pro schema types, paywall support, advanced variables & WooCommerce integration', 'swift-rank');
 
 	return (
 		<ProNotice

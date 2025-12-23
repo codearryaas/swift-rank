@@ -95,11 +95,11 @@ class Wizard_API
     public function get_wizard_data($request)
     {
         $settings = get_option('swift_rank_settings', array());
-        $knowledge_base = get_option('swift_rank_knowledge_base', array());
+
 
         $data = array(
             2 => array(
-                'knowledge_base_type' => isset($settings['knowledge_base_type']) ? $settings['knowledge_base_type'] : 'Organization',
+                'knowledge_graph_type' => isset($settings['knowledge_graph_type']) ? $settings['knowledge_graph_type'] : 'Organization',
                 'organization_fields' => isset($settings['organization_fields']) ? $settings['organization_fields'] : array(),
                 'person_fields' => isset($settings['person_fields']) ? $settings['person_fields'] : array(),
                 'localbusiness_fields' => isset($settings['localbusiness_fields']) ? $settings['localbusiness_fields'] : array(),
@@ -120,7 +120,7 @@ class Wizard_API
                 'woocommerce_enabled' => isset($settings['auto_schema_woocommerce_enabled']) ? $settings['auto_schema_woocommerce_enabled'] : true,
             ),
             5 => array(
-                'knowledge_base_enabled' => isset($settings['knowledge_base_enabled']) ? $settings['knowledge_base_enabled'] : true,
+                'knowledge_graph_enabled' => isset($settings['knowledge_graph_enabled']) ? $settings['knowledge_graph_enabled'] : true,
                 'breadcrumb_enabled' => isset($settings['breadcrumb_enabled']) ? $settings['breadcrumb_enabled'] : true,
                 'sitelinks_searchbox' => isset($settings['sitelinks_searchbox']) ? $settings['sitelinks_searchbox'] : false,
             ),
@@ -190,12 +190,12 @@ class Wizard_API
                 break;
 
             case 2:
-                // Site Info - save to knowledge base
+                // Site Info - save to Knowledge Graph
                 $this->save_site_info($data);
                 break;
 
             case 3:
-                // Social Profiles - save to knowledge base
+                // Social Profiles - save to Knowledge Graph
                 $this->save_social_profiles($data);
                 break;
 
@@ -238,10 +238,10 @@ class Wizard_API
     {
         $settings = get_option('swift_rank_settings', array());
 
-        // Save knowledge base type
-        if (isset($data['knowledge_base_type'])) {
-            $settings['knowledge_base_enabled'] = true;
-            $settings['knowledge_base_type'] = sanitize_text_field($data['knowledge_base_type']);
+        // Save Knowledge Graph type
+        if (isset($data['knowledge_graph_type'])) {
+            $settings['knowledge_graph_enabled'] = true;
+            $settings['knowledge_graph_type'] = sanitize_text_field($data['knowledge_graph_type']);
         }
 
         // Save organization fields
@@ -324,9 +324,9 @@ class Wizard_API
     {
         $settings = get_option('swift_rank_settings', array());
 
-        // Knowledge Base settings
-        if (isset($data['knowledge_base_enabled'])) {
-            $settings['knowledge_base_enabled'] = (bool) $data['knowledge_base_enabled'];
+        // Knowledge Graph settings
+        if (isset($data['knowledge_graph_enabled'])) {
+            $settings['knowledge_graph_enabled'] = (bool) $data['knowledge_graph_enabled'];
         }
 
         if (isset($data['breadcrumb_enabled'])) {

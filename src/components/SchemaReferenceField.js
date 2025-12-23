@@ -22,15 +22,15 @@ const SchemaReferenceField = ({
 	onChange,
 	tooltip,
 	placeholder,
-	targets = ['Person'], // Allowed schema types
-	sources = ['users', 'knowledge_base', 'media'], // Where to look for entities
+	target = ['Person'], // Allowed schema types
+	sources = ['users', 'knowledge_graph', 'media'], // Where to look for entities
 	allowCustom = false, // Allow custom text input
 	customPlaceholder = '',
 	isOverridden = false,
 	onReset,
 	required = false,
 }) => {
-	const [entities, setEntities] = useState({ global: [], users: [], schema_templates: [], knowledge_base: [], media: [] });
+	const [entities, setEntities] = useState({ global: [], users: [], schema_templates: [], knowledge_graph: [], media: [] });
 	const [loading, setLoading] = useState(true);
 	const [mode, setMode] = useState('reference'); // 'reference' or 'custom'
 	const [searchQuery, setSearchQuery] = useState('');
@@ -70,7 +70,7 @@ const SchemaReferenceField = ({
 			setEntities(response);
 		} catch (error) {
 			console.error('Failed to fetch entities:', error);
-			setEntities({ global: [], users: [], schema_templates: [], knowledge_base: [] });
+			setEntities({ global: [], users: [], schema_templates: [], knowledge_graph: [] });
 		} finally {
 			setLoading(false);
 		}
@@ -142,12 +142,12 @@ const SchemaReferenceField = ({
 			});
 		}
 
-		// Add knowledge base
-		if (sources.includes('knowledge_base') && entities.knowledge_base && entities.knowledge_base.length > 0) {
+		// Add Knowledge Graph
+		if (sources.includes('knowledge_graph') && entities.knowledge_graph && entities.knowledge_graph.length > 0) {
 			options.push({
-				label: __('Knowledge Base', 'swift-rank-pro'),
-				options: entities.knowledge_base.map(entity => ({
-					value: JSON.stringify({ type: 'reference', source: 'knowledge_base', id: entity.id }),
+				label: __('Knowledge Graph', 'swift-rank-pro'),
+				options: entities.knowledge_graph.map(entity => ({
+					value: JSON.stringify({ type: 'reference', source: 'knowledge_graph', id: entity.id }),
 					label: entity.label,
 					icon: entity.icon,
 					description: entity.description,

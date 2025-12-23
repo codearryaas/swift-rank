@@ -1,23 +1,114 @@
 import { __ } from '@wordpress/i18n';
 import Icon from '../../components/Icon';
 
-const FeatureCard = ({ icon, title, items, highlight }) => {
+const ComparisonTable = () => {
+    const features = [
+        {
+            category: __('Schema Types', 'swift-rank'),
+            items: [
+                { name: __('Article & Blog Posting', 'swift-rank'), free: true, pro: true },
+                { name: __('WebPage Schema', 'swift-rank'), free: true, pro: true },
+                { name: __('Organization Schema', 'swift-rank'), free: true, pro: true },
+                { name: __('Person Schema', 'swift-rank'), free: true, pro: true },
+                { name: __('Local Business Schema', 'swift-rank'), free: true, pro: true },
+                { name: __('Product Schema', 'swift-rank'), free: true, pro: true },
+                { name: __('Author Schema', 'swift-rank'), free: false, pro: true },
+                { name: __('Recipe Schema', 'swift-rank'), free: false, pro: true },
+                { name: __('Event Schema', 'swift-rank'), free: false, pro: true },
+                { name: __('Video Schema', 'swift-rank'), free: false, pro: true },
+                // { name: __('Course Schema', 'swift-rank'), free: false, pro: true },
+                { name: __('Job Posting Schema', 'swift-rank'), free: false, pro: true },
+                { name: __('Review & AggregateRating', 'swift-rank'), free: true, pro: true },
+                { name: __('FAQ Page Schema', 'swift-rank'), free: true, pro: true },
+                { name: __('HowTo Schema', 'swift-rank'), free: false, pro: true },
+                // { name: __('Podcast Episode', 'swift-rank'), free: false, pro: true },
+                // { name: __('Software Application', 'swift-rank'), free: false, pro: true },
+            ]
+        },
+        // {
+        //     category: __('WooCommerce SEO', 'swift-rank'),
+        //     items: [
+        //         { name: __('Basic Product Schema', 'swift-rank'), free: true, pro: true },
+        //         { name: __('Automated Product Schema', 'swift-rank'), free: false, pro: true },
+        //         { name: __('Price & Stock Sync', 'swift-rank'), free: false, pro: true },
+        //         { name: __('Product Reviews & Ratings', 'swift-rank'), free: false, pro: true },
+        //         { name: __('Brand & SKU Data', 'swift-rank'), free: false, pro: true },
+        //         { name: __('Merchant Return Policy', 'swift-rank'), free: false, pro: true },
+        //         { name: __('Shipping Details', 'swift-rank'), free: false, pro: true },
+        //     ]
+        // },
+        {
+            category: __('Advanced Features', 'swift-rank'),
+            items: [
+                { name: __('Custom Schema Builder', 'swift-rank'), free: false, pro: true },
+                { name: __('BreadcrumbList Schema', 'swift-rank'), free: true, pro: true },
+                { name: __('Sitelinks Searchbox', 'swift-rank'), free: true, pro: true },
+                { name: __('Advanced Display Conditions', 'swift-rank'), free: false, pro: true },
+                { name: __('Advanced Variables', 'swift-rank'), free: false, pro: true },
+                { name: __('Custom Code Placement', 'swift-rank'), free: false, pro: true },
+                { name: __('Prebuild Schema Templates', 'swift-rank'), free: false, pro: true },
+                { name: __('Paywall Content Support', 'swift-rank'), free: false, pro: true },
+                { name: __('Local Business Opening Hours', 'swift-rank'), free: false, pro: true },
+                { name: __('Schema Linking', 'swift-rank'), free: false, pro: true },
+                { name: __('Default Image Fallback', 'swift-rank'), free: false, pro: true },
+                { name: __('Custom Social Profiles', 'swift-rank'), free: false, pro: true },
+                { name: __('Priority Support', 'swift-rank'), free: false, pro: true },
+            ]
+        }
+    ];
+
     return (
-        <div className={`upgrade-feature-card ${highlight ? 'highlight' : ''}`}>
-            <div className="feature-icon-wrapper">
-                <Icon name={icon} size={24} />
-            </div>
-            <h3 className="upgrade-feature-title">
-                {title}
-            </h3>
-            <ul className="upgrade-feature-list">
-                {items.map((item, index) => (
-                    <li key={index}>
-                        <Icon name="check-circle-2" size={16} />
-                        <span>{item}</span>
-                    </li>
-                ))}
-            </ul>
+        <div className="comparison-table-wrapper">
+            <table className="comparison-table">
+                <thead>
+                    <tr>
+                        <th className="feature-col">{__('Features', 'swift-rank')}</th>
+                        <th className="plan-col free-plan">
+                            <span className="plan-name">{__('Free', 'swift-rank')}</span>
+                        </th>
+                        <th className="plan-col pro-plan">
+                            <div className="pro-badge">
+                                <Icon name="zap" size={14} />
+                                <span>{__('PRO', 'swift-rank')}</span>
+                            </div>
+                            <span className="plan-name">{__('Swift Rank Pro', 'swift-rank')}</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {features.map((section, sIndex) => (
+                        <>
+                            <tr key={`header-${sIndex}`} className="section-header-row">
+                                <td colSpan="3">{section.category}</td>
+                            </tr>
+                            {section.items.map((item, iIndex) => (
+                                <tr key={`item-${sIndex}-${iIndex}`}>
+                                    <td className="feature-name">
+                                        {item.name}
+                                        {item.new && <span className="new-badge">{__('NEW', 'swift-rank')}</span>}
+                                    </td>
+                                    <td className="plan-value free-value">
+                                        {item.free ? (
+                                            <Icon name="check" size={20} className="check-icon" />
+                                        ) : (
+                                            <Icon name="minus" size={20} className="dash-icon" />
+                                        )}
+                                    </td>
+                                    <td className="plan-value pro-value">
+                                        {item.pro ? (
+                                            <div className="check-wrapper">
+                                                <Icon name="check" size={20} className="check-icon" />
+                                            </div>
+                                        ) : (
+                                            <Icon name="x" size={20} className="x-icon" />
+                                        )}
+                                    </td>
+                                </tr>
+                            ))}
+                        </>
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 };
@@ -28,188 +119,60 @@ const UpgradeTab = () => {
     return (
         <div className="swift-rank-upgrade-tab">
             <div className="upgrade-hero">
-                <div className="upgrade-hero-badge">
-                    <Icon name="zap" size={16} />
-                    <span>{__('PRO VERSION', 'swift-rank')}</span>
-                </div>
-
-                <div className="upgrade-hero-icon">
-                    <Icon name="sparkles" size={48} />
-                </div>
-
-                <h1 className="upgrade-hero-title">
-                    {__('Unlock the Full Power of', 'swift-rank')}
-                    <br />
-                    {__('Swift Rank Pro', 'swift-rank')}
-                </h1>
-
-                <p className="upgrade-hero-description">
-                    {__('Take your SEO to the next level with premium schema types, advanced targeting, powerful integrations, and professional support. Boost your search visibility and drive more organic traffic.', 'swift-rank')}
-                </p>
-
-                <div className="upgrade-stats">
-                    <div className="upgrade-stat">
-                        <Icon name="layers" size={24} />
-                        <strong>15+</strong>
-                        <span>{__('Schema Types', 'swift-rank')}</span>
+                <div className="upgrade-hero-content">
+                    <div className="upgrade-badge">
+                        <Icon name="crown" size={16} />
+                        <span>{__('Unlock Full Potential', 'swift-rank')}</span>
                     </div>
-                    <div className="upgrade-stat">
-                        <Icon name="sparkles" size={24} />
-                        <strong>50+</strong>
-                        <span>{__('Pro Features', 'swift-rank')}</span>
-                    </div>
-                    <div className="upgrade-stat">
-                        <Icon name="users" size={24} />
-                        <strong>1000+</strong>
-                        <span>{__('Happy Users', 'swift-rank')}</span>
+
+                    <h1>
+                        {__('Supercharge Your SEO with', 'swift-rank')} <span className="highlight-text">{__('Swift Rank Pro', 'swift-rank')}</span>
+                    </h1>
+
+                    <p className="hero-description">
+                        {__('Get access to advanced schema types, paywall content support, powerful custom schema builder, and priority support to dominate search results.', 'swift-rank')}
+                    </p>
+
+                    <div className="hero-cta-group">
+                        <a
+                            href={upgradeUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="button button-upgrade-hero"
+                        >
+                            <Icon name="rocket" size={20} />
+                            <span>{__('Upgrade to Pro Now', 'swift-rank')}</span>
+                        </a>
+                        <p className="guarantee-text">
+                            <Icon name="shield-check" size={14} />
+                            {__('14-day money-back guarantee', 'swift-rank')}
+                        </p>
                     </div>
                 </div>
+            </div>
 
-                <div className="upgrade-features-grid">
-                    <FeatureCard
-                        icon="utensils-crossed"
-                        title={__('Premium Schema Types', 'swift-rank')}
-                        highlight={true}
-                        items={[
-                            __('Recipe Schema with Ingredients', 'swift-rank'),
-                            __('Event Schema with Locations', 'swift-rank'),
-                            __('HowTo Schema with Steps', 'swift-rank'),
-                            __('Podcast Episode Schema', 'swift-rank'),
-                            __('Custom JSON-LD Builder', 'swift-rank'),
-                            __('Enhanced Video Schema', 'swift-rank')
-                        ]}
-                    />
+            <div className="upgrade-comparison-section">
+                <ComparisonTable />
 
-                    <FeatureCard
-                        icon="link"
-                        title={__('Schema Relationships', 'swift-rank')}
-                        items={[
-                            __('Link Schemas Together', 'swift-rank'),
-                            __('Author-Article Connections', 'swift-rank'),
-                            __('Organization References', 'swift-rank'),
-                            __('Video-Article Relationships', 'swift-rank'),
-                            __('Dynamic Reference Resolution', 'swift-rank')
-                        ]}
-                    />
-
-                    <FeatureCard
-                        icon="filter"
-                        title={__('Advanced Targeting', 'swift-rank')}
-                        items={[
-                            __('Multiple Condition Groups', 'swift-rank'),
-                            __('AND/OR Logic Operators', 'swift-rank'),
-                            __('Category & Tag Conditions', 'swift-rank'),
-                            __('Custom Field Matching', 'swift-rank'),
-                            __('URL Pattern Matching', 'swift-rank')
-                        ]}
-                    />
-
-                    <FeatureCard
-                        icon="shopping-bag"
-                        title={__('WooCommerce Pro', 'swift-rank')}
-                        highlight={true}
-                        items={[
-                            __('Automatic Product Schema', 'swift-rank'),
-                            __('Price & Availability Sync', 'swift-rank'),
-                            __('Product Reviews & Ratings', 'swift-rank'),
-                            __('Variable Product Support', 'swift-rank'),
-                            __('SKU & Brand Data', 'swift-rank')
-                        ]}
-                    />
-
-                    <FeatureCard
-                        icon="braces"
-                        title={__('Premium Variables', 'swift-rank')}
-                        items={[
-                            __('ACF Custom Fields', 'swift-rank'),
-                            __('WooCommerce Data', 'swift-rank'),
-                            __('Category & Tag Variables', 'swift-rank'),
-                            __('Advanced Meta Fields', 'swift-rank'),
-                            __('Dynamic Calculations', 'swift-rank')
-                        ]}
-                    />
-
-                    <FeatureCard
-                        icon="clock"
-                        title={__('Business Features', 'swift-rank')}
-                        items={[
-                            __('Visual Opening Hours Editor', 'swift-rank'),
-                            __('Timezone Support', 'swift-rank'),
-                            __('Holiday/Special Hours', 'swift-rank'),
-                            __('Multiple Locations', 'swift-rank')
-                        ]}
-                    />
-
-                    <FeatureCard
-                        icon="code-2"
-                        title={__('Developer Tools', 'swift-rank')}
-                        items={[
-                            __('Custom Code Placement', 'swift-rank'),
-                            __('Advanced Hooks & Filters', 'swift-rank'),
-                            __('Schema Presets API', 'swift-rank'),
-                            __('JSON-LD Validation', 'swift-rank')
-                        ]}
-                    />
-
-                    <FeatureCard
-                        icon="image"
-                        title={__('Media Management', 'swift-rank')}
-                        items={[
-                            __('Default Image Fallbacks', 'swift-rank'),
-                            __('Smart Image Selection', 'swift-rank'),
-                            __('Video Metadata', 'swift-rank'),
-                            __('Thumbnail Generation', 'swift-rank')
-                        ]}
-                    />
-
-                    <FeatureCard
-                        icon="headphones"
-                        title={__('Priority Support', 'swift-rank')}
-                        highlight={true}
-                        items={[
-                            __('Priority Email Support', 'swift-rank'),
-                            __('Dedicated Support Portal', 'swift-rank'),
-                            __('Feature Request Priority', 'swift-rank'),
-                            __('Setup & Migration Help', 'swift-rank'),
-                            __('Regular Plugin Updates', 'swift-rank')
-                        ]}
-                    />
-                </div>
-
-                <div className="upgrade-cta">
-                    <a
-                        href={upgradeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="upgrade-button"
-                    >
-                        <Icon name="rocket" size={20} />
-                        <span>{__('Upgrade to Pro Now', 'swift-rank')}</span>
-                        <Icon name="arrow-right" size={20} />
-                    </a>
-
-                    <div className="upgrade-benefits">
-                        <div className="upgrade-benefit">
-                            <Icon name="shield-check" size={18} />
-                            <span>{__('14-Day Money-Back Guarantee', 'swift-rank')}</span>
+                <div className="bottom-cta-container">
+                    <div className="cta-content">
+                        <h2>{__('Ready to rank higher?', 'swift-rank')}</h2>
+                        <p>{__('Join thousands of smart website owners utilizing Swift Rank Pro\'s advanced schema features to dominate Google search results.', 'swift-rank')}</p>
+                        <div className="cta-actions">
+                            <a
+                                href={upgradeUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="button button-upgrade-large"
+                            >
+                                <Icon name="rocket" size={20} />
+                                <span>{__('Get Swift Rank Pro Now', 'swift-rank')}</span>
+                            </a>
+                            <div className="guarantee-badge">
+                                <Icon name="shield-check" size={16} />
+                                <span>{__('14-Day Money-Back Guarantee', 'swift-rank')}</span>
+                            </div>
                         </div>
-                        <div className="upgrade-benefit">
-                            <Icon name="refresh-cw" size={18} />
-                            <span>{__('Regular Updates', 'swift-rank')}</span>
-                        </div>
-                        <div className="upgrade-benefit">
-                            <Icon name="crown" size={18} />
-                            <span>{__('Premium Support', 'swift-rank')}</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="upgrade-testimonial">
-                    <Icon name="quote" size={32} />
-                    <p>{__('Swift Rank Pro transformed our search visibility. We\'ve seen a 300% increase in rich snippets and organic traffic. The support team is amazing!', 'swift-rank')}</p>
-                    <div className="testimonial-author">
-                        <strong>{__('Sarah J.', 'swift-rank')}</strong>
-                        <span>{__('SEO Manager', 'swift-rank')}</span>
                     </div>
                 </div>
             </div>

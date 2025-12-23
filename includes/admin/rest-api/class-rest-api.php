@@ -136,13 +136,13 @@ class Swift_Rank_REST_API
             $sanitized['minify_schema'] = (bool) $input['minify_schema'];
         }
 
-        // Knowledge Base settings.
-        if (isset($input['knowledge_base_enabled'])) {
-            $sanitized['knowledge_base_enabled'] = (bool) $input['knowledge_base_enabled'];
+        // Knowledge Graph settings.
+        if (isset($input['knowledge_graph_enabled'])) {
+            $sanitized['knowledge_graph_enabled'] = (bool) $input['knowledge_graph_enabled'];
         }
 
-        if (isset($input['knowledge_base_type'])) {
-            $sanitized['knowledge_base_type'] = sanitize_text_field($input['knowledge_base_type']);
+        if (isset($input['knowledge_graph_type'])) {
+            $sanitized['knowledge_graph_type'] = sanitize_text_field($input['knowledge_graph_type']);
         }
 
         // Organization fields (structured object for FieldsBuilder).

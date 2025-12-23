@@ -256,7 +256,7 @@ class Schema_Output_Handler
 		// 6. Allow other components (like blocks) to add schemas
 		$schemas = apply_filters('swift_rank_schemas', $schemas);
 
-		// 7. Output Knowledge Base (Organization or Person) schema
+		// 7. Output Knowledge Graph (Organization or Person) schema
 		// Logic: Output on homepage (if enabled) OR if a WebPage schema is present (to satisfy 'about' link)
 		$has_webpage_schema = false;
 		foreach ($schemas as $schema) {
@@ -266,23 +266,23 @@ class Schema_Output_Handler
 			}
 		}
 
-		$knowledge_base_enabled = isset($settings['knowledge_base_enabled']) ? $settings['knowledge_base_enabled'] : false;
-		$should_output_kb = ($knowledge_base_enabled && (is_front_page() || is_home())) || $has_webpage_schema;
+		$knowledge_graph_enabled = isset($settings['knowledge_graph_enabled']) ? $settings['knowledge_graph_enabled'] : false;
+		$should_output_kg = ($knowledge_graph_enabled && (is_front_page() || is_home())) || $has_webpage_schema;
 
-		if ($should_output_kb) {
+		if ($should_output_kg) {
 			// Get schema type (Organization, Person, or LocalBusiness)
-			$kb_type = isset($settings['knowledge_base_type']) ? $settings['knowledge_base_type'] : 'Organization';
+			$kg_type = isset($settings['knowledge_graph_type']) ? $settings['knowledge_graph_type'] : 'Organization';
 
 			// Get appropriate fields based on type
-			if ($kb_type === 'Person') {
-				$kb_fields = isset($settings['person_fields']) ? $settings['person_fields'] : array();
-			} elseif ($kb_type === 'LocalBusiness') {
-				$kb_fields = isset($settings['localbusiness_fields']) ? $settings['localbusiness_fields'] : array();
+			if ($kg_type === 'Person') {
+				$kg_fields = isset($settings['person_fields']) ? $settings['person_fields'] : array();
+			} elseif ($kg_type === 'LocalBusiness') {
+				$kg_fields = isset($settings['localbusiness_fields']) ? $settings['localbusiness_fields'] : array();
 			} else {
-				$kb_fields = isset($settings['organization_fields']) ? $settings['organization_fields'] : array();
+				$kg_fields = isset($settings['organization_fields']) ? $settings['organization_fields'] : array();
 			}
 
-			// Inject social profiles from Social Profiles tab into Knowledge Base fields
+			// Inject social profiles from Social Profiles tab into Knowledge Graph fields
 			// Build social profiles array from individual fields
 			$social_urls = array();
 			$social_fields = ['facebook', 'twitter', 'linkedin', 'instagram', 'youtube'];
@@ -304,20 +304,20 @@ class Schema_Output_Handler
 
 			// Convert to repeater format expected by schema builders
 			if (!empty($social_urls)) {
-				$kb_fields['socialProfiles'] = array();
+				$kg_fields['socialProfiles'] = array();
 				foreach ($social_urls as $url) {
-					$kb_fields['socialProfiles'][] = array('url' => $url);
+					$kg_fields['socialProfiles'][] = array('url' => $url);
 				}
 			}
 
-			$kb_schema = $this->build_schema($kb_type, $kb_fields);
-			if (!empty($kb_schema)) {
-				// Ensure global ID for Knowledge Base (Organization/Person/LocalBusiness)
+			$kg_schema = $this->build_schema($kg_type, $kg_fields);
+			if (!empty($kg_schema)) {
+				// Ensure global ID for Knowledge Graph (Organization/Person/LocalBusiness)
 				// This matches the ID reference used in WebPage's 'about' property
-				if (!isset($kb_schema['@id'])) {
-					$kb_schema['@id'] = home_url('/#' . strtolower($kb_type));
+				if (!isset($kg_schema['@id'])) {
+					$kg_schema['@id'] = home_url('/#' . strtolower($kg_type));
 				}
-				$schemas[] = $kb_schema;
+				$schemas[] = $kg_schema;
 			}
 		}
 

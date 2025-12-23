@@ -23,12 +23,12 @@ const ProSidebarNotice = ({
 }) => {
     // Comprehensive default features list relevant to Swift Rank Pro
     const defaultFeatures = [
-        'Advanced Schema Types (Product, Recipe, Video)',
-        'WooCommerce Integration',
-        'Opening Hours & Business Info',
-        'Custom Field Variables',
-        'Category & Tag Variables',
-        'ACF Field Integration',
+        'Advanced Schema Types (Recipe, Event, Video)',
+        'Paywall Content Support',
+        'Local Business Opening Hours',
+        'Advanced Variables (ACF & Custom Fields)',
+        'Prebuild Schema Templates',
+        'Schema Linking',
         'Priority Support'
     ];
 

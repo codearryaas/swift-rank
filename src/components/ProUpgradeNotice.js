@@ -51,7 +51,8 @@ const ProUpgradeNotice = ({ schemaType, featureType = null }) => {
 			default:
 				return [
 					__('Advanced Schema Types', 'swift-rank'),
-					__('WooCommerce Support', 'swift-rank'),
+					__('Paywall Content Support', 'swift-rank'),
+					__('Advanced Variables (ACF)', 'swift-rank'),
 					__('Priority Support', 'swift-rank'),
 				];
 		}

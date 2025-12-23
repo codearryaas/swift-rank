@@ -1,20 +1,20 @@
 import { __ } from '@wordpress/i18n';
 
 /**
- * Field configurations for Knowledge Base Settings tab
+ * Field configurations for Knowledge Graph Settings tab
  * Top-level toggle and type selector fields
  */
 
-const knowledgeBaseFields = [
+const knowledgeGraphFields = [
     {
-        name: 'knowledge_base_enabled',
-        label: __('Enable Knowledge Base Schema', 'swift-rank'),
+        name: 'knowledge_graph_enabled',
+        label: __('Enable Knowledge Graph Schema', 'swift-rank'),
         type: 'toggle',
         default: false,
         tooltip: __('Add Organization or Person schema to your homepage for Google Knowledge Graph.', 'swift-rank'),
     },
     {
-        name: 'knowledge_base_type',
+        name: 'knowledge_graph_type',
         label: __('Schema Type', 'swift-rank'),
         type: 'select',
         options: [
@@ -27,4 +27,4 @@ const knowledgeBaseFields = [
     },
 ];
 
-export default knowledgeBaseFields;
+export default knowledgeGraphFields;

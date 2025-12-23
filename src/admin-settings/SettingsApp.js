@@ -5,7 +5,7 @@ import { __ } from '@wordpress/i18n';
 import { applyFilters } from '@wordpress/hooks';
 
 import GeneralTab from './components/GeneralTab';
-import KnowledgeBaseTab from './components/KnowledgeBaseTab';
+import KnowledgeGraphTab from './components/KnowledgeGraphTab';
 import SocialProfilesTab from './components/SocialProfilesTab';
 import BreadcrumbTab from './components/BreadcrumbTab';
 import ImportExportTab from './components/ImportExportTab';
@@ -120,9 +120,9 @@ const SettingsApp = () => {
             component: GeneralTab,
         },
         {
-            name: 'knowledge_base',
-            title: __('Knowledge Base', 'swift-rank'),
-            component: KnowledgeBaseTab,
+            name: 'knowledge_graph',
+            title: __('Knowledge Graph', 'swift-rank'),
+            component: KnowledgeGraphTab,
         },
         {
             name: 'social_profiles',
