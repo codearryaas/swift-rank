@@ -97,6 +97,16 @@ class Schema_Output_Handler
 			add_filter('wpseo_json_ld_output', '__return_false');
 		}
 
+		// Check for AIOSEO Schema Disabling
+		if (!empty($settings['disable_aioseo_schema'])) {
+			add_filter('aioseo_schema_disable', '__return_true');
+		}
+
+		// Check for Rank Math Schema Disabling
+		if (!empty($settings['disable_rankmath_schema'])) {
+			add_filter('rank_math/json_ld', '__return_false', 99);
+		}
+
 		// Code placement is a Pro feature - default to 'head' for free version
 		$placement = 'head';
 		if (defined('SWIFT_RANK_PRO_VERSION')) {

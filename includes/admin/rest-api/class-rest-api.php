@@ -141,6 +141,16 @@ class Swift_Rank_REST_API
             $sanitized['disable_yoast_schema'] = (bool) $input['disable_yoast_schema'];
         }
 
+        // Disable AIOSEO schema setting.
+        if (isset($input['disable_aioseo_schema'])) {
+            $sanitized['disable_aioseo_schema'] = (bool) $input['disable_aioseo_schema'];
+        }
+
+        // Disable RankMath schema setting.
+        if (isset($input['disable_rankmath_schema'])) {
+            $sanitized['disable_rankmath_schema'] = (bool) $input['disable_rankmath_schema'];
+        }
+
         // Knowledge Graph settings.
         if (isset($input['knowledge_graph_enabled'])) {
             $sanitized['knowledge_graph_enabled'] = (bool) $input['knowledge_graph_enabled'];

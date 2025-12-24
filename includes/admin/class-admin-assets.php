@@ -123,6 +123,8 @@ class Swift_Rank_Admin_Assets
             'isProActive' => defined('SWIFT_RANK_PRO_VERSION'),
             'isWooCommerceActive' => class_exists('WooCommerce'),
             'isYoastActive' => defined('WPSEO_VERSION'),
+            'isAioseoActive' => defined('AIOSEO_VERSION'),
+            'isRankMathActive' => defined('RANK_MATH_VERSION'),
             'upgradeUrl' => apply_filters('swift_rank_upgrade_url', 'https://toolpress.net/swift-rank/pricing'),
             'version' => defined('SWIFT_RANK_VERSION') ? SWIFT_RANK_VERSION : 'N/A',
             'proVersion' => defined('SWIFT_RANK_PRO_VERSION') ? SWIFT_RANK_PRO_VERSION : null,

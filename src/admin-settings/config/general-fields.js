@@ -128,6 +128,30 @@ const generalFields = [
         },
     },
     {
+        name: 'disable_aioseo_schema',
+        label: __('Disable All in One SEO Schema', 'swift-rank'),
+        type: 'toggle',
+        default: false,
+        tooltip: __('Disable All in One SEO\'s JSON-LD schema output.', 'swift-rank'),
+        description: __('Prevents All in One SEO from outputting its own schema markup. Use this if you want Swift Rank to be the sole provider of schema on your site to avoid conflicts.', 'swift-rank'),
+        condition: () => {
+            return typeof window.swiftRankSettings !== 'undefined' &&
+                window.swiftRankSettings.isAioseoActive;
+        },
+    },
+    {
+        name: 'disable_rankmath_schema',
+        label: __('Disable Rank Math Schema', 'swift-rank'),
+        type: 'toggle',
+        default: false,
+        tooltip: __('Disable Rank Math\'s JSON-LD schema output.', 'swift-rank'),
+        description: __('Prevents Rank Math from outputting its own schema markup. Use this if you want Swift Rank to be the sole provider of schema on your site to avoid conflicts.', 'swift-rank'),
+        condition: () => {
+            return typeof window.swiftRankSettings !== 'undefined' &&
+                window.swiftRankSettings.isRankMathActive;
+        },
+    },
+    {
         name: 'setup_wizard_heading',
         label: __('Setup Wizard', 'swift-rank'),
         type: 'heading',
