@@ -95,6 +95,15 @@ const generalFields = [
         isPro: true,
     },
     {
+        name: 'auto_image_schema_enabled',
+        label: __('Auto Image Schema', 'swift-rank'),
+        type: 'toggle',
+        default: false,
+        tooltip: __('Automatically generate ImageObject schema from content images.', 'swift-rank'),
+        description: __('Automatically creates ImageObject schema markup for images found in your post content. Extracts images from Gutenberg image blocks or IMG tags and generates structured data with dimensions, captions, and alt text.', 'swift-rank'),
+        isPro: true,
+    },
+    {
         name: 'code_placement',
         label: __('Schema Code Location', 'swift-rank'),
         type: 'select',

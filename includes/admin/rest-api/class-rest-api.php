@@ -151,6 +151,11 @@ class Swift_Rank_REST_API
             $sanitized['disable_rankmath_schema'] = (bool) $input['disable_rankmath_schema'];
         }
 
+        // Auto Image Schema setting (Pro).
+        if (isset($input['auto_image_schema_enabled'])) {
+            $sanitized['auto_image_schema_enabled'] = (bool) $input['auto_image_schema_enabled'];
+        }
+
         // Knowledge Graph settings.
         if (isset($input['knowledge_graph_enabled'])) {
             $sanitized['knowledge_graph_enabled'] = (bool) $input['knowledge_graph_enabled'];
