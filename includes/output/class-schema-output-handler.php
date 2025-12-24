@@ -92,6 +92,11 @@ class Schema_Output_Handler
 	{
 		$settings = get_option('swift_rank_settings', array());
 
+		// Check for Yoast SEO Schema Disabling
+		if (!empty($settings['disable_yoast_schema'])) {
+			add_filter('wpseo_json_ld_output', '__return_false');
+		}
+
 		// Code placement is a Pro feature - default to 'head' for free version
 		$placement = 'head';
 		if (defined('SWIFT_RANK_PRO_VERSION')) {

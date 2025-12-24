@@ -116,6 +116,18 @@ const generalFields = [
         description: __('Removes unnecessary whitespace from schema JSON-LD output to reduce HTML file size. Disable this if you need to read the schema in your page source for debugging.', 'swift-rank'),
     },
     {
+        name: 'disable_yoast_schema',
+        label: __('Disable Yoast SEO Schema', 'swift-rank'),
+        type: 'toggle',
+        default: false,
+        tooltip: __('Disable Yoast SEO\'s JSON-LD schema output.', 'swift-rank'),
+        description: __('Prevents Yoast SEO from outputting its own schema markup. Use this if you want Swift Rank to be the sole provider of schema on your site to avoid conflicts.', 'swift-rank'),
+        condition: () => {
+            return typeof window.swiftRankSettings !== 'undefined' &&
+                window.swiftRankSettings.isYoastActive;
+        },
+    },
+    {
         name: 'setup_wizard_heading',
         label: __('Setup Wizard', 'swift-rank'),
         type: 'heading',

@@ -136,6 +136,11 @@ class Swift_Rank_REST_API
             $sanitized['minify_schema'] = (bool) $input['minify_schema'];
         }
 
+        // Disable Yoast SEO schema setting.
+        if (isset($input['disable_yoast_schema'])) {
+            $sanitized['disable_yoast_schema'] = (bool) $input['disable_yoast_schema'];
+        }
+
         // Knowledge Graph settings.
         if (isset($input['knowledge_graph_enabled'])) {
             $sanitized['knowledge_graph_enabled'] = (bool) $input['knowledge_graph_enabled'];
