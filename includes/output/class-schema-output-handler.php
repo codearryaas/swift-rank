@@ -219,6 +219,11 @@ class Schema_Output_Handler
 				$breadcrumb_schema_builder = new Schema_Breadcrumb();
 				$breadcrumb_schema = $breadcrumb_schema_builder->build($settings);
 				if (!empty($breadcrumb_schema)) {
+					// Apply variable replacement to breadcrumb schema
+					$breadcrumb_json = wp_json_encode($breadcrumb_schema);
+					$breadcrumb_json = $this->replace_template_variables($breadcrumb_json);
+					$breadcrumb_schema = json_decode($breadcrumb_json, true);
+
 					$schemas[] = $breadcrumb_schema;
 				}
 			}
@@ -414,7 +419,8 @@ class Schema_Output_Handler
 			// Final Output Structure
 			$output = array(
 				'@context' => 'https://schema.org',
-				'@graph' => $graph
+				'@graph' => $graph,
+				'inLanguage' => get_bloginfo('language'),
 			);
 
 			$this->output_json_ld($output);

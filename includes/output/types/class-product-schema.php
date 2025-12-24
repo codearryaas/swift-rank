@@ -37,9 +37,23 @@ class Schema_Product implements Schema_Builder_Interface
 			$schema['description'] = $fields['description'];
 		}
 
-		// Image with fallback to featured_image variable
-		$image_url = isset($fields['image']) ? $fields['image'] : '{featured_image}';
-		$schema['image'] = $image_url;
+		// Image fallback logic (mirrors Organization logo logic)
+		$image_url = (isset($fields['image']) && !empty($fields['image'])) ? $fields['image'] : '';
+
+		if (empty($image_url) && defined('SWIFT_RANK_PRO_VERSION')) {
+			$settings = get_option('swift_rank_settings', array());
+			if (!empty($settings['default_image'])) {
+				$image_url = $settings['default_image'];
+			}
+		}
+
+		if (empty($image_url)) {
+			$image_url = '{featured_image}';
+		}
+
+		if (!empty($image_url)) {
+			$schema['image'] = $image_url;
+		}
 
 		if (!empty($fields['sku'])) {
 			$schema['sku'] = $fields['sku'];
@@ -176,7 +190,9 @@ class Schema_Product implements Schema_Builder_Interface
 				'label' => __('Product Image URL', 'swift-rank'),
 				'type' => 'select',
 				'allowCustom' => true,
-				'tooltip' => __('Product image URL. Click pencil icon to enter custom URL.', 'swift-rank'),
+				'customType' => 'image',
+				'returnObject' => true,
+				'tooltip' => __('Product image. Select from list or click pencil to upload custom image.', 'swift-rank'),
 				'placeholder' => '{featured_image}',
 				'options' => array(
 					array(

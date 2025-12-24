@@ -1,4 +1,4 @@
-=== Swift Rank ===
+=== Swift Rank – AI-Ready & Search-Optimized Structured Data for WordPress ===
 Contributors: racase
 Tags: schema, structured data, seo, json-ld, rich snippets
 Requires at least: 5.9
@@ -119,6 +119,15 @@ Yes! The import/export feature lets you backup templates, migrate between sites,
 6.  Setup Wizard - Configure setup wizard.
 
 == Changelog ==
+
+= 1.0.6 – 2025-12-24 =
+* Add settings to disable schema output from Yoast SEO, All in One SEO, and Rank Math.
+* Implement Image Schema Auto-Generate feature (Pro).
+* Add variable replacement support for breadcrumb home text.
+* Add default image fallback support for Product schema (Pro).
+* Enhance Product schema with image upload picker support.
+* Improve schema output handling with better image object fallback logic.
+* Add inLanguage property to schema output.
 
 = 1.0.5 – 2025-12-23 =
 * Update readme description and FAQ to reflect latest features.
