@@ -102,6 +102,7 @@ class Schema_Webpage implements Schema_Builder_Interface
             'description' => __('A web page. Every web page is implicitly assumed to be declared to be of type WebPage.', 'swift-rank'),
             'url' => 'https://schema.org/WebPage',
             'icon' => 'file',
+            'supports_language' => true,
             'subtypes' => array(
                 'WebPage' => __('WebPage - General web page', 'swift-rank'),
                 'AboutPage' => __('AboutPage - About Us page', 'swift-rank'),

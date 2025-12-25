@@ -373,6 +373,32 @@ class Schema_Output_Handler
 			$used_ids = array();
 			$type_counts = array();
 
+			$site_language = get_bloginfo('language');
+			// Build list of types that support language dynamically from builders
+			$types_support_language = array();
+
+
+
+			if (!empty($this->schema_builders)) {
+				foreach ($this->schema_builders as $builder) {
+					if (method_exists($builder, 'get_schema_structure')) {
+						$structure = $builder->get_schema_structure();
+						if (!empty($structure['supports_language'])) {
+							// Add main type
+							if (!empty($structure['@type'])) {
+								$types_support_language[] = $structure['@type'];
+							}
+							// Add subtypes
+							if (!empty($structure['subtypes']) && is_array($structure['subtypes'])) {
+								foreach (array_keys($structure['subtypes']) as $subtype) {
+									$types_support_language[] = $subtype;
+								}
+							}
+						}
+					}
+				}
+			}
+
 			foreach ($schemas as $schema) {
 				// Add @id if missing to support graph connections
 				if (!isset($schema['@id']) && isset($schema['@type'])) {
@@ -408,6 +434,18 @@ class Schema_Output_Handler
 					$used_ids[] = $schema['@id'];
 				}
 
+				// Add inLanguage to supported CreativeWork types
+				if (
+					isset($schema['@type']) &&
+					(in_array($schema['@type'], $types_support_language) ||
+						(strpos($schema['@type'], 'Article') !== false) || // Catch custom Article types
+						(strpos($schema['@type'], 'Page') !== false)) // Catch custom Page types
+				) {
+					if (!isset($schema['inLanguage'])) {
+						$schema['inLanguage'] = $site_language;
+					}
+				}
+
 				// Remove @context from inner nodes as it is defined at the root
 				if (isset($schema['@context'])) {
 					unset($schema['@context']);
@@ -419,8 +457,7 @@ class Schema_Output_Handler
 			// Final Output Structure
 			$output = array(
 				'@context' => 'https://schema.org',
-				'@graph' => $graph,
-				'inLanguage' => get_bloginfo('language'),
+				'@graph' => $graph
 			);
 
 			$this->output_json_ld($output);

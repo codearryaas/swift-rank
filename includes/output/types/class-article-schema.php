@@ -128,6 +128,7 @@ class Schema_Article implements Schema_Builder_Interface
 			'description' => __('An article, such as a news article or piece of investigative report.', 'swift-rank'),
 			'url' => 'https://schema.org/Article',
 			'icon' => 'file-text',
+			'supports_language' => true,
 			'subtypes' => array(
 				'Article' => __('Article - General article content', 'swift-rank'),
 				'BlogPosting' => __('BlogPosting - Blog posts and informal articles', 'swift-rank'),
