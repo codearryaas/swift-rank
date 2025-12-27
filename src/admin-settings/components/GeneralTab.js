@@ -54,7 +54,7 @@ const GeneralTab = ({ settings, updateSetting }) => {
                             // Check if field should be rendered (condition check)
                             let shouldRender = true;
                             if (nextField.condition && typeof nextField.condition === 'function') {
-                                shouldRender = nextField.condition();
+                                shouldRender = nextField.condition(settings);
                             }
 
                             // Check dependsOn (parent field)
@@ -95,6 +95,14 @@ const GeneralTab = ({ settings, updateSetting }) => {
                     // Skip fields that are part of a group (already rendered)
                     if (fieldConfig.group && !fieldConfig.groupStart) {
                         return null;
+                    }
+
+                    // Check if standalone field should be rendered (condition check)
+                    if (fieldConfig.condition && typeof fieldConfig.condition === 'function') {
+                        const shouldRender = fieldConfig.condition(settings);
+                        if (!shouldRender) {
+                            return null;
+                        }
                     }
 
                     return fieldElement;

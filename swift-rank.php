@@ -149,6 +149,7 @@ class Swift_Rank
 			// Setup Wizard
 			require_once SWIFT_RANK_PLUGIN_DIR . 'includes/admin/class-setup-wizard.php';
 			require_once SWIFT_RANK_PLUGIN_DIR . 'includes/admin/class-wizard-notice.php';
+			require_once SWIFT_RANK_PLUGIN_DIR . 'includes/admin/class-seo-conflict-notice.php';
 
 			// CPT Admin components
 			require_once SWIFT_RANK_PLUGIN_DIR . 'includes/admin/cpt/class-cpt-metabox.php';

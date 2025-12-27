@@ -40,16 +40,21 @@ const ProNotice = ({
                     <span dangerouslySetInnerHTML={{ __html: message }} />
                 ) : (
                     message
-                )}{' '}
-                <a
-                    href={upgradeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="pro-field-notice-link"
-                >
-                    {linkText}
-                    <Icon name="external-link" size={12} />
-                </a>
+                )}
+                {linkText && (
+                    <>
+                        {' '}
+                        <a
+                            href={upgradeUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="pro-field-notice-link"
+                        >
+                            {linkText}
+                            <Icon name="external-link" size={12} />
+                        </a>
+                    </>
+                )}
             </span>
         </div>
     );

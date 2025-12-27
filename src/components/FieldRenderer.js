@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import { __ } from '@wordpress/i18n';
 import SchemaField from './SchemaField';
 import Select from './Select';
 import Tooltip from './Tooltip';
@@ -22,7 +23,7 @@ const FieldRenderer = ({ fieldConfig, value, onChange, fields, isOverridden, onR
 
 	// Handle conditional field visibility (condition function)
 	if (condition && typeof condition === 'function') {
-		if (!condition()) {
+		if (!condition(fields)) {
 			return null;
 		}
 	}
@@ -723,9 +724,10 @@ const FieldRenderer = ({ fieldConfig, value, onChange, fields, isOverridden, onR
 	// Handle generic notice field
 	if (type === 'notice') {
 		const showLabel = label && fieldConfig.showLabel !== false;
+		const noticeType = fieldConfig.noticeType || 'info'; // warning, info, error, success
 
 		return (
-			<div className={`schema-field schema-field-notice ${fieldConfig.isPro ? 'schema-field-pro-locked' : ''}`}>
+			<div className={`schema-field schema-field-notice schema-field-notice-${noticeType} ${fieldConfig.isPro ? 'schema-field-pro-locked' : ''}`}>
 				{showLabel && (
 					<div className="field-header">
 						<label className="field-label">
@@ -736,11 +738,12 @@ const FieldRenderer = ({ fieldConfig, value, onChange, fields, isOverridden, onR
 				)}
 				<ProNotice
 					message={fieldConfig.message || fieldConfig.description}
-					linkText={fieldConfig.linkText || __('Learn More', 'swift-rank')}
+					linkText={fieldConfig.linkText !== undefined ? fieldConfig.linkText : __('Learn More', 'swift-rank')}
 					linkUrl={fieldConfig.linkUrl}
 					compact={fieldConfig.compact !== false}
-					icon={fieldConfig.icon || (fieldConfig.isPro ? 'lock' : 'info')}
+					icon={fieldConfig.icon || (fieldConfig.isPro ? 'lock' : noticeType === 'warning' ? 'alert-triangle' : 'info')}
 					allowHtml={fieldConfig.allowHtml || false}
+					className={`notice-${noticeType}`}
 				/>
 			</div>
 		);

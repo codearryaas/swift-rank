@@ -125,6 +125,25 @@ const generalFields = [
         description: __('Removes unnecessary whitespace from schema JSON-LD output to reduce HTML file size. Disable this if you need to read the schema in your page source for debugging.', 'swift-rank'),
     },
     {
+        name: 'yoast_schema_warning',
+        type: 'notice',
+        noticeType: 'warning',
+        message: __('⚠️ Yoast SEO is active and may be outputting schema markup. This could cause duplicate schema on your site. Enable the toggle below to disable Yoast\'s schema output.', 'swift-rank'),
+        linkText: '', // No link for warning notices
+        condition: (values) => {
+            // Return false if values haven't loaded yet
+            if (!values) return false;
+
+            const result = typeof window.swiftRankSettings !== 'undefined' &&
+                !!window.swiftRankSettings.isYoastActive &&
+                !values.disable_yoast_schema;
+
+            console.log('Yoast warning check:', result, values.disable_yoast_schema);
+
+            return result;
+        },
+    },
+    {
         name: 'disable_yoast_schema',
         label: __('Disable Yoast SEO Schema', 'swift-rank'),
         type: 'toggle',
@@ -137,6 +156,20 @@ const generalFields = [
         },
     },
     {
+        name: 'aioseo_schema_warning',
+        type: 'notice',
+        noticeType: 'warning',
+        message: __('⚠️ All in One SEO is active and may be outputting schema markup. This could cause duplicate schema on your site. Enable the toggle below to disable All in One SEO\'s schema output.', 'swift-rank'),
+        linkText: '', // No link for warning notices
+        condition: (values) => {
+            if (!values) return false;
+
+            return typeof window.swiftRankSettings !== 'undefined' &&
+                !!window.swiftRankSettings.isAioseoActive &&
+                !values.disable_aioseo_schema;
+        },
+    },
+    {
         name: 'disable_aioseo_schema',
         label: __('Disable All in One SEO Schema', 'swift-rank'),
         type: 'toggle',
@@ -146,6 +179,20 @@ const generalFields = [
         condition: () => {
             return typeof window.swiftRankSettings !== 'undefined' &&
                 window.swiftRankSettings.isAioseoActive;
+        },
+    },
+    {
+        name: 'rankmath_schema_warning',
+        type: 'notice',
+        noticeType: 'warning',
+        message: __('⚠️ Rank Math is active and may be outputting schema markup. This could cause duplicate schema on your site. Enable the toggle below to disable Rank Math\'s schema output.', 'swift-rank'),
+        linkText: '', // No link for warning notices
+        condition: (values) => {
+            if (!values) return false;
+
+            return typeof window.swiftRankSettings !== 'undefined' &&
+                !!window.swiftRankSettings.isRankMathActive &&
+                !values.disable_rankmath_schema;
         },
     },
     {
