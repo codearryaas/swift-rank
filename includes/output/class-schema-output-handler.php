@@ -229,15 +229,25 @@ class Schema_Output_Handler
 			}
 		}
 
-		// 3. Get post-specific schemas (from Swift Rank metabox)
-		if (is_singular()) {
-			$post_schemas = $this->get_post_schemas();
-			if (!empty($post_schemas)) {
-				$schemas = array_merge($schemas, $post_schemas);
+
+		// 3. Get auto-generated schemas first (if enabled)
+		// Auto-schemas provide baseline structured data for pages
+		$auto_schema = $this->get_auto_schema();
+		if (!empty($auto_schema)) {
+			$schemas = array_merge($schemas, $auto_schema);
+		}
+
+		// 4. Get schema templates that match current page conditions
+		// Templates add or enhance the auto-generated schemas
+		// On author archives, get_author_schemas() handles template matching with overrides
+		if (!is_author()) {
+			$template_schemas = $this->get_template_schemas();
+			if (!empty($template_schemas)) {
+				$schemas = array_merge($schemas, $template_schemas);
 			}
 		}
 
-		// 4. Get author-specific schemas
+		// 5. Get author-specific schemas (includes template matching with user overrides)
 		if (is_author()) {
 			$author_schemas = $this->get_author_schemas();
 			if (!empty($author_schemas)) {
@@ -245,36 +255,21 @@ class Schema_Output_Handler
 			}
 		}
 
-		// 5. Get auto-generated schemas (if enabled and no post-specific schemas)
-		// Auto-schemas are only generated if there are no post-specific schemas
-		// Templates will override auto-schemas in the next step
-		if (empty($post_schemas) && !is_author()) {
-			$auto_schema = $this->get_auto_schema();
-			if (!empty($auto_schema)) {
-				// Check if templates exist for this page
-				$template_schemas = $this->get_template_schemas();
-
-				// Only use auto-schema if no templates exist
-				if (empty($template_schemas)) {
-					$schemas = array_merge($schemas, $auto_schema);
-				} else {
-					// Templates exist, use them instead
-					$schemas = array_merge($schemas, $template_schemas);
-				}
+		// 6. Get post-specific schema overrides (highest priority)
+		// These override/supplement auto-schemas and templates for individual posts
+		if (is_singular()) {
+			$post_schemas = $this->get_post_schemas();
+			if (!empty($post_schemas)) {
+				$schemas = array_merge($schemas, $post_schemas);
 			}
 		}
 
-		// 6. Get schema templates that match current page (if no post-specific schemas and no auto-schema was used)
-		// On author archives, get_author_schemas() handles template matching with overrides, so we skip this to avoid duplicates
-		if (empty($post_schemas) && !is_author() && empty($auto_schema)) {
-			$template_schemas = $this->get_template_schemas();
-			if (!empty($template_schemas)) {
-				$schemas = array_merge($schemas, $template_schemas);
-			}
-		}
-
-		// 6. Allow other components (like blocks) to add schemas
+		// 7. Allow other components (like blocks) to add schemas
 		$schemas = apply_filters('swift_rank_schemas', $schemas);
+
+		// 8. Deduplicate schemas by @id to prevent duplicate outputs
+		// This handles cases where multiple templates match the same page
+		$schemas = $this->deduplicate_schemas($schemas);
 
 		// 7. Output Knowledge Graph (Organization or Person) schema
 		// Logic: Output on homepage (if enabled) OR if a WebPage schema is present (to satisfy 'about' link)
@@ -471,6 +466,9 @@ class Schema_Output_Handler
 	/**
 	 * Get schemas for the current post based on matching templates and overrides
 	 *
+	 * This method only returns schemas that have actual field overrides.
+	 * Base templates without overrides are already added by get_template_schemas().
+	 *
 	 * @return array
 	 */
 	private function get_post_schemas()
@@ -492,6 +490,11 @@ class Schema_Output_Handler
 			$saved_overrides = array();
 		}
 
+		// If no overrides exist, return empty - base templates are already added
+		if (empty($saved_overrides)) {
+			return array();
+		}
+
 		$schemas = array();
 
 		foreach ($matching_templates as $template) {
@@ -508,7 +511,7 @@ class Schema_Output_Handler
 				continue;
 			}
 
-			// Merge template fields with overrides (check string key first, then int)
+			// Check if this template has overrides (check string key first, then int)
 			$overrides = array();
 			$template_key = (string) $template_id;
 			if (isset($saved_overrides[$template_key])) {
@@ -516,6 +519,13 @@ class Schema_Output_Handler
 			} elseif (isset($saved_overrides[$template_id])) {
 				$overrides = $saved_overrides[$template_id];
 			}
+
+			// Skip if no overrides for this template - base template is already added
+			if (empty($overrides)) {
+				continue;
+			}
+
+			// Merge template fields with overrides
 			$fields = array_merge($template_fields, $overrides);
 
 			// Build schema using registered builder or filter
@@ -605,6 +615,7 @@ class Schema_Output_Handler
 	private function get_template_schemas()
 	{
 		$schemas = array();
+		$seen_templates = array(); // Track template data to prevent duplicates
 
 		// Query all published schema templates
 		$templates = get_posts(
@@ -631,6 +642,21 @@ class Schema_Output_Handler
 			if (!$this->should_display_template($schema_data)) {
 				continue;
 			}
+
+			// Create a hash of the template data to detect duplicates
+			// This prevents multiple template posts with identical data from creating duplicate schemas
+			$template_hash = md5(wp_json_encode(array(
+				'type' => $schema_data['schemaType'],
+				'fields' => isset($schema_data['fields']) ? $schema_data['fields'] : array(),
+			)));
+
+			// Skip if we've already processed this exact template data
+			if (in_array($template_hash, $seen_templates, true)) {
+				continue;
+			}
+
+			// Mark this template data as seen
+			$seen_templates[] = $template_hash;
 
 			// Build schema based on type
 			$schema = $this->build_schema_from_template($schema_data);
@@ -1180,5 +1206,40 @@ class Schema_Output_Handler
 		}
 
 		return 0;
+	}
+
+	/**
+	 * Deduplicate schemas by @id
+	 *
+	 * Removes duplicate schemas that have the same @id, keeping only the first occurrence.
+	 * This prevents duplicate outputs when multiple templates match the same page.
+	 *
+	 * @param array $schemas Array of schemas.
+	 * @return array Deduplicated schemas array.
+	 */
+	private function deduplicate_schemas($schemas)
+	{
+		$seen_ids = array();
+		$unique_schemas = array();
+
+		foreach ($schemas as $schema) {
+			// Check if schema has an @id
+			if (isset($schema['@id'])) {
+				$schema_id = $schema['@id'];
+
+				// Skip if we've already seen this @id
+				if (in_array($schema_id, $seen_ids, true)) {
+					continue;
+				}
+
+				// Mark this @id as seen
+				$seen_ids[] = $schema_id;
+			}
+
+			// Add schema to unique list
+			$unique_schemas[] = $schema;
+		}
+
+		return $unique_schemas;
 	}
 }
